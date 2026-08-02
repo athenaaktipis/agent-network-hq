@@ -170,7 +170,7 @@
   <div class="kicker">Schmidt Sciences · Scaling AI Safety for a Multi-Agent World · Focus Area 2</div>
   <h1>Agent Network HQ</h1>
   <div class="statusline" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-    <span><span class="dot">●</span> 5 agents active · network status: <b>converging</b> — Athena has pinged every node; Problem &amp; Impact, Approach, and Novelty all moving</span>
+    <span><span class="dot">●</span> 5 agents active · network status: <b>accelerating</b> — 10 of 12 sections in motion; only Existing Funding and Milestones untouched</span>
     <button id="syncbtn" onclick="requestSync()" style="cursor:pointer;font:600 12.5px system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--surface-1);border:1px solid var(--border);border-radius:8px;padding:6px 12px;white-space:nowrap;">⟳ Sync now</button>
   </div>
   <div id="syncnote" style="display:none;margin-top:8px;font-size:12.5px;color:var(--text-secondary);border:1px solid var(--border);border-left:3px solid var(--series-2);border-radius:8px;padding:8px 12px;background:var(--surface-1);">
@@ -186,13 +186,13 @@
   </div>
   <div class="tile">
     <div class="label">Core words drafted</div>
-    <div class="value">~350<span style="font-size:16px;color:var(--muted)"> / 3,000</span></div>
-    <div class="sub">+290 words since 4 PM — velocity is real</div>
+    <div class="value">~545<span style="font-size:16px;color:var(--muted)"> / 3,000</span></div>
+    <div class="sub">+490 words since 4 PM — velocity is real</div>
   </div>
   <div class="tile">
     <div class="label">Sections started</div>
-    <div class="value">7<span style="font-size:16px;color:var(--muted)"> / 12</span></div>
-    <div class="sub">2 drafted, 5 in progress</div>
+    <div class="value">10<span style="font-size:16px;color:var(--muted)"> / 12</span></div>
+    <div class="sub">only Existing Funding &amp; Milestones left to open</div>
   </div>
   <div class="tile">
     <div class="label">Salvage available</div>
@@ -213,10 +213,10 @@
     <div class="row"><div class="name">Problem &amp; Impact <small>≤ 500 words</small></div><div class="meter"><div class="fill" style="width:56%"></div></div><div class="words">~280 / 500</div><div class="chip notes">✍ drafting [AA]</div></div>
     <div class="row"><div class="name">Approach <small>≤ 1000 words</small></div><div class="meter"><div class="fill notes" style="width:12%"></div></div><div class="words">~120 / 1000</div><div class="chip notes">✍ prose begun [AA]</div></div>
     <div class="row"><div class="name">Novelty <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:13%"></div></div><div class="words">~40 / 300</div><div class="chip notes">✍ drafting [AA]</div></div>
-    <div class="row"><div class="name">Feasibility <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 / 300</div><div class="chip notes">◔ data flagged</div></div>
-    <div class="row"><div class="name">Team <small>≤ 300 words</small></div><div class="meter"><div class="fill notes" style="width:4%"></div></div><div class="words">names only</div><div class="chip needs">◑ bios needed</div></div>
-    <div class="row"><div class="name">Proposal Risks <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 / 300</div><div class="chip empty">not started</div></div>
-    <div class="row"><div class="name">"But for" impact <small>≤ 300 words</small></div><div class="meter"><div class="fill notes" style="width:5%"></div></div><div class="words">1 note</div><div class="chip notes">◔ notes</div></div>
+    <div class="row"><div class="name">Feasibility <small>≤ 300 words</small></div><div class="meter"><div class="fill notes" style="width:3%"></div></div><div class="words">assigned</div><div class="chip notes">→ Reilly: prelim data</div></div>
+    <div class="row"><div class="name">Team <small>≤ 300 words</small></div><div class="meter"><div class="fill notes" style="width:8%"></div></div><div class="words">~15 / 300</div><div class="chip needs">◑ bios needed ×3</div></div>
+    <div class="row"><div class="name">Proposal Risks <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:28%"></div></div><div class="words">~85 / 300</div><div class="chip notes">✍ drafting [AA]</div></div>
+    <div class="row"><div class="name">"But for" impact <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:32%"></div></div><div class="words">~95 / 300</div><div class="chip notes">✍ drafting [AA]</div></div>
     <div class="row"><div class="name">Existing Funding <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 / 300</div><div class="chip empty">not started</div></div>
     <div class="row"><div class="name">Milestones table <small>≥2/yr + 3 outcomes</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 rows</div><div class="chip needs">◑ required</div></div>
     <div class="row"><div class="name">Budget &amp; compute <small>option 1–4</small></div><div class="meter"><div class="fill notes" style="width:33%"></div></div><div class="words">$1M · 24 mo</div><div class="chip needs">◑ compute opt.</div></div>
@@ -332,6 +332,9 @@
     <h2>Mission pulse</h2>
     <div class="h2sub">What moved since the last sync</div>
     <ul class="pulse">
+      <li>🛡 <b>Athena</b> drafted Proposal Risks (~85 words): the core risk (LLMs ≠ biological systems) plus a mitigation ladder — broader cue sets: noise, entropy, system entrainment <span class="when">— today ~4:40 PM</span></li>
+      <li><b>Athena</b> drafted "But for" impact (~95 words): markets push deployment, not testing of emergent failure modes — <i>last sentence ends mid-thought, easy pickup point</i> <span class="when">— today ~4:45 PM</span></li>
+      <li><b>Athena</b> scaffolded Team (now including <b>Liz</b> as a member) and tagged <b>Jennifer</b> &amp; <b>Ted</b> for their lines; <b>Reilly</b> assigned the Feasibility prelim-data summary <span class="when">— 4:36 PM</span></li>
       <li>🔥 <b>Athena</b> tripled Problem &amp; Impact (~280 words): detection of unsafe parameter space, the fallback argument if detection fails, and the "1B agents by 2028" urgency case <span class="when">— today 4:00–4:30 PM</span></li>
       <li><b>Athena</b> added the methodological spine to Approach: <i>signal detection theory → multi-cue decision systems</i> for spotting cooperation/coordination failures; <b>Ted</b> tagged for a gut-check <span class="when">— 4:13 PM</span></li>
       <li><b>Athena</b> opened Novelty (evolutionary bio + cooperation science + cheater detection + signal detection) and pulled in <b>Reilly</b> and <b>Ted</b> <span class="when">— 4:10 &amp; 4:30 PM</span></li>
@@ -418,7 +421,7 @@
 </section>
 
 <footer>
-  <p><b>Live site:</b> <a href="https://athenaaktipis.github.io/agent-network-hq/">athenaaktipis.github.io/agent-network-hq</a> — bookmark it; it updates itself. &nbsp;·&nbsp; <b>Last sync:</b> Sunday, Aug 2, 2026 · 4:35 PM Phoenix &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
+  <p><b>Live site:</b> <a href="https://athenaaktipis.github.io/agent-network-hq/">athenaaktipis.github.io/agent-network-hq</a> — bookmark it; it updates itself. &nbsp;·&nbsp; <b>Last sync:</b> Sunday, Aug 2, 2026 · 4:47 PM Phoenix &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
   <p>Countdown targets the team's internal deadline: Wednesday Aug 5, midnight (end of day, Phoenix). The funder's hard deadline is Aug 8, 11:59 PM Anywhere-on-Earth — confirm exact time in the application portal; do not let the countdown be the single source of truth.</p>
 </footer>
 
