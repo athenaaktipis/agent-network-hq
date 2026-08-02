@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Network HQ — Schmidt Multi-Agent Sprint</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page:        #f9f9f7;
+    --surface-1:   #fcfcfb;
+    --text-primary:#0b0b0b;
+    --text-secondary:#52514e;
+    --muted:       #898781;
+    --grid:        #e1e0d9;
+    --baseline:    #c3c2b7;
+    --border:      rgba(11,11,11,0.10);
+    --series-1:    #2a78d6;
+    --series-2:    #eb6834;
+    --series-3:    #1baf7a;
+    --series-4:    #eda100;
+    --series-5:    #e87ba4;
+    --seq-150:     #b7d3f6;
+    --seq-300:     #6da7ec;
+    --status-good: #0ca30c;
+    --status-warn: #fab219;
+    --status-serious:#ec835a;
+    --status-critical:#d03b3b;
+    --good-text:   #006300;
+    --wash:        rgba(42,120,214,0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      color-scheme: dark;
+      --page:        #0d0d0d;
+      --surface-1:   #1a1a19;
+      --text-primary:#ffffff;
+      --text-secondary:#c3c2b7;
+      --muted:       #898781;
+      --grid:        #2c2c2a;
+      --baseline:    #383835;
+      --border:      rgba(255,255,255,0.10);
+      --series-1:    #3987e5;
+      --series-2:    #d95926;
+      --series-3:    #199e70;
+      --series-4:    #c98500;
+      --series-5:    #d55181;
+      --seq-150:     #184f95;
+      --seq-300:     #256abf;
+      --good-text:   #0ca30c;
+      --wash:        rgba(57,135,229,0.14);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--page);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.45;
+    padding: 28px 20px 60px;
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+  a { color: var(--series-1); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---------- header ---------- */
+  header { margin-bottom: 22px; }
+  .kicker { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 30px; font-weight: 750; letter-spacing: -0.01em; margin: 2px 0 4px; }
+  .statusline { color: var(--text-secondary); font-size: 14px; }
+  .statusline .dot { color: var(--good-text); font-weight: 700; }
+
+  /* ---------- stat tiles ---------- */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 12px; margin: 18px 0 26px; }
+  .tile {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px;
+    padding: 14px 16px 12px;
+  }
+  .tile .label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+  .tile .value { font-size: 30px; font-weight: 700; margin-top: 2px; }
+  .tile .sub { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+  .tile.urgent .value { color: var(--status-critical); }
+  #clock .value { font-variant-numeric: tabular-nums; }
+
+  /* ---------- layout ---------- */
+  .cols { display: grid; grid-template-columns: 1.35fr 1fr; gap: 16px; align-items: start; }
+  @media (max-width: 840px) { .cols { grid-template-columns: 1fr; } }
+  section.card {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 18px 14px; margin-bottom: 16px;
+  }
+  h2 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .h2sub { font-size: 12.5px; color: var(--muted); margin-bottom: 12px; }
+
+  /* ---------- progress board ---------- */
+  .row { display: grid; grid-template-columns: 168px 1fr 86px 96px; gap: 10px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--grid); }
+  .row:last-child { border-bottom: none; }
+  .row .name { font-size: 13.5px; font-weight: 600; }
+  .row .name small { display:block; font-weight: 400; color: var(--muted); font-size: 11px; }
+  .meter { height: 10px; background: var(--page); border: 1px solid var(--grid); border-radius: 5px; overflow: hidden; position: relative; }
+  .meter .fill { position: absolute; inset: 0 auto 0 0; background: var(--series-1); border-radius: 4px 0 0 4px; min-width: 0; }
+  .meter .fill.notes { background: var(--seq-150); }
+  .row .words { font-size: 12.5px; color: var(--text-secondary); text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .chip { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); text-align: center; white-space: nowrap; justify-self: end; }
+  .chip.empty { color: var(--muted); }
+  .chip.notes { color: var(--text-primary); background: color-mix(in srgb, var(--status-warn) 18%, transparent); }
+  .chip.needs { color: var(--text-primary); background: color-mix(in srgb, var(--status-serious) 18%, transparent); }
+  @media (max-width: 560px) { .row { grid-template-columns: 1fr 1fr; } .meter { grid-column: 1 / -1; } }
+
+  /* ---------- question of the day ---------- */
+  .qotd {
+    border: 2px solid var(--series-2); border-radius: 10px; padding: 12px 14px;
+    background: color-mix(in srgb, var(--series-2) 7%, transparent); margin-bottom: 16px;
+  }
+  .qotd .tag { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--series-2); }
+  .qotd p { font-size: 14px; font-weight: 600; margin-top: 3px; }
+  .qotd small { display:block; font-weight: 400; color: var(--text-secondary); margin-top: 4px; font-size: 12.5px; }
+
+  /* ---------- differentiation gauntlet ---------- */
+  .rivals { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 10px; }
+  .rival { border: 1px solid var(--border); border-radius: 10px; padding: 11px 13px; background: var(--page); font-size: 13px; color: var(--text-secondary); }
+  .rival .top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 3px; }
+  .rival b { color: var(--text-primary); font-size: 13.5px; }
+  .rival .edge { margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--grid); font-size: 12.5px; }
+  .rival .edge span { color: var(--muted); font-style: italic; }
+  .chip.open { color: var(--text-primary); background: color-mix(in srgb, var(--status-serious) 20%, transparent); }
+  .chip.claimed { color: var(--text-primary); background: color-mix(in srgb, var(--status-good) 20%, transparent); }
+
+  /* ---------- pulse ---------- */
+  .pulse li { margin: 0 0 9px 0; font-size: 13.5px; color: var(--text-secondary); list-style: none; padding-left: 18px; position: relative; }
+  .pulse li::before { content: "▸"; position: absolute; left: 0; color: var(--series-1); }
+  .pulse li b { color: var(--text-primary); font-weight: 650; }
+  .pulse .when { color: var(--muted); font-size: 11.5px; }
+  .openq li::before { content: "?"; font-weight: 800; color: var(--series-2); }
+  .initial { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 1px 5px; border-radius: 4px; background: var(--wash); color: var(--text-primary); border: 1px solid var(--border); }
+
+  /* ---------- network graph ---------- */
+  .netfig text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .figcap { font-size: 11.5px; color: var(--muted); margin-top: 6px; }
+
+  /* ---------- idea wall ---------- */
+  .wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px,1fr)); gap: 10px; }
+  .idea {
+    border: 1px solid var(--border); border-left: 4px solid var(--series-3);
+    border-radius: 8px; padding: 10px 12px; background: var(--page);
+    font-size: 13px; color: var(--text-secondary);
+  }
+  .idea b { display: block; color: var(--text-primary); font-size: 13.5px; margin-bottom: 2px; }
+  .idea.games { border-left-color: var(--series-5); }
+  .idea.ladder { border-left-color: var(--series-2); }
+  .idea.frame { border-left-color: var(--series-1); }
+
+  /* ---------- salvage yard ---------- */
+  details { border: 1px solid var(--border); border-radius: 10px; background: var(--page); margin-bottom: 8px; }
+  summary { cursor: pointer; padding: 10px 14px; font-weight: 650; font-size: 13.5px; }
+  summary:hover { background: var(--wash); border-radius: 10px; }
+  details .inner { padding: 2px 16px 12px; font-size: 13px; color: var(--text-secondary); }
+  details .inner p { margin: 6px 0; }
+  details .inner li { margin: 4px 0 4px 16px; }
+  blockquote { border-left: 3px solid var(--series-1); margin: 8px 0; padding: 4px 12px; font-style: italic; color: var(--text-secondary); }
+
+  footer { margin-top: 26px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--grid); padding-top: 14px; }
+  footer p { margin: 4px 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">Schmidt Sciences · Scaling AI Safety for a Multi-Agent World · Focus Area 2</div>
+  <h1>Agent Network HQ</h1>
+  <div class="statusline" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+    <span><span class="dot">●</span> 5 agents active · network status: <b>signals detected</b> — first drafts emerging (title, tier, and summary locked this afternoon)</span>
+    <button id="syncbtn" onclick="requestSync()" style="cursor:pointer;font:600 12.5px system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--surface-1);border:1px solid var(--border);border-radius:8px;padding:6px 12px;white-space:nowrap;">⟳ Sync now</button>
+  </div>
+  <div id="syncnote" style="display:none;margin-top:8px;font-size:12.5px;color:var(--text-secondary);border:1px solid var(--border);border-left:3px solid var(--series-2);border-radius:8px;padding:8px 12px;background:var(--surface-1);">
+    This page now <b>auto-syncs every ~15 minutes</b> (7 AM–10 PM Phoenix): Claude checks the doc for changes and republishes when something moved, so edits appear here within about 15 minutes on their own. Can't wait? Message <b>"sync HQ"</b> to Claude in Athena's Cowork chat for an immediate refresh.
+  </div>
+</header>
+
+<div class="tiles">
+  <div class="tile urgent" id="clock">
+    <div class="label">Team deadline · Wed Aug 5, midnight</div>
+    <div class="value" id="countdown">—</div>
+    <div class="sub">Hard deadline Aug 8 AoE — Wed finish = 3-day buffer</div>
+  </div>
+  <div class="tile">
+    <div class="label">Core words drafted</div>
+    <div class="value">57<span style="font-size:16px;color:var(--muted)"> / 3,000</span></div>
+    <div class="sub">+ title, summary &amp; tier locked today ✓</div>
+  </div>
+  <div class="tile">
+    <div class="label">Sections started</div>
+    <div class="value">6<span style="font-size:16px;color:var(--muted)"> / 12</span></div>
+    <div class="sub">2 drafted, 4 in notes/progress</div>
+  </div>
+  <div class="tile">
+    <div class="label">Salvage available</div>
+    <div class="value">10</div>
+    <div class="sub">bios + 5 pilot datasets from May</div>
+  </div>
+</div>
+
+<div class="cols">
+<div>
+
+  <section class="card">
+    <h2>Proposal progress board</h2>
+    <div class="h2sub">Word meters read live from the <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">working doc</a> · limits are hard caps</div>
+
+    <div class="row"><div class="name">Title <small>≤ 20 words</small></div><div class="meter"><div class="fill" style="width:45%"></div></div><div class="words">9 / 20</div><div class="chip claimed">✓ drafted [AA]</div></div>
+    <div class="row"><div class="name">Plain summary <small>2–3 sentences</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">3 sentences</div><div class="chip claimed">✓ drafted [AA]</div></div>
+    <div class="row"><div class="name">Problem &amp; Impact <small>≤ 500 words</small></div><div class="meter"><div class="fill" style="width:11%"></div></div><div class="words">57 / 500</div><div class="chip notes">✍ drafting [AA]</div></div>
+    <div class="row"><div class="name">Approach <small>≤ 1000 words</small></div><div class="meter"><div class="fill notes" style="width:9%"></div></div><div class="words">~90 / 1000</div><div class="chip notes">◔ notes</div></div>
+    <div class="row"><div class="name">Novelty <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 / 300</div><div class="chip empty">not started</div></div>
+    <div class="row"><div class="name">Feasibility <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 / 300</div><div class="chip notes">◔ data flagged</div></div>
+    <div class="row"><div class="name">Team <small>≤ 300 words</small></div><div class="meter"><div class="fill notes" style="width:4%"></div></div><div class="words">names only</div><div class="chip needs">◑ bios needed</div></div>
+    <div class="row"><div class="name">Proposal Risks <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 / 300</div><div class="chip empty">not started</div></div>
+    <div class="row"><div class="name">"But for" impact <small>≤ 300 words</small></div><div class="meter"><div class="fill notes" style="width:5%"></div></div><div class="words">1 note</div><div class="chip notes">◔ notes</div></div>
+    <div class="row"><div class="name">Existing Funding <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 / 300</div><div class="chip empty">not started</div></div>
+    <div class="row"><div class="name">Milestones table <small>≥2/yr + 3 outcomes</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 rows</div><div class="chip needs">◑ required</div></div>
+    <div class="row"><div class="name">Budget &amp; compute <small>option 1–4</small></div><div class="meter"><div class="fill notes" style="width:33%"></div></div><div class="words">$1M · 24 mo</div><div class="chip needs">◑ compute opt.</div></div>
+  </section>
+
+  <section class="card">
+    <h2>Differentiation gauntlet</h2>
+    <div class="h2sub">Six nearest neighbors stand between you and the Novelty section (≤300 words). Claim an edge by writing one distinguishing sentence in the doc's Novelty notes with your initials — the card flips green at the next sync. Defeat all six and Novelty drafts itself.</div>
+    <div class="rivals">
+      <div class="rival">
+        <div class="top"><b>Concordia (DeepMind)</b><span class="chip open">◑ edge unclaimed</span></div>
+        LLM-agent social simulation library; mixed-motive generalization evals (Smith et al. 2025).
+        <div class="edge">Our edge: <span>candidate — they build sandboxes; we bring validated psychometric constructs + biological theory of what makes agent networks fail. Someone make this sharp.</span></div>
+      </div>
+      <div class="rival">
+        <div class="top"><b>Melting Pot &amp; MARL suites</b><span class="chip open">◑ edge unclaimed</span></div>
+        Multi-agent cooperation evals at scale — but trained MARL policies, not frontier LLMs, and no human-grounded constructs.
+        <div class="edge">Our edge: <span>candidate — and Softmax is our partner, not our rival: their environments, our measurement science.</span></div>
+      </div>
+      <div class="rival">
+        <div class="top"><b>MultiAgentBench / Agent SafetyBench</b><span class="chip open">◑ edge unclaimed</span></div>
+        Task-completion and single-agent safety benchmarks; nothing measures population-level properties or detects network failures.
+        <div class="edge">Our edge: <span>candidate — they benchmark agents; we benchmark <i>networks</i>.</span></div>
+      </div>
+      <div class="rival">
+        <div class="top"><b>CAIF "Multi-Agent Risks" report</b><span class="chip open">◑ edge unclaimed</span></div>
+        The funders' own taxonomy of collusion, cascades, and emergent risks — it names the problems and calls for instruments.
+        <div class="edge">Our edge: <span>candidate — not a rival, a demand signal: cite it as the map; we build the instruments it asks for.</span></div>
+      </div>
+      <div class="rival">
+        <div class="top"><b>Generative-agents social sims</b><span class="chip open">◑ edge unclaimed</span></div>
+        Park-et-al-style societies produce emergent behavior demos — vivid, but no failure detection, no validated metrics.
+        <div class="edge">Our edge: <span>candidate — demos show emergence happens; we make it measurable and flag when it turns dangerous.</span></div>
+      </div>
+      <div class="rival">
+        <div class="top"><b>Escalation studies (Rivera '24, Payne '26)</b><span class="chip open">◑ edge unclaimed</span></div>
+        Single-domain evidence of dangerous collective behavior (wargames, no nuclear taboo).
+        <div class="edge">Our edge: <span>candidate — they showed one alarming instance; we generalize to detection across domains, with exclusionary-alliance pilot data already in hand.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Idea wall</h2>
+    <div class="h2sub">From the brainstorm notes — nothing decays until the network votes it out</div>
+    <div class="wall">
+      <div class="idea"><b>Detecting cooperation &amp; coordination failures</b> The core Focus-Area-2 move: population-level failure detection in multi-agent systems.</div>
+      <div class="idea"><b>Detecting hijacking &amp; cheating</b> When agents get captured or defect — tie to The Cheating Cell lineage.</div>
+      <div class="idea"><b>Biologically informed safety principles</b> What evolution already knows about keeping networks of agents stable.</div>
+      <div class="idea"><b>NetLogo + LLM agents</b> Reilly scouting current state; Chen et al. 2024 + 2026 NetLogo Conf LLM-cognition workshop.</div>
+      <div class="idea ladder"><b>The scaling ladder</b> Softmax (model by model) → Kradle (multi-agent env) → Edge Esmeralda (massive multi-agent with humans; agent-village / Healdsburg data).</div>
+      <div class="idea games"><b>Game library</b> Osotua · Volunteer's dilemma / "hold the door" · Simple majority / "witch hunt" · LLMpollster (3 benchmarks w/ Softmax).</div>
+      <div class="idea frame"><b>Define "safety"</b> The proposal needs its own operational definition — open question.</div>
+      <div class="idea frame"><b>"But for" argument</b> There's no market for cooperation-failure measurement tools; only philanthropy builds this instrument.</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Salvage yard</h2>
+    <div class="h2sub">Ready-to-adapt parts from the May "Trustworthy AI" proposal — steal liberally, rewrite for agent networks</div>
+
+    <details>
+      <summary>Preliminary data with real numbers (feasibility gold)</summary>
+      <div class="inner">
+        <li><b>Trust / Prisoner's Dilemma:</b> 1,224 multi-round games; 75% round-1 cooperation; 96% strategy–behavior alignment; only GPT-4o clears strict tit-for-tat (r ≥ 0.95).</li>
+        <li><b>Exclusionary alliances:</b> 1,242 responses across 7 cooperation games; models failed 2× as often as they passed (65% vs 33%); Grok 3 and Llama 4 Maverick at ~1%, forming exclusionary alliances in nearly every replicate — a ready-made <i>detectable dangerous population-level property</i>.</li>
+        <li><b>Division of labor:</b> 3 prompt metrics, 9 frontier models, 4,355 coded responses; models default to helpfulness over cooperative reasoning.</li>
+        <li><b>Mechanistic interpretability pilot:</b> belief-relevant representations linearly decodable in mid-to-late layers; activation patching recovers cooperative behavior (Llama 3.1 8B, Claude 3.7, GPT-4o).</li>
+        <li><b>Commons:</b> Janssen's Port of Mars replication — LLMs track human behavior in collective-resource games (Slumbers et al. 2025).</li>
+      </div>
+    </details>
+
+    <details>
+      <summary>Bios on the shelf (and one gap)</summary>
+      <div class="inner">
+        <p>Polished bios exist for: <b>Aktipis</b> (full version in the Background doc), <b>Pavlic</b>, <b>Kwan</b>, <b>Janssen</b>, <b>Loughman</b>, <b>Simeone</b>, <b>Krems</b>, <b>Shear</b> (Softmax), <b>Tamplin</b> (Kradle), <b>Sodhi</b> (Learning Layer Labs).</p>
+        <p><b>⚠ Gap: Jennifer Fewell has no bio in any prior doc</b> — she was only on a workshop list in May. One needs writing this week. Edge also has no partner description on file.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Quotable framing to adapt</summary>
+      <div class="inner">
+        <blockquote>"AI systems have become social partners in people's lives; people confide in them, defer to them, and form attachments with them without this having been a conscious individual or collective decision."</blockquote>
+        <blockquote>"The window for establishing third-party social-behavior measurement (before norms calcify around whatever AI companies choose to self-report) is narrow and closing."</blockquote>
+        <blockquote>"Mixed-equilibria games allow us to probe frequency-dependent dynamics absent from existing benchmarks… displacing human behavioral equilibria."</blockquote>
+        <p>Plus the escalation evidence: simulated AI nuclear use nearly universal with no taboo (Payne 2026; Rivera et al. 2024) — strong "dangerous population-level properties" hook.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Methods toolkit</summary>
+      <div class="inner">
+        <li>Social Relations Model round-robins (perceiver / target / relationship variance — AI-evaluating-AI bias control)</li>
+        <li>Activation patching + linear probing via NDIF on open-weight models; sentence-ablation analogue for closed models</li>
+        <li>Psychometric prompt-ladder construction (one element changed per version; the ladder doubles as the ablation set)</li>
+        <li>Vary group size, communication, time horizon; mixed human–AI groups; time-stamped drift tracking</li>
+      </div>
+    </details>
+  </section>
+
+</div>
+<div>
+
+  <div class="qotd">
+    <div class="tag">⚡ Question of the day</div>
+    <p>"Concordia already exists. Why should Schmidt fund you?"</p>
+    <small>One sentence each in the doc's Novelty notes, tagged with your initials. Best answer becomes the opening of the Novelty section and slays the first rival below.</small>
+  </div>
+
+  <section class="card">
+    <h2>Mission pulse</h2>
+    <div class="h2sub">What moved since the last sync</div>
+    <ul class="pulse">
+      <li>🎉 <b>Athena</b> locked the title (<i>"Detecting failures of cooperation and coordination in multiagent systems"</i>), <b>Tier 2 · $1M · 24 mo</b>, and a 3-sentence plain-language summary <span class="when">— today ~3:45–3:55 PM</span></li>
+      <li><b>Athena</b> opened Problem &amp; Impact — evolutionary-systems framing (multicellular bodies, insect societies, human societies) <span class="when">— today, 57 words in</span></li>
+      <li><b>Athena</b> on Keywords: <i>"We'll ask AI for this after it's drafted"</i> <span class="when">— today 3:48 PM</span></li>
+      <li><b>Reilly</b> flagged Approach (<i>"Draft stuff for this"</i>) and Feasibility prelim data <span class="when">— today 3:25 &amp; 3:28 PM</span></li>
+      <li>Summary names the <b>Edge Esmeralda agent-village experiment</b> as the at-scale testbed — Edge partner description still needed</li>
+    </ul>
+    <h2 style="margin-top:14px">Open questions for the network</h2>
+    <div class="h2sub">Resolve these and several sections unblock at once</div>
+    <ul class="pulse openq">
+      <li><b>Compute option (1–4)</b> — the last budget unknown; Option 3 in-kind changes the ceiling math ($50k carve-out from the $1M).</li>
+      <li><b>Edge Esmeralda description + data-access confirmation</b> — it's now in the summary, so the Approach and Team sections need the partnership pinned down.</li>
+      <li><b>Fewell bio + headshots to Liz</b> — only missing team assets.</li>
+      <li><s style="color:var(--muted)">Tier &amp; duration</s> — <span style="color:var(--good-text);font-weight:600">✓ resolved: Tier 2, $1M, 24 mo [AA]</span></li>
+      <li><s style="color:var(--muted)">Title</s> — <span style="color:var(--good-text);font-weight:600">✓ drafted [AA]</span> · keywords deferred until draft is in.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>The network (that's you)</h2>
+    <div class="h2sub">Edges form as agents touch the same sections — tag moves with initials like <span class="initial">[AA]</span> so the graph stays honest</div>
+    <svg class="netfig" viewBox="0 0 380 330" width="100%" role="img" aria-label="Team network: five collaborators connected to the proposal sections they have touched">
+      <!-- section hub -->
+      <g>
+        <circle cx="190" cy="165" r="46" fill="none" stroke="var(--baseline)" stroke-dasharray="4 4"/>
+        <text x="190" y="160" text-anchor="middle" font-size="11" fill="var(--muted)">THE</text>
+        <text x="190" y="174" text-anchor="middle" font-size="11" fill="var(--muted)">PROPOSAL</text>
+      </g>
+      <!-- edges -->
+      <g stroke="var(--baseline)" stroke-width="2" opacity="0.9">
+        <line x1="190" y1="52"  x2="190" y2="119" stroke="var(--series-1)" stroke-width="5"/>
+        <line x1="63"  y1="120" x2="146" y2="150"/>
+        <line x1="317" y1="120" x2="234" y2="150"/>
+        <line x1="95"  y1="277" x2="158" y2="200"/>
+        <line x1="285" y1="277" x2="222" y2="200"/>
+        <line x1="190" y1="52"  x2="76"  y2="108" stroke="var(--series-1)" stroke-width="2.5"/>
+        <line x1="190" y1="52"  x2="285" y2="265" stroke="var(--series-1)" stroke-width="2.5"/>
+      </g>
+      <!-- nodes: fixed categorical order, initials inside (identity never color-alone) -->
+      <g font-size="13" font-weight="700">
+        <circle cx="190" cy="42" r="21" fill="var(--series-1)"/><text x="190" y="47" text-anchor="middle" fill="#fff">AA</text>
+        <circle cx="55"  cy="112" r="21" fill="var(--series-2)"/><text x="55" y="117" text-anchor="middle" fill="#fff">LG</text>
+        <circle cx="325" cy="112" r="21" fill="var(--series-3)"/><text x="325" y="117" text-anchor="middle" fill="#fff">TP</text>
+        <circle cx="88"  cy="288" r="21" fill="var(--series-4)"/><text x="88" y="293" text-anchor="middle" fill="#0b0b0b">JF</text>
+        <circle cx="292" cy="288" r="21" fill="var(--series-5)"/><text x="292" y="293" text-anchor="middle" fill="#0b0b0b">RD</text>
+      </g>
+      <g font-size="11" fill="var(--text-secondary)" text-anchor="middle">
+        <text x="190" y="14">Athena · PI</text>
+        <text x="55"  y="82">Liz · coordination</text>
+        <text x="325" y="82">Ted</text>
+        <text x="88"  y="322">Jennifer</text>
+        <text x="292" y="322">Reilly · NetLogo</text>
+      </g>
+    </svg>
+    <div class="figcap">Blue edges = activity in the last 24h; thickness = volume. Athena's thick edge to the proposal: title, tier, summary, and Problem &amp; Impact opened this afternoon. Athena↔Liz and Athena↔Reilly active via comments. This graph gets denser as the week goes — that's the emergence we're funded to study, demonstrated live.</div>
+  </section>
+
+  <section class="card">
+    <h2>How this page works</h2>
+    <div class="h2sub" style="margin-bottom:6px">The rules of the game</div>
+    <ul class="pulse">
+      <li>Write in the <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">working doc</a> — this page checks for changes every ~15 minutes (7 AM–10 PM Phoenix) and updates itself; edits show up here within a quarter hour. Deep sweeps (whole folder + email) run ~8 AM &amp; ~4 PM.</li>
+      <li>Tag contributions with initials — <span class="initial">[AA]</span> <span class="initial">[JF]</span> <span class="initial">[TP]</span> <span class="initial">[LG]</span> <span class="initial">[RD]</span> — to light up your node.</li>
+      <li>New ideas → drop them under <b>Notes</b> in the doc; they appear on the idea wall next sync.</li>
+      <li>Answer the ⚡ question of the day &amp; claim gauntlet edges in the doc's <b>Novelty</b> notes — cards flip green when you do.</li>
+      <li>Ask Athena's Claude for an off-schedule refresh anytime.</li>
+    </ul>
+  </section>
+
+</div>
+</div>
+
+<section class="card" style="margin-top:0;">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;">
+    <div>
+      <h2>The working doc, live</h2>
+      <div class="h2sub">Edit directly here if the embed loads for you (requires being signed into Google in this view) — otherwise use the button</div>
+    </div>
+    <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank" style="font:600 12.5px system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--series-1);color:#fff;border-radius:8px;padding:7px 14px;">Open in Google Docs ↗</a>
+  </div>
+  <iframe src="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit?rm=embedded" style="width:100%;height:720px;border:1px solid var(--grid);border-radius:8px;margin-top:10px;background:#fff;" title="Schmidt Multi-Agent working doc"></iframe>
+  <div class="figcap">If this pane shows a sign-in wall or stays blank, Google is refusing to embed for this browser session — the button above is the reliable path.</div>
+</section>
+
+<footer>
+  <p><b>Last sync:</b> Sunday, Aug 2, 2026 · 4:00 PM Phoenix &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
+  <p>Countdown targets the team's internal deadline: Wednesday Aug 5, midnight (end of day, Phoenix). The funder's hard deadline is Aug 8, 11:59 PM Anywhere-on-Earth — confirm exact time in the application portal; do not let the countdown be the single source of truth.</p>
+</footer>
+
+<script>
+  // Live countdown to Aug 8 23:59:59 AoE (UTC-12) = Aug 9 11:59:59 UTC
+  // Team deadline: Wed Aug 5, 2026, midnight (end of day) Phoenix = Aug 6 07:00 UTC
+  var deadline = Date.UTC(2026, 7, 6, 7, 0, 0);
+  function tick() {
+    var ms = deadline - Date.now();
+    var el = document.getElementById('countdown');
+    if (ms <= 0) { el.textContent = 'BUFFER TIME'; document.querySelector('#clock .sub').textContent = 'Team deadline passed — hard deadline Aug 8 AoE'; return; }
+    var d = Math.floor(ms / 86400000);
+    var h = Math.floor(ms % 86400000 / 3600000);
+    var m = Math.floor(ms % 3600000 / 60000);
+    el.textContent = d + 'd ' + h + 'h ' + m + 'm';
+  }
+  tick();
+  setInterval(tick, 30000);
+
+  // Sync button: this page is static HTML — it cannot reach Google Drive or
+  // trigger Claude by itself. Clicking explains the one-step manual sync.
+  function requestSync() {
+    var note = document.getElementById('syncnote');
+    if (note) { note.style.display = note.style.display === 'none' ? 'block' : 'none'; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText('sync HQ').catch(function(){});
+    }
+  }
+</script>
+
+</body>
+</html>
