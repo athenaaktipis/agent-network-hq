@@ -212,20 +212,30 @@ def build_verified(data):
     tally = " · ".join(
         f'<span class="initial">{k}</span> {p["edits_24h"] + p["comments_24h"] + p["replies_24h"]}'
         for k, p in people.items() if p["active_24h"])
-    lis = [f'      <li>📡 <b>Verified activity</b> (read from the doc\'s revision history) — actions '
-           f'in the last 24h: {tally or "none yet"}</li>']
-    for e in events:
-        name = people[e["initials"]]["name"]
-        detail = ""
-        m = re.search(r"\(([+-]\d+) words\)", e["summary"])
-        if m:
-            detail = f' ({m.group(1)} words)'
-        m2 = re.search(r'updated “([^”]+)”', e["summary"])
-        if m2:
-            detail = f' — {html.escape(m2.group(1))}'
-        lis.append(f'      <li><b>{name}</b> {KIND_VERB.get(e["kind"], "touched the proposal")}'
-                   f'{detail} <span class="when">— {e["when_phoenix"]}</span></li>')
-    return "\n".join(lis)
+    # One line per person, not one per event — the pulse below carries the story.
+    lines = []
+    for who in [k for k, p in people.items() if p["active_24h"]]:
+        mine = [e for e in data["events"] if e["initials"] == who]
+        if not mine:
+            continue
+        p = people[who]
+        bits = []
+        if p["edits_24h"]:
+            bits.append(f'{p["edits_24h"]} doc edit{"s" if p["edits_24h"] != 1 else ""}')
+        n = p["comments_24h"] + p["replies_24h"]
+        if n:
+            bits.append(f'{n} comment{"s" if n != 1 else ""}')
+        files = [re.search(r'updated “([^”]+)”', e["summary"]) for e in mine if e["kind"] == "file"]
+        names = [html.escape(f.group(1)) for f in files if f]
+        if names:
+            bits.append("uploaded " + ", ".join(dict.fromkeys(names)))
+        span = mine[-1]["when_phoenix"] if len(mine) == 1 else \
+            f'{mine[-1]["when_phoenix"]} → {mine[0]["when_phoenix"].split(", ")[-1]}'
+        lines.append(f'      <li><b>{p["name"]}</b> — {", ".join(bits) or "active"} '
+                     f'<span class="when">— {span}</span></li>')
+    return (f'      <li>📡 <b>Verified activity</b>, read from the doc\'s revision history — '
+            f'last 24h: {tally or "none yet"}</li>\n' + "\n".join(lines)) if lines else \
+           f'      <li>📡 <b>Verified activity</b> — last 24h: {tally or "none yet"}</li>'
 
 
 def replace_marker(page, name, body):
