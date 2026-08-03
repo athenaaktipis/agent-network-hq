@@ -146,6 +146,15 @@
   .openq li::before { content: "?"; font-weight: 800; color: var(--series-2); }
   .initial { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 1px 5px; border-radius: 4px; background: var(--wash); color: var(--text-primary); border: 1px solid var(--border); }
 
+  /* ---------- contributors ---------- */
+  .contrib { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--grid); font-size: 13px; color: var(--text-secondary); }
+  .contrib:last-of-type { border-bottom: none; }
+  .contrib .avatar { flex: 0 0 30px; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; color: #fff; }
+  .contrib .who { flex: 1; min-width: 0; }
+  .contrib .who b { color: var(--text-primary); display: block; font-size: 13.5px; }
+  .contrib .stats { text-align: right; font-size: 12px; white-space: nowrap; color: var(--text-secondary); }
+  .contrib .stats .n { font-weight: 700; color: var(--text-primary); }
+
   /* ---------- network graph ---------- */
   .netfig text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
   .figcap { font-size: 11.5px; color: var(--muted); margin-top: 6px; }
@@ -448,6 +457,17 @@
   </section>
 
   <section class="card">
+    <h2>Contributors</h2>
+    <div class="h2sub">Every move counts and gets counted — from doc edits, comments, and assignments at each sync</div>
+    <div class="contrib"><div class="avatar" style="background:var(--series-1)">AA</div><div class="who"><b>Athena</b>Latest: flagged Approach for AI drafting · 5:36 PM</div><div class="stats"><span class="n">7</span> sections advanced · <span class="n">13</span> comments · <span class="n">~570</span> words</div></div>
+    <div class="contrib"><div class="avatar" style="background:var(--series-5)">RD</div><div class="who"><b>Reilly</b>Latest: flagged prelim data for Feasibility · 3:28 PM</div><div class="stats"><span class="n">2</span> comments · <span class="n">1</span> section owned (Feasibility)</div></div>
+    <div class="contrib"><div class="avatar" style="background:var(--series-2)">LG</div><div class="who"><b>Liz</b>Project infrastructure: folder, doc, template — the substrate everything runs on</div><div class="stats">coordination · <span class="n">2</span> tags pending</div></div>
+    <div class="contrib"><div class="avatar" style="background:var(--series-3)">TP</div><div class="who"><b>Ted</b>Awaiting first move — tagged on Approach, Novelty &amp; Team</div><div class="stats"><span class="n">3</span> open tags</div></div>
+    <div class="contrib"><div class="avatar" style="background:var(--series-4)">JF</div><div class="who"><b>Jennifer</b>Awaiting first move — DoL question waiting in Novelty &amp; Team</div><div class="stats"><span class="n">2</span> open tags</div></div>
+    <div class="figcap" style="margin-top:8px">Counts come from comments, names, and section context — solid but not keystroke-perfect. An optional revision-history upgrade (a small script Athena can install) makes this board ground-truth accurate; the page picks it up automatically once installed.</div>
+  </section>
+
+  <section class="card">
     <h2>Mission pulse</h2>
     <div class="h2sub">What moved since the last sync</div>
     <ul class="pulse">
@@ -503,7 +523,7 @@
 </section>
 
 <footer>
-  <p><b>Live site:</b> <a href="https://athenaaktipis.github.io/agent-network-hq/">athenaaktipis.github.io/agent-network-hq</a> — bookmark it; it updates itself. &nbsp;·&nbsp; <b>Last sync:</b> Sunday, Aug 2, 2026 · 6:12 PM Phoenix · <i>Approach draft added to AI drafts</i> &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
+  <p><b>Live site:</b> <a href="https://athenaaktipis.github.io/agent-network-hq/">athenaaktipis.github.io/agent-network-hq</a> — bookmark it; it updates itself. &nbsp;·&nbsp; <b>Last sync:</b> Sunday, Aug 2, 2026 · 6:28 PM Phoenix · <i>Contributors board added</i> &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
   <p>Countdown targets the team's internal deadline: Wednesday Aug 5, midnight (end of day, Phoenix). The funder's hard deadline is Aug 8, 11:59 PM Anywhere-on-Earth — confirm exact time in the application portal; do not let the countdown be the single source of truth.</p>
 </footer>
 
