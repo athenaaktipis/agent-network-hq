@@ -2,7 +2,7 @@
 """Ground-truth contribution detection for Agent Network HQ.
 
 Pulls, via the Google Drive API with Athena's own OAuth credentials:
-  1. Revision history of the working doc  -> who edited, when, words added/removed
+  1. Revision history of the working doc  -> who edited and when
   2. Comment + reply history of the doc   -> who commented, when
   3. File activity in the project folder  -> who uploaded/modified files, when
 
@@ -226,7 +226,11 @@ def main():
             p["active_24h"] = True
             p[kind] += 1
 
-    # --- 1. doc revisions -> edits + word deltas ---
+    # --- 1. doc revisions -> who edited, when ---
+    # NOTE: no word deltas here. Google's per-revision text/plain export
+    # includes template boilerplate inconsistently (and is missing entirely
+    # for some revisions), so revision-to-revision deltas are meaningless.
+    # cloud_sync.py counts drafted words per section instead.
     revs = fetch_revisions(drive, session)
     revs.sort(key=lambda r: r["modifiedTime"])
     prev_words = None
@@ -244,15 +248,8 @@ def main():
                                  "when": when, "what": "doc revision"})
             continue
         bump(who, when, "edits_24h")
-        if delta is not None and ts(when) >= active_cut:
-            if delta >= 0:
-                people[who]["words_added_24h"] += delta
-            else:
-                people[who]["words_removed_24h"] += -delta
         if ts(when) >= event_cut:
             desc = "edited the doc"
-            if delta is not None and delta != 0:
-                desc += f" ({'+' if delta > 0 else ''}{delta} words)"
             events.append({"when": when, "when_phoenix": phoenix(when),
                            "initials": who, "kind": "edit", "summary": desc})
 
