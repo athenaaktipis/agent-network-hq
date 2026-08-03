@@ -214,8 +214,7 @@ def build_verified(data):
         f'<span class="initial">{k}</span> {p["edits_24h"] + p["comments_24h"] + p["replies_24h"]}'
         for k, p in people.items() if p["active_24h"])
     lis = [f'      <li>📡 <b>Verified activity</b> (read from the doc\'s revision history) — actions '
-           f'in the last 24h: {tally or "none yet"} '
-           f'<span class="when">— refreshed {data["generated_at_phoenix"]}</span></li>']
+           f'in the last 24h: {tally or "none yet"}</li>']
     for e in events:
         name = people[e["initials"]]["name"]
         detail = ""
@@ -284,23 +283,29 @@ def main():
         "EDGES": build_edges(people),
         "FIGCAP": f'    <div class="figcap">{build_figcap(people)}</div>',
         "VERIFIED": build_verified(data),
-        "LASTSYNC": (
-            f'<b>Last sync:</b> {now_phx} Phoenix · <i>automatic — data refreshed from the doc\'s '
-            f'revision history</i>'),
     }
 
+    # Apply the substantive regions first. If none of them moved, the page is
+    # already current — leave it completely alone rather than committing a new
+    # timestamp every 15 minutes.
     changed = []
     for name, body in blocks.items():
         page, did = replace_marker(page, name, body)
         if did:
             changed.append(name)
 
-    if changed:
-        with open(PAGE, "w", encoding="utf-8") as f:
-            f.write(page)
     print(f"core words: {core} | sections started: {started}/{total_sections} | "
           f"active 24h: {', '.join(active) or 'nobody'}")
-    print(f"regions updated: {', '.join(changed) if changed else 'none (page already current)'}")
+    if not changed:
+        print("no data changes — page left untouched")
+        return 0
+
+    page, _ = replace_marker(page, "LASTSYNC", (
+        f'<b>Last update:</b> {now_phx} Phoenix · <i>automatic — data refreshed from the '
+        f'doc\'s revision history</i>'))
+    with open(PAGE, "w", encoding="utf-8") as f:
+        f.write(page)
+    print(f"regions updated: {', '.join(changed)}")
     return 0
 
 
