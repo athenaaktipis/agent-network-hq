@@ -42,9 +42,17 @@ Attributions in the doc appear as initials tags `[AA] [JF] [TP] [LG] [RD]` or `(
   It is gitignored (public repo): only distilled headlines go into the page, never raw
   comment text or the JSON itself.
 
-**Email privacy rule:** email developments go into the Mission pulse at HEADLINE level only
-(e.g. "Ted emailed his bio", "Liz confirmed headshots received"). Never quote or summarize
-private email content in detail — this page may be shared with the whole team.
+- **WhatsApp:** the group chat **"Schmidt Sciences (Multi-Agent) Group Chat"**, JID
+  `120363427034331498@g.us` — read messages since the last sync. (A separate, older
+  "Schmidt Sciences Group Chat", `120363427050636396@g.us`, is from the May proposal; check it
+  only if something references it.) Team members coordinate here in real time, so this is often
+  where a bio, a CV, or a decision lands first.
+
+**Private-message privacy rule (email AND WhatsApp):** developments from email and WhatsApp go
+into the Mission pulse at HEADLINE level only (e.g. "Ted sent his bio", "Liz confirmed headshots
+received"). Never quote or paraphrase message content in detail, never reproduce a thread, and
+never put a phone number or WhatsApp handle on the page. This page is PUBLIC — assume anyone
+can read it. When in doubt, say that something happened without saying what was said.
 
 ## Section word limits (progress board)
 

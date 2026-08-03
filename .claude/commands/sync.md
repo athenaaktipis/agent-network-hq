@@ -21,8 +21,13 @@ Note the "Last sync" timestamp in the footer — every "since last sync" below i
       (budget sheets, bios, milestones, figures) go into the Mission pulse and, where relevant,
       flip progress-board statuses.
    c. Gmail — threads since last sync involving the grant ("Schmidt", plus the team contacts
-      listed in CLAUDE.md). Fold into the Mission pulse at HEADLINE level only; never quote or
-      detail private email content.
+      listed in CLAUDE.md).
+   c2. WhatsApp — the "Schmidt Sciences (Multi-Agent) Group Chat" (JID in CLAUDE.md), messages
+      since the last sync. This is where the team coordinates fastest, so a bio, CV, or decision
+      often shows up here before it reaches the doc.
+      Fold email and WhatsApp into the Mission pulse at HEADLINE level ONLY — never quote or
+      paraphrase message content, never reproduce a thread, never publish a phone number. The
+      page is public.
    d. **Ground-truth contributions:** run `.venv/bin/python tools/contributions.py` and read
       `tools/contributions.json`. This is the authoritative record of who did what (doc
       revisions with word deltas, comments/replies, project-folder file updates), from the
