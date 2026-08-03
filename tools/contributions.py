@@ -73,6 +73,20 @@ def get_creds(interactive):
     from google.auth.transport.requests import Request
     from google.oauth2.credentials import Credentials
 
+    # In CI the token arrives as an env var (GitHub Actions secret) instead of a file.
+    env_token = os.environ.get("GOOGLE_TOKEN_JSON")
+    if env_token and not os.path.exists(TOKEN_PATH):
+        os.makedirs(CONF_DIR, exist_ok=True)
+        with open(TOKEN_PATH, "w") as f:
+            f.write(env_token)
+        os.chmod(TOKEN_PATH, 0o600)
+    env_secret = os.environ.get("GOOGLE_CLIENT_SECRET_JSON")
+    if env_secret and not os.path.exists(CLIENT_SECRET):
+        os.makedirs(CONF_DIR, exist_ok=True)
+        with open(CLIENT_SECRET, "w") as f:
+            f.write(env_secret)
+        os.chmod(CLIENT_SECRET, 0o600)
+
     creds = None
     if os.path.exists(TOKEN_PATH):
         creds = Credentials.from_authorized_user_file(TOKEN_PATH, SCOPES)
