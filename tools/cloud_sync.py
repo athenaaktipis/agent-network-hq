@@ -111,40 +111,39 @@ def section_word_counts(text):
     return counts
 
 
-def chip_for(label, words, limit):
-    """Status chip mirroring the page's vocabulary."""
-    if words == 0:
-        return '<div class="chip empty">not started</div>'
-    if label == "Feasibility" and words < 20:
-        return '<div class="chip notes">→ Reilly: prelim data</div>'
-    if label in ("Title", "Plain summary"):
-        return '<div class="chip claimed">✓ drafted [AA]</div>'
-    if limit and words >= limit * 0.85:
-        return '<div class="chip needs">◑ at limit</div>'
-    return '<div class="chip notes">✍ drafting</div>'
+WORDS_CELL = re.compile(r'(<div class="words">)~?(\d+)\s*/\s*(\d+)(</div>)')
+FILL_WIDTH = re.compile(r'(<div class="fill[^"]*" style="width:)(\d+)(%)')
+ROW_NAME = re.compile(r'<div class="name">(.*?)\s*<small>')
 
 
-def build_board(counts):
-    subs = {
-        "Title": "≤ 20 words", "Plain summary": "2–3 sentences",
-        "Problem & Impact": "≤ 500 words", "Approach": "≤ 1000 words",
-        "Novelty": "≤ 300 words", "Feasibility": "≤ 300 words", "Team": "≤ 300 words",
-        "Proposal Risks": "≤ 300 words", '"But for" impact': "≤ 300 words",
-        "Existing Funding": "≤ 300 words",
-    }
-    rows = []
-    for _key, label, limit in SECTIONS:
-        words, lim = counts.get(label, (0, limit))
-        lim = lim or 0
-        pct = min(100, round(words / lim * 100)) if lim else (100 if words else 0)
-        shown = f"{words} / {lim}" if lim else ("3 sentences" if words else "0")
-        name = html.escape(label).replace("&amp;", "&amp;")
-        rows.append(
-            f'    <div class="row"><div class="name">{name} <small>{subs.get(label,"")}</small></div>'
-            f'<div class="meter"><div class="fill" style="width:{pct}%"></div></div>'
-            f'<div class="words">{shown}</div>{chip_for(label, words, lim)}</div>'
-        )
-    return "\n".join(rows)
+def patch_board(page, counts):
+    """Update ONLY the numbers and meter widths inside existing rows.
+
+    Status chips, their [initials] attribution, the lighter `fill notes`
+    shading, and any hand-written cell like "assigned" are editorial — Claude
+    owns them, so they are never rewritten here. A row is only touched if its
+    words cell already looks like "N / LIMIT".
+    """
+    out, touched = [], 0
+    for line in page.splitlines(keepends=True):
+        if 'class="row"' not in line:
+            out.append(line)
+            continue
+        nm = ROW_NAME.search(line)
+        label = html.unescape(nm.group(1)).strip() if nm else ""
+        if label not in counts:
+            out.append(line)
+            continue
+        words, lim = counts[label]
+        if not lim or not WORDS_CELL.search(line):
+            out.append(line)      # e.g. Feasibility's "assigned" — leave alone
+            continue
+        pct = min(100, round(words / lim * 100))
+        new = WORDS_CELL.sub(rf'\g<1>{words} / {lim}\g<4>', line)
+        new = FILL_WIDTH.sub(rf'\g<1>{pct}\g<3>', new)
+        touched += new != line
+        out.append(new)
+    return "".join(out), touched
 
 
 # Node geometry must match the SVG in index.html.
@@ -256,10 +255,17 @@ def main():
     people = data["people"]
 
     # 2. doc word counts
-    counts = section_word_counts(fetch_doc_text(session))
+    doc_text = fetch_doc_text(session)
+    counts = section_word_counts(doc_text)
     core = sum(w for w, _ in counts.values())
-    started = sum(1 for w, _ in counts.values() if w > 0)
-    # Milestones + Budget are tracked on the board but not word-counted
+    # Milestones + Budget sit on the board but aren't word-counted; Budget counts
+    # as started once personnel lines exist, Milestones once the table has rows.
+    budget_started = "SUM month" in doc_text
+    empty = [l for _k, l, _n in SECTIONS if counts.get(l, (0,))[0] == 0]
+    if not budget_started:
+        empty.append("Budget")
+    empty.append("Milestones")
+    started = sum(1 for w, _ in counts.values() if w > 0) + (1 if budget_started else 0)
     total_sections = len(SECTIONS) + 2
 
     page = open(PAGE, encoding="utf-8").read()
@@ -277,9 +283,7 @@ def main():
         "TILESECTIONS": (
             f'    <div class="value">{started}<span style="font-size:16px;color:var(--muted)"> / '
             f'{total_sections}</span></div>\n    <div class="sub">'
-            f'{", ".join(l for _k, l, _n in SECTIONS if counts.get(l, (0,))[0] == 0) or "all sections open"}'
-            f' still empty</div>'),
-        "BOARD": build_board(counts),
+            f'{" &amp; ".join(empty) if empty else "every section open"} still empty</div>'),
         "EDGES": build_edges(people),
         "FIGCAP": f'    <div class="figcap">{build_figcap(people)}</div>',
         "VERIFIED": build_verified(data),
@@ -293,6 +297,10 @@ def main():
         page, did = replace_marker(page, name, body)
         if did:
             changed.append(name)
+
+    page, rows = patch_board(page, counts)
+    if rows:
+        changed.append(f"BOARD({rows} rows)")
 
     print(f"core words: {core} | sections started: {started}/{total_sections} | "
           f"active 24h: {', '.join(active) or 'nobody'}")
