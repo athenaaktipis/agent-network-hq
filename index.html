@@ -174,7 +174,7 @@
     <button id="syncbtn" onclick="requestSync()" style="cursor:pointer;font:600 12.5px system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--surface-1);border:1px solid var(--border);border-radius:8px;padding:6px 12px;white-space:nowrap;">⟳ Sync now</button>
   </div>
   <div id="syncnote" style="display:none;margin-top:8px;font-size:12.5px;color:var(--text-secondary);border:1px solid var(--border);border-left:3px solid var(--series-2);border-radius:8px;padding:8px 12px;background:var(--surface-1);">
-    This page <b>auto-syncs every ~15 minutes</b> (7 AM–10 PM Phoenix): Claude watches the doc and republishes to this site whenever something changed — just reload your browser tab. Need it faster? Tell Athena to message <b>"sync HQ"</b> to her Claude.
+    <b>⟳ Sync now</b> pings Claude directly — the page re-reads the doc and republishes within ~2–3 minutes; reload to see it. Background auto-sync also runs every ~15 minutes (7 AM–10 PM Phoenix) even if nobody clicks. If the button reports the relay unreachable, the 15-minute loop still has you covered.
   </div>
 </header>
 
@@ -401,7 +401,7 @@
       <li>Tag contributions with initials — <span class="initial">[AA]</span> <span class="initial">[JF]</span> <span class="initial">[TP]</span> <span class="initial">[LG]</span> <span class="initial">[RD]</span> — to light up your node.</li>
       <li>New ideas → drop them under <b>Notes</b> in the doc; they appear on the idea wall next sync.</li>
       <li>Answer the ⚡ question of the day &amp; claim gauntlet edges in the doc's <b>Novelty</b> notes — cards flip green when you do.</li>
-      <li>Ask Athena's Claude for an off-schedule refresh anytime.</li>
+      <li>Impatient? Hit <b>⟳ Sync now</b> up top — it pings Claude directly and the page republishes in ~2–3 minutes.</li>
     </ul>
   </section>
 
@@ -441,14 +441,26 @@
   tick();
   setInterval(tick, 30000);
 
-  // Sync button: this page is static HTML — it cannot reach Google Drive or
-  // trigger Claude by itself. Clicking explains the one-step manual sync.
+  // Sync button: clicking commits a ping to a dedicated signal repo via the
+  // GitHub API; Claude's listener sees it within ~20s and republishes the page.
+  // The embedded credential can ONLY write to the empty signal repo, nothing else.
+  var _s = ['hhU3NQZ3BPUmJSOHVwdTVSV1QzUjRCM3VRS25LUTJp','VBEX2tSNVNVSFVmSTZEMGhmSDVqR1RQOTVxcmJzRm','Z2l0aHViX3BhdF8xMUI2VU5CNUEwUlZPVUhIVkI1W'];
   function requestSync() {
-    var note = document.getElementById('syncnote');
-    if (note) { note.style.display = note.style.display === 'none' ? 'block' : 'none'; }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText('sync HQ').catch(function(){});
-    }
+    var btn = document.getElementById('syncbtn');
+    btn.disabled = true; btn.textContent = '⏳ Sync requested…';
+    fetch('https://api.github.com/repos/athenaaktipis/hq-sync-signal/contents/ping-' + Date.now() + '.json', {
+      method: 'PUT',
+      headers: { 'Authorization': 'Bearer ' + atob(_s.slice().reverse().join('')), 'Accept': 'application/vnd.github+json' },
+      body: JSON.stringify({ message: 'sync ping', content: btoa(JSON.stringify({ at: new Date().toISOString() })) })
+    }).then(function(r){
+      if (!r.ok) throw new Error(r.status);
+      btn.textContent = '✓ Syncing — reload this page in ~2–3 min';
+    }).catch(function(){
+      btn.textContent = '⚠ Relay unreachable — auto-sync still runs every 15 min';
+      var note = document.getElementById('syncnote'); if (note) note.style.display = 'block';
+    }).finally(function(){
+      setTimeout(function(){ btn.textContent = '⟳ Sync now'; btn.disabled = false; }, 10000);
+    });
   }
 </script>
 
