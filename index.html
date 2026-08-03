@@ -211,8 +211,8 @@
   </div>
   <div class="tile">
     <div class="label">Sections started</div>
-    <div class="value">10<span style="font-size:16px;color:var(--muted)"> / 12</span></div>
-    <div class="sub">only Existing Funding &amp; Milestones left to open</div>
+    <div class="value">11<span style="font-size:16px;color:var(--muted)"> / 12</span></div>
+    <div class="sub">only Milestones table still empty</div>
   </div>
   <div class="tile">
     <div class="label">Salvage available</div>
@@ -263,8 +263,8 @@
     <div class="row"><div class="name">Proposal Risks <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:28%"></div></div><div class="words">~85 / 300</div><div class="chip notes">✍ drafting [AA]</div></div>
     <div class="row"><div class="name">"But for" impact <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:40%"></div></div><div class="words">~120 / 300</div><div class="chip notes">✍ drafting [AA]</div></div>
     <div class="row"><div class="name">Existing Funding <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 / 300</div><div class="chip empty">not started</div></div>
-    <div class="row"><div class="name">Milestones table <small>≥2/yr + 3 outcomes</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 rows</div><div class="chip needs">◑ required</div></div>
-    <div class="row"><div class="name">Budget &amp; compute <small>option 1–4</small></div><div class="meter"><div class="fill notes" style="width:33%"></div></div><div class="words">$1M · 24 mo</div><div class="chip needs">◑ compute opt.</div></div>
+    <div class="row"><div class="name">Milestones table <small>≥2/yr + 3 outcomes</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 rows</div><div class="chip needs">◑ still empty</div></div>
+    <div class="row"><div class="name">Budget &amp; compute <small>option 1–4</small></div><div class="meter"><div class="fill notes" style="width:60%"></div></div><div class="words">personnel in</div><div class="chip notes">✍ compute opt. left</div></div>
   </section>
 
   <section class="card">
@@ -369,6 +369,14 @@
     <div class="h2sub">Anything flagged "ask AI" in the doc gets drafted here at the next sync. Copy what earns its place into the doc, edit ruthlessly, ignore the rest — nothing enters the proposal unless a human moves it. Adopted items get marked ✓.</div>
 
     <details open>
+      <summary>Jennifer Fewell bio (doc: "Ask AI for bio" — drafted from her CV, now on file)</summary>
+      <div class="inner">
+        <p><i>Jennifer H. Fewell is President's Professor in the School of Life Sciences at Arizona State University and Director of Biological Systems at the Cooperative Futures Institute. A Guggenheim Fellow and past president of both the Animal Behavior Society and the International Union for the Study of Social Insects, she studies the evolution and organization of cooperative societies — how division of labor, self-organization, and social networks emerge in insect colonies and generalize to other complex adaptive systems. Her expertise in the biological principles that keep cooperative systems stable and productive directly informs the project's framework for detecting when division of labor and coordination break down in multi-agent AI.</i></p>
+        <p style="color:var(--muted);font-size:12px">~95 words. Trim toward the Team section's shared 300-word budget; verify title/affiliation before filing.</p>
+      </div>
+    </details>
+
+    <details>
       <summary>Approach — scaling-up prose (doc: "We can ask AI to draft this based on the context I gave it")</summary>
       <div class="inner">
         <p>Draft turning the three bullet points into ecological-validity prose for the Approach section:</p>
@@ -411,8 +419,8 @@
 
   <div class="qotd">
     <div class="tag">⚡ Question of the day</div>
-    <p>Compute option 1–4 — which one are we filing?</p>
-    <small>The last budget unknown, and it changes the ceiling math: Option 3 (in-kind) caps the cash budget at $950k; Option 2 keeps GPU costs inside the $1M as a line item. Decide, and Budget unblocks. Previous question — the 1B-agents citation — <b>answered by Athena in 3 minutes flat</b> (IDC, May 2025). This network converges fast.</small>
+    <p>The Milestones table is the last empty required section — who takes first crack?</p>
+    <small>It needs ≥2 milestones/year and ≥3 end-of-project outcomes, framed as results not activities. The scaling ladder hands you the structure: a milestone per rung (LLMpollster baselines → Kradle interaction failures → Edge population-level detection). Compute option (1–4) is still open too. Budget personnel: <b>done tonight ✓</b>.</small>
   </div>
 
   <section class="card">
@@ -460,10 +468,11 @@
     <h2>Mission pulse</h2>
     <div class="h2sub">What moved since the last sync</div>
     <ul class="pulse">
-      <li>📁 <b>Liz</b> is on the board: created the <a href="https://drive.google.com/drive/folders/1mhiGEBM2bOCNe-bt4VpMau_FTmdXT4WA" target="_blank">PI CVs folder</a> and uploaded all three CVs — Aktipis, Fewell, Pavlic <span class="when">— today 7:57 PM</span></li>
-      <li>The Team section got structure (by all signs Liz): CV-folder link added, roles locked — <b>Athena Lead PI</b>, <b>Jennifer &amp; Ted Co-PIs</b>, <b>Liz Project Manager</b> — and Athena's bio line opened <span class="when">— 8:03 PM</span></li>
-      <li>💡 With Fewell's CV now on file, her missing bio can be drafted — say "ask AI" next to her name in the doc and it lands in AI drafts next sync</li>
-      <li>🤖 <b>Athena</b> flagged the Approach "scaling up" section for AI help — a draft turning the three-partner ladder into ecological-validity prose is now in <b>AI drafts</b>, ready to pull in <span class="when">— today 5:36 PM</span></li>
+      <li>💰 <b>Budget scaffolded</b>: PI summer months (Athena 1.5, Ted &amp; Jennifer 1 each ×2yr), Liz 0.25 FTE, a grad student, and a <b>$5k/yr advisory board</b> — Tamplin (Kradle), Sheer (Softmax), David Sloan Wilson, Rob Brooks, Nichol Bradford — plus annual Phoenix travel <span class="when">— today ~8:20 PM</span></li>
+      <li>✅ Fewell bio requested in-doc — <b>drafted from her CV and waiting in AI drafts</b> (President's Professor, Guggenheim, past ABS &amp; IUSSI president; cooperative-systems expertise) <span class="when">— just now</span></li>
+      <li>📸 <b>Liz</b> added a <a href="https://drive.google.com/drive/folders/12amdnd95rVNou6nlFarA2i2d0FEb6o1u" target="_blank">Headshots folder</a> and the 1B-agents IDC citation is now in the References section <span class="when">— 8:20 PM</span></li>
+      <li>📁 <b>Liz</b> earlier created the <a href="https://drive.google.com/drive/folders/1mhiGEBM2bOCNe-bt4VpMau_FTmdXT4WA" target="_blank">PI CVs folder</a> with all three CVs; Team roles locked — Athena Lead PI, Jennifer &amp; Ted Co-PIs, Liz PM <span class="when">— 7:57 PM</span></li>
+      <li>🤖 <b>Athena</b> flagged the Approach "scaling up" section for AI help — draft in <b>AI drafts</b> <span class="when">— 5:36 PM</span></li>
       <li>📚 <b>Athena</b> sourced the 1B-agents claim — IDC Info Snapshot, "1.3 Billion AI Agents by 2028" (May 2025) — closing the question of the day within minutes of it being posed <span class="when">— today 4:51 PM</span></li>
       <li><b>Athena</b> finished the "But for" argument with its best line yet: <i>a meta cooperation/coordination problem exists for this work to even take place</i> <span class="when">— today ~4:50 PM</span></li>
       <li><b>Athena</b> queued Suggested Reviewers for AI assist (alongside Keywords) <span class="when">— 4:49 PM</span></li>
@@ -479,7 +488,9 @@
     <h2 style="margin-top:14px">Open questions for the network</h2>
     <div class="h2sub">Resolve these and several sections unblock at once</div>
     <ul class="pulse openq">
+      <li><b>Milestones table</b> — the only required section still fully empty; needs ≥2/yr + 3 outcomes.</li>
       <li><b>Compute option (1–4)</b> — the last budget unknown; Option 3 in-kind changes the ceiling math ($50k carve-out from the $1M).</li>
+      <li><b>Advisory board gap</b> — Rob Brooks has no affiliation/honorarium line yet (others are set at $5k/yr).</li>
       <li><b>Edge Esmeralda description + data-access confirmation</b> — it's now in the summary, so the Approach and Team sections need the partnership pinned down.</li>
       <li><b>Bios for Jennifer, Ted &amp; Liz</b> — CVs are now on file (✓ Liz, 7:57 PM), so these are drafting jobs, not hunts. Headshots to Liz still open.</li>
       <li><s style="color:var(--muted)">Tier &amp; duration</s> — <span style="color:var(--good-text);font-weight:600">✓ resolved: Tier 2, $1M, 24 mo [AA]</span></li>
@@ -515,7 +526,7 @@
 </section>
 
 <footer>
-  <p><b>Live site:</b> <a href="https://athenaaktipis.github.io/agent-network-hq/">athenaaktipis.github.io/agent-network-hq</a> — bookmark it; it updates itself. &nbsp;·&nbsp; <b>Last sync:</b> Sunday, Aug 2, 2026 · 8:12 PM Phoenix · <i>Liz's CV drop + Team structure</i> &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
+  <p><b>Live site:</b> <a href="https://athenaaktipis.github.io/agent-network-hq/">athenaaktipis.github.io/agent-network-hq</a> — bookmark it; it updates itself. &nbsp;·&nbsp; <b>Last sync:</b> Sunday, Aug 2, 2026 · 8:24 PM Phoenix · <i>⟳ button — budget + Fewell bio</i> &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
   <p>Countdown targets the team's internal deadline: Wednesday Aug 5, midnight (end of day, Phoenix). The funder's hard deadline is Aug 8, 11:59 PM Anywhere-on-Earth — confirm exact time in the application portal; do not let the countdown be the single source of truth.</p>
 </footer>
 
