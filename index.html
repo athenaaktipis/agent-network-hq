@@ -191,10 +191,10 @@
   <h1>Agent Network HQ</h1>
   <div class="statusline" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
     <span><span class="dot">●</span> 3 of 5 agents active in the last 24h (verified) · network status: <b>accelerating</b> — 10 of 12 sections in motion; Existing Funding and Milestones untouched</span>
-    <button id="syncbtn" onclick="requestSync()" style="cursor:pointer;font:600 12.5px system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--surface-1);border:1px solid var(--border);border-radius:8px;padding:6px 12px;white-space:nowrap;">⟳ How syncing works</button>
+    <button id="syncbtn" onclick="requestSync()" style="cursor:pointer;font:600 12.5px system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--surface-1);border:1px solid var(--border);border-radius:8px;padding:6px 12px;white-space:nowrap;">⟳ Auto-syncing every 15 min</button>
   </div>
   <div id="syncnote" style="display:none;margin-top:8px;font-size:12.5px;color:var(--text-secondary);border:1px solid var(--border);border-left:3px solid var(--series-2);border-radius:8px;padding:8px 12px;background:var(--surface-1);">
-    <b>Syncing moved.</b> This page is now refreshed by Claude Code running on Athena's machine, which reads the working doc's <b>revision history</b> — so contributions are attributed by name and timestamp instead of inferred. Just write in the doc; your work lands here at the next sync. Want one right now? Ask Athena.
+    <b>This page refreshes itself every 15 minutes</b> (7 AM–11 PM Phoenix), reading the working doc's <b>revision history</b> — so contributions are attributed by name and timestamp instead of inferred. Just write in the doc; your work appears here within the quarter hour. Syncs run from Athena's machine, so they pause when her laptop is closed and resume when it opens.
   </div>
 </header>
 
@@ -505,11 +505,11 @@
     <h2>How this page works</h2>
     <div class="h2sub" style="margin-bottom:6px">The rules of the game</div>
     <ul class="pulse">
-      <li>Write in the <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">working doc</a> — every edit and comment is recorded with your name and time, and lands here at the next sync. Your contribution shows up whether or not you announce it.</li>
+      <li>Write in the <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">working doc</a> — this page re-reads it every ~15 minutes (7 AM–11 PM Phoenix) and updates itself. Every edit and comment is recorded with your name and time, so your contribution shows up whether or not you announce it.</li>
       <li>New ideas → drop them under <b>Notes</b> in the doc; they appear on the idea wall next sync.</li>
       <li>Claim a gauntlet edge with a doc line like <b>Gauntlet: Concordia — our edge is… [AA]</b> — next sync flips the card and quotes you. Drafts to steal from live in <b>AI drafts</b>.</li>
       <li>Write "ask AI" next to anything in the doc — a draft appears in the <b>AI drafts</b> section at the next sync.</li>
-      <li>Syncs now run from Athena's machine (Claude Code, <code>/sync</code>) rather than the old cloud loop — ping her for a refresh if you want one immediately after a big push.</li>
+      <li>Nothing to press. The 15-minute loop handles it; if a sync looks overdue, Athena's laptop is closed and it will catch up when she opens it.</li>
     </ul>
   </section>
 
@@ -558,7 +558,7 @@
     var note = document.getElementById('syncnote');
     if (note) note.style.display = 'block';
     btn.textContent = '↑ see note';
-    setTimeout(function(){ btn.textContent = '⟳ How syncing works'; }, 6000);
+    setTimeout(function(){ btn.textContent = '⟳ Auto-syncing every 15 min'; }, 6000);
   }
 </script>
 
