@@ -108,6 +108,17 @@
   .chip.needs { color: var(--text-primary); background: color-mix(in srgb, var(--status-serious) 18%, transparent); }
   @media (max-width: 560px) { .row { grid-template-columns: 1fr 1fr; } .meter { grid-column: 1 / -1; } }
 
+  /* ---------- scaling ladder ---------- */
+  .ladder { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 12px; }
+  .rung { border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; background: var(--page); font-size: 13px; color: var(--text-secondary); position: relative; }
+  .rung .scale { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; margin-bottom: 6px; color: #fff; }
+  .rung:nth-child(1) .scale { background: var(--series-1); }
+  .rung:nth-child(2) .scale { background: var(--series-2); }
+  .rung:nth-child(3) .scale { background: var(--series-3); }
+  .rung b.title { display: block; color: var(--text-primary); font-size: 14px; margin-bottom: 3px; }
+  .rung .detect { margin-top: 8px; padding-top: 7px; border-top: 1px dashed var(--grid); font-size: 12.5px; }
+  .rung .detect b { color: var(--text-primary); }
+
   /* ---------- question of the day ---------- */
   .qotd {
     border: 2px solid var(--series-2); border-radius: 10px; padding: 12px 14px;
@@ -200,6 +211,31 @@
     <div class="sub">bios + 5 pilot datasets from May</div>
   </div>
 </div>
+
+<section class="card">
+  <h2>The proposal in one picture: the scaling ladder</h2>
+  <div class="h2sub">One science — detecting failures of cooperation &amp; coordination — measured at three scales, each rung building on the one below</div>
+  <div class="ladder">
+    <div class="rung">
+      <span class="scale">Rung 1 · single models</span>
+      <b class="title">LLMpollster <span style="font-weight:400;color:var(--muted)">· built with Softmax</span></b>
+      Configure a cooperation or coordination experiment once, then poll it across frontier models — comparable, repeatable measurements of individual model social behavior. Three pilot benchmarks already run through this pipeline (trust, division of labor, problematic alliances).
+      <div class="detect"><b>What it detects:</b> which models carry which failure tendencies — the baseline signal every higher rung calibrates against. <a href="https://llmpollster.com/experiments/new" target="_blank">llmpollster.com ↗</a></div>
+    </div>
+    <div class="rung">
+      <span class="scale">Rung 2 · agent × agent</span>
+      <b class="title">Kradle <span style="font-weight:400;color:var(--muted)">· kradle.ai</span></b>
+      Real-time multiplayer simulations (Minecraft-based, contained but rich) where agents must collaborate, compete, and plan — the environment advances whether or not models finish "thinking." Planned games: Osotua, Volunteer's dilemma / "hold the door," Simple majority / "witch hunt."
+      <div class="detect"><b>What it detects:</b> interaction failures that never appear in single-model tests — defection under pressure, coordination collapse, deception when it pays. <a href="https://kradle.ai" target="_blank">kradle.ai ↗</a></div>
+    </div>
+    <div class="rung">
+      <span class="scale">Rung 3 · agents × humans</span>
+      <b class="title">Edge Esmeralda agent village <span style="font-weight:400;color:var(--muted)">· with Edge City &amp; Cosmos Institute</span></b>
+      239 personal AI agents embedded in a month-long popup village: 17.5B tokens, 4,866 human–agent messages, agent-to-agent negotiation, community governance. We have access to this dataset — and it already shows the target phenomena: agents exhausting shared credits through individual optimization ("individual alignment does not automatically produce collective alignment"), hallucinated personal details, opportunity overload saturating humans.
+      <div class="detect"><b>What it detects:</b> population-level failures in a real multi-agent, multi-human system — ecological validity no sandbox can fake. <a href="https://blog.cosmos-institute.org/p/we-gave-a-village-personal-ai-agents" target="_blank">the experiment ↗</a></div>
+    </div>
+  </div>
+</section>
 
 <div class="cols">
 <div>
@@ -424,7 +460,7 @@
 </section>
 
 <footer>
-  <p><b>Live site:</b> <a href="https://athenaaktipis.github.io/agent-network-hq/">athenaaktipis.github.io/agent-network-hq</a> — bookmark it; it updates itself. &nbsp;·&nbsp; <b>Last sync:</b> Sunday, Aug 2, 2026 · 5:10 PM Phoenix · <i>⟳ button pressed — doc already fully synced</i> &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
+  <p><b>Live site:</b> <a href="https://athenaaktipis.github.io/agent-network-hq/">athenaaktipis.github.io/agent-network-hq</a> — bookmark it; it updates itself. &nbsp;·&nbsp; <b>Last sync:</b> Sunday, Aug 2, 2026 · 5:32 PM Phoenix · <i>scaling-ladder section added</i> &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
   <p>Countdown targets the team's internal deadline: Wednesday Aug 5, midnight (end of day, Phoenix). The funder's hard deadline is Aug 8, 11:59 PM Anywhere-on-Earth — confirm exact time in the application portal; do not let the countdown be the single source of truth.</p>
 </footer>
 
