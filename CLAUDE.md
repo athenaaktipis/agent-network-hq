@@ -75,9 +75,16 @@ counts against the actual doc text before publishing.
   and its target; the Salvage yard.
 - **Mission pulse:** what changed since last sync (doc + folder + email), with author initials
   and America/Phoenix times.
-- **⚡ Question of the day:** exactly ONE — the most decision-blocking unresolved question, or a
-  differentiation challenge from an unclaimed gauntlet rival. Never repeat the previous QotD
-  (it's visible in the current HTML). If the previous QotD got answered, celebrate in the pulse.
+- **⚡ Question of the day:** exactly ONE. It is addressed to **the whole team** and must be a
+  genuinely **interesting intellectual question about the science of the grant** — a conceptual
+  or methodological question the proposal itself has to answer (how we define a cooperation
+  "failure", what the detector's decision threshold should be, which biological mechanism
+  actually maps onto LLM agents, what the pilot data really shows, how to out-differentiate a
+  gauntlet rival). Ground it in the doc's own open questions and the preliminary data.
+  **Never** make it a logistics or project-management question — no meetings, calendars,
+  deadlines, assignments, or "who takes first crack at X". Say which section it unblocks.
+  Never repeat the previous QotD (it's visible in the current HTML). If the previous QotD got
+  answered, celebrate that in the pulse.
 - **Differentiation gauntlet:** when Novelty notes contain a distinguishing sentence for a rival
   card, flip its chip from `◑ edge unclaimed` (class `chip open`) to `✓ edge claimed`
   (class `chip claimed`), replace the italic candidate text with the team's actual sentence,

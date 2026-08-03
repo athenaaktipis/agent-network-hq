@@ -38,6 +38,9 @@ Note the "Last sync" timestamp in the footer — every "since last sync" below i
      Distill comment snippets into headlines; never paste raw comment text (the repo and the
      live page are public). Anything in `unmapped` becomes a pulse line asking who it was.
    - ⚡ Question of the day: exactly one, never a repeat; celebrate an answered QotD in the pulse.
+     It must be an interesting SCIENTIFIC/conceptual question for the whole team, drawn from the
+     grant's own open problems and pilot data — never logistics, meetings, deadlines, or task
+     assignment. See the QotD rule in CLAUDE.md.
    - Differentiation gauntlet: claim edges when the doc supports it (never un-claim); add new
      rival cards the team mentions.
    - Open questions (drop resolved, add new), Idea wall (add, never silently delete),
