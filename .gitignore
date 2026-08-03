@@ -1,0 +1,4 @@
+.venv/
+__pycache__/
+tools/contributions.json
+tools/.revision_wordcount_cache.json
