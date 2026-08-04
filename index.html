@@ -262,7 +262,7 @@
     <div class="row"><div class="name">Title <small>≤ 20 words</small></div><div class="meter"><div class="fill" style="width:45%"></div></div><div class="words">9 / 20</div><div class="chip claimed">✓ drafted [AA]</div></div>
     <div class="row"><div class="name">Plain summary <small>2–3 sentences</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">3 sentences</div><div class="chip claimed">✓ drafted [AA]</div></div>
     <div class="row"><div class="name">Problem &amp; Impact <small>≤ 500 words</small></div><div class="meter"><div class="fill" style="width:67%"></div></div><div class="words">335 / 500</div><div class="chip notes">✍ drafting [AA]</div></div>
-    <div class="row"><div class="name">Approach <small>≤ 1000 words</small></div><div class="meter"><div class="fill notes" style="width:100%"></div></div><div class="words">1447 / 1000</div><div class="chip notes">✍ prose begun [AA]</div></div>
+    <div class="row"><div class="name">Approach <small>≤ 1000 words</small></div><div class="meter"><div class="fill notes" style="width:100%"></div></div><div class="words">1447 / 1000</div><div class="chip needs">✂ 447 over [RD]</div></div>
     <div class="row"><div class="name">Novelty <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:14%"></div></div><div class="words">42 / 300</div><div class="chip notes">✍ drafting [AA]</div></div>
     <div class="row"><div class="name">Feasibility <small>≤ 300 words</small></div><div class="meter"><div class="fill notes" style="width:3%"></div></div><div class="words">assigned</div><div class="chip notes">→ Reilly: prelim data</div></div>
     <div class="row"><div class="name">Team <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:42%"></div></div><div class="words">127 / 300</div><div class="chip notes">✍ CVs in · bios next</div></div>
@@ -334,6 +334,16 @@
       <div class="idea frame"><b>Mutualism: difference is the point</b> Strong mutualisms work because the partners' functions differ — microbiomes, ants and fungus. We keep making AI human-like and then worry about it competing with humans. Maximal division of labour comes from being unlike. [JF]</div>
       <div class="idea ladder"><b>Community ecology &amp; resilience</b> At the call's scale it's firms of humans + agents, sometimes interacting, sometimes not — niches, coexistence, competition, emergent equilibria. Resilience thinking rather than keeping one entity efficient. [TP]</div>
       <div class="idea ladder"><b>Hybrid deterministic ABM + LLM</b> Simple rule-based agents alongside LLM agents to test whether cheap heuristics stabilise a mixed system. Platforms: GAMA and Mesa are fuller-featured than NetLogo, and skip the LLM-to-NetLogo bridge unless it's needed. [TP]</div>
+      <div class="idea frame"><b>Four failure modes</b> Under-cooperation · over-cooperation · under-coordination · over-coordination. The organising frame, and the thing to be specific about: what bad outcome does each one actually produce in an agentic system? [AA/JF/LG]</div>
+      <div class="idea frame"><b>Helpfulness as a vulnerability</b> Models are trained to be helpful, so over-cooperation is a <i>trained-in</i> failure mode: over-serving, converging too readily, burning tokens, drifting from the intent the system was launched with. Under-helping and over-helping both break things. [AA/JF]</div>
+      <div class="idea"><b>Coupling strength</b> Ted's formalisation: how much of an agent's behaviour is predicted by the agents around it. Too coupled and you get the ant mill; perfectly anti-correlated is just as bad. The question is how much slack a network needs — which connects to filtering and signalling theory. [TP]</div>
+      <div class="idea games"><b>Waymo deadlock</b> Three Waymos frozen at an intersection blocking traffic because none of them randomised. The cleanest real-world over-coordination failure we have, and it's current. Pairs with the sheepdog result: stochasticity in sheep makes them <i>more</i> herdable. [TP]</div>
+      <div class="idea frame"><b>Virtue ethics, not deontology</b> Today's AI safety is entirely prohibitions — don't do this, don't leave the sandbox. There's no positive template of what a good agent looks like. The innate-immunity idea restated as an ethics: specify the virtues, not just the bans. <b>Not yet written up — worth asking Ted for it.</b> [TP]</div>
+      <div class="idea"><b>Social parasitism, often emergent</b> Manipulation, coercion, and parasitism break a system for individual gain — but usually without intent. Ant queens where one just works less; the Cape honeybee, where takeover has no known solution and colonies die. Sylvia Cremer's social-immunity review is the entry point. [JF]</div>
+      <div class="idea games"><b>Escape the prisoner's dilemma</b> Coordination failure is far more common in nature than cheating. The stag hunt is the better model: not an incentive problem, but everyone needing to agree on one thing without being able to communicate. [TP]</div>
+      <div class="idea"><b>Individuality keeps colonies adaptive</b> In <i>Lasius niger</i>, the higher the probability an ant ignores a strong pheromone trail, the better the colony switches when the feeder moves. Randomness isn't noise to be minimised — it's what lets a group explore and exploit at once. [TP/JF]</div>
+      <div class="idea frame"><b>Reinforcement timescales</b> Models are now shaped by automated reinforcement on things that are easy to test, which makes them more robotic. Complex problem-solving may need agents left a little unspecified — a mismatch between the timescale of the training signal and the timescale of the problem. [TP]</div>
+      <div class="idea"><b>Resilience as a through-line</b> Jennifer's note: lack of resilience should be a theme running through the whole proposal, not a separate section. [JF]</div>
       <div class="idea"><b>Over-cooperation: the mafia case</b> Colluding agents benefit their members while imposing externalities on everyone else. Locally successful, societally not — the problematic-alliance failure mode. [AA]</div>
     </div>
   </section>
@@ -445,8 +455,8 @@
 
   <div class="qotd">
     <div class="tag">⚡ Question of the day</div>
-    <p>Every guardrail we have is adaptive immunity — a list of known-bad behaviours. What would an <i>innate</i> immune system for an agent network actually look like?</p>
-    <small>From yesterday's call [TP]: the agents that escaped sandboxes or hit the wrong systems weren't stuck in a death spiral. They did something perfectly reasonable that nobody had specified as off-limits. An acquired immune system only recognises the bad things it has already met; an innate one recognises <i>not-self</i> — "allowed, but this doesn't match the shape of acceptable." Stephanie Forrest's negative-selection and clonal-selection algorithms are the prior art for exactly this split. So: what is the "self" template for a healthy agent network, and what cue would flag a departure from it before anyone has seen that failure before? This is the sharpest thing we have for <b>Novelty</b> (still 38/300 words).</small>
+    <p>Every model is trained to be <i>helpful</i>. Does that make over-cooperation a built-in safety vulnerability — agents helping too much, agreeing too readily, and burning the commons to do it?</p>
+    <small>This emerged live in Tuesday's call and may be the most original thing we have. Helpfulness is a trained default, so the same pressure that makes an assistant useful makes a network of them prone to converge, defer, and over-serve: tokens burned, systems drifting from the intent they were launched with, and nobody detecting it because nothing looks like cheating. Jennifer's version is <i>under-helping and over-helping</i>; Ted's is <b>coupling strength</b> — how much of an agent's behaviour is predicted by the agents around it, with too much coupling and perfectly anti-correlated coupling both pathological. So: what is the right amount of slack in an agent network, and what would you measure to know you'd lost it? Feeds <b>Novelty</b>, still the thinnest section at 42/300.</small>
   </div>
 
   <section class="card">
@@ -507,6 +517,10 @@
       <li><b>Reilly</b> — 3 doc edits, 6 comments <span class="when">— Sun Aug 2, 3:25 PM → 2:17 PM</span></li>
 <!--/SYNC:VERIFIED-->
       <li>🧬 <b>Monday's call was the richest hour of the sprint, and most of it is already drafted.</b> The doc has roughly doubled overnight — <b>innate vs adaptive immunity</b> [TP], <b>over-coordination</b> and the ant death spiral [JF], the <b>inputs → thresholds → output</b> formulation [AA], the sandbox-escape framing, and the GAMA/Mesa platform note have all landed in prose. <span class="when">— Mon 10:20–11:02 AM, drafted overnight</span></li>
+      <li>🧭 <b>The framing got decided.</b> Tuesday's call landed on <b>four failure modes</b> — under- and over-<i>cooperation</i>, under- and over-<i>coordination</i> — drawn from <b>two</b> named source systems rather than "everything": <b>human sociality</b> (LLMs are trained on human output) and <b>social insects</b> (evolution's own multi-agent system, which had to solve all four). Jennifer corrected the definitions: coordination is acting in good faith on the system's rules and failing anyway; cooperation is about who bears costs and who takes benefits. <span class="when">— Tue 1:45–1:56 PM</span></li>
+      <li>✂️ <b>Approach is 447 words over the 1,000-word cap</b> — Reilly's draft did the hard part, now it has to be cut, and it's the section reviewers say gets proposals rejected when it's thin. This is the top job before tomorrow's 10:30 co-working hour. <span class="when">— now</span></li>
+      <li>🔓 <b>Edge: the IRB is approved</b> [SM] and the data is coming shortly; survey and interview questions go back once solidified. Next step is an analysis-plan meeting with the people who built the system, ideally remote. <span class="when">— Tue 2:03 PM</span></li>
+      <li>💻 <b>Compute has an answer:</b> Option 2 (standard, under $50k as a line item) — AWS GPU hours for the multi-agent experiments plus two strong local machines for running many local LLMs fast, and local rather than cloud storage for long-term archival [TP/LG]. <span class="when">— Tue 2:11–2:17 PM</span></li>
       <li>🤝 <b>The Edge partnership is being pinned down.</b> Edge came back asking for the exact paragraph, the role and budget proposed for them, the preliminary claims we'd cite, and what the proposal would commit them to — reply going out today. Terms as proposed: they share the Healdsburg data, we visit an Edge, we write it up together with their team as co-authors, and the budget is travel only — no subaward, no scheduled deliverables. Draft paragraph is in <b>AI drafts</b>. <span class="when">— Tue morning</span></li>
       <li>🎣 <b>Six things from the call still aren't in the doc:</b> early bias &amp; critical windows · sub-agent contexts as epigenetic states · mutualism-works-because-partners-differ · community ecology and resilience · the named detectors (vampire bats, walk-away, positive assortment, cheater-detection if-then rules, ant alarm signalling) · and Stephanie Forrest's negative/clonal selection as prior art. All are cards on the idea wall. <span class="when">— checked against the doc just now</span></li>
       <li>✍️ <b>Assignments from the call:</b> Reilly takes Approach; Ted writes the hybrid deterministic-ABM + LLM architecture (and flagged GAMA and Mesa as better-featured than NetLogo); Jennifer contributes failure examples with their detection rules, invertebrate systems first. The doc is the only place work needs to land. <span class="when">— Mon 10:43–11:00 AM</span></li>
@@ -536,9 +550,13 @@
       <li><b>Which detectors get a computational spec before Wednesday?</b> The examples are easy and the inputs→thresholds→output write-ups are the hard, differentiating part. Three done properly beats ten named.</li>
       <li><b>Cite Stephanie Forrest's negative/clonal selection as prior art?</b> It's the closest existing work to the innate/adaptive framing — worth citing in Novelty, and worth checking against the reviewer-conflict list.</li>
       <li><b>Milestones table</b> — the only required section still fully empty; needs ≥2/yr + 3 outcomes.</li>
-      <li><b>Compute option (1–4)</b> — the last budget unknown; Option 3 in-kind changes the ceiling math ($50k carve-out from the $1M).</li>
       <li><b>Advisory board gap</b> — Rob Brooks has no affiliation/honorarium line yet (others are set at $5k/yr).</li>
-      <li><b>Edge: participant consent and IRB</b> — the human–agent message content is personal data, so we need to know what participants consented to and get ASU IRB review before touching it. Cheaper to settle now than after an award. Asked as part of today's reply.</li>
+      <li><b>Cut Approach from 1,447 to 1,000</b> — 447 words have to go, and the cut is where the argument gets sharp. Everything trimmed should land in the overflow doc, not the bin.</li>
+      <li><b>Say what each of the four failure modes actually does to an agentic system</b> — Liz's challenge: the safety link is obvious to us and invisible to a reviewer. Name the bad outcome for each of the four, concretely.</li>
+      <li><b>Lock the cooperation / coordination definitions</b> — Jennifer's split (coordination = good-faith action on the system's rules that still fails; cooperation = who bears costs, who takes benefits) vs Ted's caution that the agents themselves bear neither. Needs one sentence each in the doc before more prose is built on them.</li>
+      <li><b>Ask Ted for the virtue-ethics write-up</b> — he held it back not knowing if anyone wanted it. It's the sharpest Novelty material we have.</li>
+      <li><s style="color:var(--muted)">Edge consent and IRB</s> — <span style="color:var(--good-text);font-weight:600">✓ IRB approved [SM]</span>; survey and interview questions go back once solidified.</li>
+      <li><s style="color:var(--muted)">Compute option (1–4)</s> — <span style="color:var(--good-text);font-weight:600">✓ Option 2, under $50k</span> — AWS GPU hours + two local machines + local archival storage [TP/LG].</li>
       <li><b>Edge's exact figures</b> — the scale numbers we'd cite come from their public write-up, not from them. The paragraph stays vague until they confirm.</li>
       <li><b>Should Edge sit on the advisory board?</b> Kradle and Softmax are both there at $5k/yr; Edge isn't, despite being the rung-3 testbed the ecological-validity argument rests on. $10k over two years would make the three partnerships consistent.</li>
       <li><b>Bios for Jennifer, Ted &amp; Liz</b> — CVs are now on file (✓ Liz, 7:57 PM), so these are drafting jobs, not hunts. Headshots to Liz still open.</li>
@@ -572,6 +590,76 @@
   </div>
   <iframe src="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit?rm=embedded" style="width:100%;height:720px;border:1px solid var(--grid);border-radius:8px;margin-top:10px;background:#fff;" title="Schmidt Multi-Agent working doc"></iframe>
   <div class="figcap">If this pane shows a sign-in wall or stays blank, Google is refusing to embed for this browser session — the button above is the reliable path.</div>
+</section>
+
+<section class="card" id="review">
+  <h2>📝 Section-by-section review</h2>
+  <div class="h2sub">Claude's read on each section: what would strengthen it, draft text you can lift, and citations pulled from the team's own <a href="https://radar.coopradar.org" target="_blank">Cooperation Radar</a> library rather than the open internet. Suggestions only — nothing here is in the proposal until a human puts it there.</div>
+
+  <details open>
+    <summary><b>Approach</b> — 1,447 / 1,000 · <span style="color:var(--status-critical)">447 words over</span> · the urgent one</summary>
+    <div class="inner">
+      <p><b>What to fix:</b> length is the whole problem, and cutting is where the argument gets sharp. The call says thin detail is the usual reason proposals are cut — so cut breadth, not specificity. Concretely: keep the three-rung ladder and the detection-rule method, and reduce the biological examples to the two or three carrying real weight. Anything removed belongs in the overflow doc for the full proposal.</p>
+      <p><b>Structural suggestion:</b> lead the section with the four failure modes as a spine, then hang each rung off them. That way a reviewer sees one organising idea rather than a tour.</p>
+      <p><b>Draft opening:</b> <i>"We treat cooperation and coordination failures as four distinct modes — under- and over-cooperation, under- and over-coordination — and build a detector for each. For every mode we identify a biological system that solves it, specify the detection rule computationally (what information the system takes in, what threshold it applies, what output it produces), and implement that rule at three scales of increasing ecological validity."</i></p>
+      <p><b>Citations:</b> <a href="https://arxiv.org/abs/2503.13657" target="_blank">Cemri et al. 2025, <i>Why Do Multi-Agent LLM Systems Fail?</i></a> — an empirical failure taxonomy from 200+ traces; the closest thing to a baseline your detectors would beat, and citing it shows you know the engineering literature. <a href="https://arxiv.org/abs/2501.16173" target="_blank">Willis et al. 2025</a> on whether LLM agent systems cooperate in a social dilemma. <a href="https://arxiv.org/abs/2211.13746" target="_blank">Melting Pot 2.0</a> and <a href="https://arxiv.org/abs/2503.01935" target="_blank">MultiAgentBench</a> as the environments/benchmarks you are explicitly not duplicating.</p>
+    </div>
+  </details>
+
+  <details open>
+    <summary><b>Novelty</b> — 42 / 300 · thinnest section, and the one Ted is right to worry about</summary>
+    <div class="inner">
+      <p><b>What to fix:</b> this is where the proposal wins or loses, and it currently lists ingredients rather than making a claim. Three defensible claims are available and none are in the doc yet.</p>
+      <p><b>Draft text:</b> <i>"Existing multi-agent safety work is built almost entirely on prohibition: enumerate bad behaviours, then detect them. This is an acquired immune system, and it can only recognise failures someone has already catalogued. We propose the complementary branch — detectors derived from how biological systems recognise departure from healthy function without a prior example of the specific failure. Second, we treat over-cooperation and over-coordination as first-class failure modes. Because current models are trained toward helpfulness, over-cooperation is a trained-in vulnerability rather than an edge case, and no existing benchmark measures it. Third, where prior work scores agents, we measure properties that exist only between agents."</i></p>
+      <p><b>Citations:</b> <a href="https://arxiv.org/abs/2502.14143" target="_blank">Hammond et al. 2025, <i>Multi-Agent Risks from Advanced AI</i></a> — the Cooperative AI Foundation's own taxonomy; cite it as the map whose instruments you are building. <a href="https://arxiv.org/abs/2012.08630" target="_blank">Dafoe et al. 2020, <i>Open Problems in Cooperative AI</i></a>. <a href="https://www.science.org/doi/10.1126/sciadv.adu9368" target="_blank">Ashery, Aiello &amp; Baronchelli 2025 (<i>Science Advances</i>)</a> — conventions and collective bias emerging spontaneously in LLM populations, which is over-coordination observed in the wild and strong support for the claim. Your own lineage anchors the biology: <a href="https://onlinelibrary.wiley.com/doi/10.1111/eva.12303" target="_blank">Aktipis et al. 2016</a> and <a href="https://pubmed.ncbi.nlm.nih.gov/15380389/" target="_blank">Aktipis 2004 (walk-away)</a>, with <a href="https://www.science.org/doi/10.1126/science.1133755" target="_blank">Nowak 2006</a> as the canonical frame.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><b>Problem &amp; Impact</b> — 335 / 500 · room to spend, and one gap worth filling</summary>
+    <div class="inner">
+      <p><b>What to fix:</b> Liz's challenge in Tuesday's call still stands — the link from failure modes to <i>safety</i> is obvious inside the team and invisible to a reviewer. You have ~165 words of headroom; spend them naming what each of the four modes actually does to a deployed system.</p>
+      <p><b>Draft text:</b> <i>"Each failure mode produces a distinct harm. Under-coordination wastes resources and lets agents represent the same situation inconsistently to different parties. Over-coordination collapses a network onto a single course of action, removing the independent checks that made it worth running many agents at all. Under-cooperation permits hijacking, in which a subcomponent's goals displace the system's — whether by attack or by accident. Over-cooperation, the least studied, follows directly from training models to be helpful: agents defer, converge, and over-serve, consuming shared resources while drifting from the intent they were deployed with."</i></p>
+      <p><b>Citations:</b> <a href="https://arxiv.org/abs/2404.00806" target="_blank">Fish, Gonczarowski &amp; Shorrer 2024</a> on algorithmic collusion by LLMs and <a href="https://arxiv.org/abs/2402.07510" target="_blank">Motwani et al. 2024, <i>Secret Collusion</i></a> for the over-cooperation harm. <a href="https://arxiv.org/abs/2509.10147" target="_blank">Tomasev et al. 2025, <i>Virtual Agent Economies</i></a> for the scale argument. <a href="https://arxiv.org/abs/2505.02077" target="_blank">Schroeder de Witt et al. 2025</a> for the security framing.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><b>Feasibility</b> — 237 / 300 · strong; needs the Edge status added</summary>
+    <div class="inner">
+      <p><b>What to fix:</b> the IRB approval is a concrete feasibility asset and isn't mentioned. Reviewers discount data access that sounds aspirational — say plainly that approval is in hand and the corpus is in transit.</p>
+      <p><b>Draft addition:</b> <i>"Data access is already secured rather than planned: IRB approval for the agent-village corpus is in place, the dataset is being transferred, and members of this team attended the deployment and ran personal agents within it."</i></p>
+      <p><b>Citations:</b> <a href="https://theaidigest.org/village/blog/what-we-learned-2025" target="_blank">AI Digest 2026, <i>What did we learn from the AI Village in 2025?</i></a> — the closest public analogue to your rung-3 dataset, useful for showing the phenomena are real and not yet measured rigorously.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><b>Team</b> — 127 / 300 · half-used; bios still thin</summary>
+    <div class="inner">
+      <p><b>What to fix:</b> 173 words spare and three bios still to write. The stronger move is not more biography but explicit division of labour — which failure mode each person owns. That doubles as evidence the team is genuinely interdisciplinary rather than assembled.</p>
+      <p><b>Draft frame:</b> human sociality and computational modelling of cooperation (Aktipis) · social-insect collective behaviour and division of labour (Fewell) · behavioural-ecology modelling, signal detection and engineered collective systems (Pavlic) · agent-based modelling and the LLM/ABM hybrid environment (Donovan) · project coordination and data governance (Grumbach).</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><b>Proposal Risks</b> — 89 / 300 · under-used, and one risk is conspicuously missing</summary>
+    <div class="inner">
+      <p><b>What to fix:</b> the current risk is "biology may not transfer." The sharper, more credible risk — the one a reviewer will think of — is the novelty risk the team raised itself: that biologically-derived detection rules restate known results without adding predictive power. Naming it and answering it is far stronger than leaving a reviewer to raise it.</p>
+      <p><b>Draft addition:</b> <i>"A second risk is that biologically-derived detection rules recapitulate existing multi-agent evaluation without improving on it. We mitigate by committing in advance to a comparison: each detector is scored against published failure taxonomies and existing benchmarks, and we report cases where the biological rule adds no predictive power. A framework that fails this test is itself an informative result about the limits of biological analogy for artificial agents."</i></p>
+      <p><b>Citations:</b> <a href="https://arxiv.org/abs/2503.13657" target="_blank">Cemri et al. 2025</a> as the comparison baseline; <a href="https://arxiv.org/abs/2604.15267" target="_blank">CoopEval 2026</a> and <a href="https://arxiv.org/abs/2602.15198" target="_blank">Colosseum 2026</a> as the existing cooperation/collusion benchmarks to beat.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><b>Milestones &amp; Existing Funding</b> — both empty · required</summary>
+    <div class="inner">
+      <p><b>Milestones</b> — the four failure modes give you the structure for free: one detector validated per mode, staged across the three rungs. Outcomes should be stated as validated understanding, not activities. Suggested outcome names: <i>"Detection rules for four classes of multi-agent failure, validated across three scales of ecological validity"</i> · <i>"Empirical boundary conditions on the transfer of biological cooperation mechanisms to LLM agent networks"</i> · <i>"A measured account of over-cooperation as a trained-in failure mode."</i></p>
+      <p><b>Existing Funding</b> — 300 words, zero used, and it is the easiest section in the proposal. It also matters: it is where you show the pilot data was funded and the work is not starting cold.</p>
+      <p><b>Citation:</b> <a href="https://openreview.net/forum?id=00KtDBoKnO" target="_blank">Tilli 2026, <i>Agent Properties for Multi-Agent Safety</i></a> — useful for phrasing outcomes as measurable properties, which is the form the template asks for.</p>
+    </div>
+  </details>
+
+  <div class="figcap">Citations are drawn from the Cooperation Radar library (70 papers, curated by this team) — not from a web search. Verify each one before it goes in the proposal.</div>
 </section>
 
 <footer>
