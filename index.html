@@ -651,12 +651,84 @@
     </div>
   </details>
 
-  <details>
-    <summary><b>Milestones &amp; Existing Funding</b> — both empty · required</summary>
+  <details open>
+    <summary><b>Milestones &amp; Outcomes</b> — required, still empty · drafted below from the current Approach</summary>
     <div class="inner">
-      <p><b>Milestones</b> — the four failure modes give you the structure for free: one detector validated per mode, staged across the three rungs. Outcomes should be stated as validated understanding, not activities. Suggested outcome names: <i>"Detection rules for four classes of multi-agent failure, validated across three scales of ecological validity"</i> · <i>"Empirical boundary conditions on the transfer of biological cooperation mechanisms to LLM agent networks"</i> · <i>"A measured account of over-cooperation as a trained-in failure mode."</i></p>
-      <p><b>Existing Funding</b> — 300 words, zero used, and it is the easiest section in the proposal. It also matters: it is where you show the pilot data was funded and the work is not starting cold.</p>
-      <p><b>Citation:</b> <a href="https://openreview.net/forum?id=00KtDBoKnO" target="_blank">Tilli 2026, <i>Agent Properties for Multi-Agent Safety</i></a> — useful for phrasing outcomes as measurable properties, which is the form the template asks for.</p>
+      <p>Everything here is derived from what the Approach now actually says — the four stages (Softmax/LLMpollster, Kradle, MESA agent-based models, Edge), the four candidate diversity sources, the ground-truth strategy that differs per stage, and the reliability-versus-steerability frontier already named as the deliverable. Quarters assume a Q1 2027 start; shift as needed.</p>
+
+      <p><b>Intermediate milestones</b> (template asks for ≥2/year)</p>
+      <table style="width:100%;border-collapse:collapse;font-size:12.5px;margin:6px 0 12px;">
+        <tr style="text-align:left;border-bottom:1px solid var(--baseline);">
+          <th style="padding:5px 8px 5px 0;width:15%">Deadline</th><th style="padding:5px 8px;width:45%">What will be demonstrated</th><th style="padding:5px 0 5px 8px;width:40%">Evidence</th></tr>
+        <tr style="border-bottom:1px solid var(--grid);vertical-align:top;">
+          <td style="padding:6px 8px 6px 0"><b>Q2 2027</b></td>
+          <td style="padding:6px 8px">Model-level baselines established across the eleven-model suite using the three Softmax benchmarks and LLMpollster, and the candidate cue set specified — each cue with a measured hit rate and false-alarm rate at the single-model level, before any multi-agent interdependence is introduced.</td>
+          <td style="padding:6px 0 6px 8px">Baseline technical report; a versioned, public specification of the cue set with per-cue detection statistics.</td></tr>
+        <tr style="border-bottom:1px solid var(--grid);vertical-align:top;">
+          <td style="padding:6px 8px 6px 0"><b>Q4 2027</b></td>
+          <td style="padding:6px 8px">The multi-cue detector outperforms single-cue and published-taxonomy baselines on engineered, labelled coordination failures in the Kradle three-game battery (Osotua, volunteer's dilemma, majority/"witch hunt"), with the decision criterion set explicitly from the cost asymmetry between misses and false alarms rather than by convention.</td>
+          <td style="padding:6px 0 6px 8px">Labelled episode corpus; ROC curves per cue and per game; a stated criterion with its cost justification.</td></tr>
+        <tr style="border-bottom:1px solid var(--grid);vertical-align:top;">
+          <td style="padding:6px 8px 6px 0"><b>Q2 2028</b></td>
+          <td style="padding:6px 8px">Measured degradation of detection accuracy as group size grows and observation becomes partial, using MESA models where the payoff structure — and therefore the true action-to-cost mapping — is known exactly, including the hybrid runs where a subset of agents follow calibrated rules fitted to LLM behaviour.</td>
+          <td style="padding:6px 0 6px 8px">Degradation curves over group size, topology, model mixture and observability; validation that calibrated-rule agents reproduce LLM-run statistics.</td></tr>
+        <tr style="border-bottom:1px solid var(--grid);vertical-align:top;">
+          <td style="padding:6px 8px 6px 0"><b>Q3 2028</b></td>
+          <td style="padding:6px 8px">The four candidate sources of retained behavioural diversity — sampling temperature, base-model heterogeneity, prompt/persona diversity, asynchronous action timing — ranked by how much steerability each preserves per unit of single-agent reliability lost, with the prior prediction that temperature is weakest explicitly tested and reported either way.</td>
+          <td style="padding:6px 0 6px 8px">Reliability-versus-steerability frontier across all four sources; pre-registered prediction and its outcome.</td></tr>
+        <tr style="vertical-align:top;">
+          <td style="padding:6px 8px 6px 0"><b>Q4 2028</b></td>
+          <td style="padding:6px 8px">Which cues survive the move from engineered settings to a deployed human–agent network, tested on the Edge corpus using labels derived from channels the environment already meters — shared-credit drawdown, message volume, response latency — rather than from labels we created.</td>
+          <td style="padding:6px 0 6px 8px">Transfer report naming which cues held, which degraded and which failed; the derived-label methodology written up for reuse.</td></tr>
+      </table>
+
+      <p><b>End-of-project outcomes</b> (template asks for ≥3, framed as change in understanding, not activities)</p>
+      <table style="width:100%;border-collapse:collapse;font-size:12.5px;margin:6px 0 4px;">
+        <tr style="text-align:left;border-bottom:1px solid var(--baseline);">
+          <th style="padding:5px 8px 5px 0;width:22%">Outcome</th><th style="padding:5px 8px;width:30%">Scientific change</th><th style="padding:5px 8px;width:24%">Why it matters for safety</th><th style="padding:5px 0 5px 8px;width:24%">Success criteria</th></tr>
+        <tr style="border-bottom:1px solid var(--grid);vertical-align:top;">
+          <td style="padding:6px 8px 6px 0"><b>Validated detection rules for under- and over-coordination</b></td>
+          <td style="padding:6px 8px">Coordination failure becomes measurable from cues, not diagnosed after the fact, with known hit and false-alarm rates at three levels of ecological validity.</td>
+          <td style="padding:6px 8px">Lets an operator detect a network entering an unsafe regime while intervention is still cheap, instead of after visible harm.</td>
+          <td style="padding:6px 0 6px 8px">Beats published failure-taxonomy baselines at matched false-alarm rate on held-out episodes; ≥1 cue transfers to the deployed corpus.</td></tr>
+        <tr style="border-bottom:1px solid var(--grid);vertical-align:top;">
+          <td style="padding:6px 8px 6px 0"><b>Steerability as a measurable population property</b></td>
+          <td style="padding:6px 8px">Whether a collective can still be moved by a bounded external input becomes a quantity you can measure, and its cost in single-agent reliability becomes a characterised frontier.</td>
+          <td style="padding:6px 8px">Turns human oversight from an interface assumption into a property of the population — you can say whether oversight would still work.</td>
+          <td style="padding:6px 0 6px 8px">Frontier quantified for ≥3 of the four diversity sources; the temperature prediction confirmed or falsified on the record.</td></tr>
+        <tr style="border-bottom:1px solid var(--grid);vertical-align:top;">
+          <td style="padding:6px 8px 6px 0"><b>Boundary conditions on biological transfer</b></td>
+          <td style="padding:6px 8px">A documented envelope — group size, observability, heterogeneity — inside which cues derived from biological systems predict failure in agent networks, and outside which they stop.</td>
+          <td style="padding:6px 8px">Tells the field when biological analogy is a safe guide for AI safety and when it is misleading. Informative whichever way it resolves.</td>
+          <td style="padding:6px 0 6px 8px">Explicit envelope with the conditions under which each cue loses predictive power; negative results reported.</td></tr>
+        <tr style="vertical-align:top;">
+          <td style="padding:6px 8px 6px 0"><b>A method for labelling failures in deployed systems that have no ground truth</b></td>
+          <td style="padding:6px 8px">Demonstration that failure labels can be derived from channels a deployment already meters — resource drawdown, message volume, latency — rather than requiring engineered scenarios.</td>
+          <td style="padding:6px 8px">Most real deployments will never have labelled failures; without this, detection science cannot reach them at all.</td>
+          <td style="padding:6px 0 6px 8px">Derived labels agree with expert adjudication on a sampled subset above a pre-set threshold.</td></tr>
+      </table>
+      <p style="color:var(--muted);font-size:12px">Note the template's rule: outcomes must be stated as validated understanding or demonstrated capability, never as "publish papers" or "hold workshops". Each of these deliberately names something that could turn out false.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><b>Existing Funding</b> — 0 / 300 · the easiest section in the proposal</summary>
+    <div class="inner">
+      <p><b>What to fix:</b> 300 words, none used. Beyond compliance, this is where you show the pilot data was funded and the work is not starting cold — list the funding behind the existing benchmark suite and pilot datasets, plus any pending applications, and state plainly what slows down without this award.</p>
+      <p><b>Citation:</b> <a href="https://openreview.net/forum?id=00KtDBoKnO" target="_blank">Tilli 2026, <i>Agent Properties for Multi-Agent Safety</i></a> — useful for phrasing outcomes as measurable properties, which is the form the milestones template asks for.</p>
+    </div>
+  </details>
+
+  <details open>
+    <summary><b>📊 Figures worth making</b> — five candidates, described not drafted</summary>
+    <div class="inner">
+      <p>The template allows one figure. These are ranked, and the first is the one I would submit if only one is allowed.</p>
+      <p><b>1. The ecological-validity ladder.</b> Four stages left to right — Softmax/LLMpollster, Kradle, MESA agent-based models, Edge — as a staircase rising on one axis labelled <i>realism</i>. Under each step, two short rows: <i>what is controlled</i> and <i>what is real</i>, so a reviewer can see that each stage relaxes exactly one simplifying assumption. A single arrow runs along the whole staircase labelled "the same detection rules applied at every stage", which is the ecological-validity claim in one image. Colour only the "what is real" row, so realism visibly grows.</p>
+      <p><b>2. The failure-mode space.</b> Two axes — cooperation and coordination — each running from too little to too much, giving four quadrants. In each quadrant put one biological exemplar and its agentic counterpart: the ant mill beside redundant agents draining a shared budget; solitary bees burying each other beside agents duplicating work they never reconciled. Hijacking sits off-axis, drawn as an arrow of strong but misdirected coupling. This figure does the most work for a reviewer who doesn't yet believe over-coordination is a real category.</p>
+      <p><b>3. Signal detection made concrete.</b> One ROC panel with a handful of labelled cue curves, plus a marked criterion point and a small inset showing how that point moves as the cost of a miss rises relative to a false alarm. This is the figure that proves the project is quantitative rather than analogical — worth including precisely because the biological framing invites the opposite suspicion.</p>
+      <p><b>4. The reliability–steerability frontier.</b> Single-agent reliability on one axis, steerability on the other, with the four diversity sources plotted as separate curves. Shade the region where a collective can no longer be moved by bounded input. Since the proposal already names this frontier as the deliverable rather than a "add noise" recommendation, showing its shape — even as a predicted sketch — communicates the whole contribution at a glance.</p>
+      <p><b>5. Detection degradation with scale.</b> Detection accuracy against group size, with separate lines for full and partial observability. This answers the question a Focus-Area-2 reviewer will actually ask — does this still work at population scale? — and it is the one claim the MESA stage exists to test.</p>
+      <p style="color:var(--muted);font-size:12px">If you can only submit one: figure 1. If the Novelty section stays tight, figure 2 carries the argument the prose has no room for.</p>
     </div>
   </details>
 
