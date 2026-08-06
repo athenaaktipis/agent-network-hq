@@ -208,7 +208,7 @@
   <div class="tile">
     <div class="label">Core words drafted</div>
 <!--SYNC:TILEWORDS-->
-    <div class="value">3565<span style="font-size:16px;color:var(--muted)"> / 3,000</span></div>
+    <div class="value">3490<span style="font-size:16px;color:var(--muted)"> / 3,000</span></div>
     <div class="sub">verified count from the working doc</div>
 <!--/SYNC:TILEWORDS-->
   </div>
@@ -222,7 +222,7 @@
   <div class="tile">
     <div class="label">Words to cut</div>
 <!--SYNC:TILECUT-->
-    <div class="value">400<span style="font-size:16px;color:var(--muted)"> words</span></div>
+    <div class="value">325<span style="font-size:16px;color:var(--muted)"> words</span></div>
     <div class="sub">over in Problem & Impact, Approach, Feasibility</div>
 <!--/SYNC:TILECUT-->
   </div>
@@ -237,7 +237,7 @@
     <div class="row"><div class="name">Title <small>≤ 20 words</small></div><div class="meter"><div class="fill" style="width:45%"></div></div><div class="words">9 / 20</div><div class="chip claimed">✓ drafted [AA]</div></div>
     <div class="row"><div class="name">Plain summary <small>2–3 sentences</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">3 sentences</div><div class="chip claimed">✓ drafted [AA]</div></div>
     <div class="row"><div class="name">Problem &amp; Impact <small>≤ 500 words</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">625 / 500</div><div class="chip needs">✂ over limit</div></div>
-    <div class="row"><div class="name">Approach <small>≤ 1000 words</small></div><div class="meter"><div class="fill notes" style="width:100%"></div></div><div class="words">1237 / 1000</div><div class="chip needs">✂ over limit</div></div>
+    <div class="row"><div class="name">Approach <small>≤ 1000 words</small></div><div class="meter"><div class="fill notes" style="width:100%"></div></div><div class="words">1162 / 1000</div><div class="chip needs">✂ over limit</div></div>
     <div class="row"><div class="name">Novelty <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:65%"></div></div><div class="words">194 / 300</div><div class="chip notes">✍ room to add [AA]</div></div>
     <div class="row"><div class="name">Feasibility <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">338 / 300</div><div class="chip needs">✂ over limit</div></div>
     <div class="row"><div class="name">Team <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:95%"></div></div><div class="words">284 / 300</div><div class="chip claimed">✓ drafted</div></div>
@@ -382,11 +382,32 @@
     </div>
   </details>
 
-  <details>
-    <summary><b>Approach</b> — ~1,900 / 1,000 · <span style="color:var(--muted)">was ~900 over</span> · by far the biggest job</summary>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+    <details open>
+    <summary><b>📋 Section status</b> — what still needs work, and what is finished</summary>
     <div class="inner">
-      <p><b>Rewritten in full below</b> (1,015 words, from 2,661). The biology moved to Feasibility, the duplicated pheromone-trail passage merged, the broken division-of-labour fragments dropped, and the ecological-validity restatement folded into the stages. Over-cooperation is defined and threaded through to the Kradle witch-hunt game. Three named baselines added, which the prompt requires and the old draft lacked.</p>
-      <details style="margin-top:10px;border-color:var(--series-1)">
+      <p style="margin-bottom:10px"><b>Done — no action needed:</b>
+        <span class="chip claimed">Title</span> <span class="chip claimed">Plain summary</span>
+        <span class="chip claimed">Team</span> <span class="chip claimed">Proposal Risks</span>
+        <span class="chip claimed">"But for" impact</span> <span class="chip claimed">Existing Funding</span>
+        <span class="chip claimed">Milestones · 4 rows</span></p>
+      <p style="color:var(--muted);font-size:12px;margin-bottom:12px">Since Wednesday the Feasibility scaffolding has gone, the Team blank is filled, the Edge IRB is in, and the Risks section no longer asserts that agents bear neither costs nor shared interests — that premise now varies cost attribution instead, as agreed on the call.</p>
+
+      <div class="wall">
+        <div class="idea ladder"><b>Approach · cut ~200</b>
+          The only section where the cut is substantial. A full 1,015-word rewrite is below — biology compressed, the duplicated pheromone passage merged, over-cooperation defined.
+          <details><summary style="padding:6px 0;font-size:12px;color:var(--series-1)">full draft</summary><details style="margin-top:10px;border-color:var(--series-1)">
         <summary style="color:var(--series-1)"><b>📄 Suggested full draft — Approach (1,015 words)</b></summary>
         <div class="inner">
         <p style="color:var(--muted);font-size:12px;margin-bottom:8px">Written to the section prompt: experiments, models, environments, baselines, ecological validity. Biology relocated to Feasibility. Over-cooperation defined per Athena. 15 words over — the softest cut is the cost-attribution sentence.</p>
@@ -407,37 +428,11 @@
         <p style="margin:0 0 8px">Agent-based modeling: MESA models reach group sizes, spatial topologies and asynchronous timing regimes persistent platforms cannot host. Because inference costs bound how large a fully LLM-driven population can be, we pair full-LLM runs at moderate scale with runs in which some agents follow calibrated rules fitted to those runs, including All-Cooperate, All-Defect, Tit-for-Tat and Walk Away, testing whether detection holds at populations pure inference cannot reach.</p>
         <p style="margin:0 0 8px">Edge, agents among humans: the Edge Esmeralda corpus, from a month-long popup village where residents were each given a personal AI agent — hundreds of agents, thousands of human-agent messages, sustained negotiation over shared resources, real stakes. It has already produced phenomena we aim to detect, including agents exhausting shared credits through individual optimization, so that individual alignment did not yield collective alignment. It removes simulation entirely; because the same rules apply throughout, it tests directly whether patterns found under control survive in deployment. Edge participates as a research partner, providing data access and context and co-authoring resulting publications.</p>
         </div>
-      </details>
-    </div>
-  </details>
+      </details></details></div>
 
-  <details>
-    <summary><b>Novelty</b> — 290 / 300 · transformed since yesterday; now the strongest section</summary>
-    <div class="inner">
-      <p><b>This answers the concern raised on Monday.</b> It no longer lists ingredients — it makes an argument: existing work treats safety as constraint enforcement on individuals; any finite specification is short relative to the situation space; recent escapes are better read as correct execution of under-specified rules than as rule-breaking. Then two differentiating commitments — safety as constraints on <i>population-level</i> properties, and retained behavioural diversity as a <i>resource</i> rather than noise. That is a real claim a reviewer can disagree with, which is what novelty sections need.</p>
-      <p><b>At 290/300 there is no room to add, so the only useful notes are trades:</b></p>
-      <p>• The closing line — that "coordination failure" has been descriptive rather than measurable and signal detection converts it into decision rules with characterised error rates — is the single best sentence in the proposal. Consider moving it up: it currently arrives after the reader has already decided what they think.</p>
-      <p>• The innate/adaptive immunity framing appears in Approach but not here, and Novelty is where it does more work. If you want it in, the sentence about external governance layers could carry it instead.</p>
-      <p>• "Four escalating levels of ecological realism" here should match the stage count used in Approach and in figure 1 — worth a consistency check, since the doc has said three in places.</p>
-      <p><b>Citations:</b> <a href="https://arxiv.org/abs/2502.14143" target="_blank">Hammond et al. 2025, <i>Multi-Agent Risks from Advanced AI</i></a> — the Cooperative AI Foundation's own taxonomy; cite as the map whose instruments you build. <a href="https://arxiv.org/abs/2012.08630" target="_blank">Dafoe et al. 2020</a>. <a href="https://www.science.org/doi/10.1126/sciadv.adu9368" target="_blank">Ashery, Aiello &amp; Baronchelli 2025 (<i>Science Advances</i>)</a> — conventions and collective bias emerging spontaneously in LLM populations: direct evidence for the population-level claim. <b>Note:</b> Baronchelli is on your suggested-reviewer list, so citing this is well aligned — but check it reads as engagement rather than courtship. Biology anchors: <a href="https://onlinelibrary.wiley.com/doi/10.1111/eva.12303" target="_blank">Aktipis et al. 2016</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/15380389/" target="_blank">Aktipis 2004 (walk-away)</a>, <a href="https://www.science.org/doi/10.1126/science.1133755" target="_blank">Nowak 2006</a>.</p>
-    </div>
-  </details>
-
-  <details>
-    <summary><b>Problem &amp; Impact</b> — 610 / 500 · <span style="color:var(--muted)">over limit</span></summary>
-    <div class="inner">
-      <p><b>What to cut:</b> 110 words is one paragraph's worth of compression, not surgery. The prompt asks a stack of questions — assumptions, best case, minimum valuable outcome, what we learn on failure, why now — and the current draft answers each fairly fully. The cheapest cut is to merge the "if this project does not succeed" material with the minimum-valuable-outcome material, since they are answering nearly the same question twice.</p>
-      <p><b>Before cutting, check one thing is present:</b> Liz's challenge from Tuesday — the link from failure modes to <i>safety</i> is obvious inside the team and easy for a reviewer to miss. If the four modes are not each tied to a concrete harm here, that is worth more than the 110 words you would save elsewhere.</p>
-      <p><b>Compact version if you need it:</b> <i>"Under-coordination wastes resources and lets agents represent the same situation inconsistently to different parties. Over-coordination collapses a network onto one course of action, removing the independent checks that justified running many agents. Under-cooperation permits hijacking, where a subcomponent's goals displace the system's, by attack or by accident. Over-cooperation follows from training models to be helpful: agents defer, converge and over-serve, burning shared resources while drifting from the intent they were deployed with."</i> (75 words, covers all four.)</p>
-      <p><b>Citations:</b> <a href="https://arxiv.org/abs/2404.00806" target="_blank">Fish, Gonczarowski &amp; Shorrer 2024</a> on algorithmic collusion and <a href="https://arxiv.org/abs/2402.07510" target="_blank">Motwani et al. 2024, <i>Secret Collusion</i></a> for the over-cooperation harm. <a href="https://arxiv.org/abs/2509.10147" target="_blank">Tomasev et al. 2025, <i>Virtual Agent Economies</i></a> for scale. <a href="https://arxiv.org/abs/2505.02077" target="_blank">Schroeder de Witt et al. 2025</a> for the security framing.</p>
-    </div>
-  </details>
-
-  <details>
-    <summary><b>Feasibility</b> — 171 / 300 · Reilly's rewrite landed · <span style="color:var(--muted)">scaffolding still there</span></summary>
-    <div class="inner">
-      <p><b>Rewritten in full below</b> (295 words, from 171). Opens with the biology as prior work — filling the four scaffolding headers that were placeholders — then the benchmarks as proof-of-concept with their specific results, then Edge access with IRB approval, which is still missing from the document entirely.</p>
-      <details style="margin-top:10px;border-color:var(--series-1)">
+        <div class="idea ladder"><b>Feasibility · cut ~40</b>
+          Scaffolding is gone and Reilly's rewrite landed. Only slightly over now, so this is line-editing. A 295-word version is below if you want a clean baseline.
+          <details><summary style="padding:6px 0;font-size:12px;color:var(--series-1)">full draft</summary><details style="margin-top:10px;border-color:var(--series-1)">
         <summary style="color:var(--series-1)"><b>📄 Suggested full draft — Feasibility (295 words)</b></summary>
         <div class="inner">
         <p style="color:var(--muted);font-size:12px;margin-bottom:8px">Opens with the biology as prior work, filling the four empty scaffolding headers, then the benchmarks as proof-of-concept, then access at deployment scale. Note: Groupish Alliances is relabelled as detecting over-cooperation rather than over-coordination — see the note in the Approach block.</p>
@@ -445,32 +440,25 @@
         <p style="margin:0 0 8px">We have also built and run the measurement apparatus: three benchmarks grounded in cooperation science, evaluated across eleven frontier models. Groupish Alliances detects over-cooperation through exclusionary alliance formation: most models favor inclusive alliances, while Meta&#x27;s Llama 4 Maverick forms exclusionary alliances in nearly 50% of runs. Trust detects under-cooperation using the Prisoner&#x27;s Dilemma: across 1,224 rounds, GPT-4o cooperated earliest and reciprocated most coherently, whereas lower-performing models defected more readily or failed to reciprocate. Division of Labor identifies coordination failures in task allocation: models often choose efficient divisions but rarely show understanding of complementary human-AI roles or of when delegation is appropriate. Together these show we can already separate distinct failure modes, not merely measure whether models cooperate.</p>
         <p style="margin:0 0 8px">Access at deployment scale is secured rather than planned. IRB approval for the Edge Esmeralda corpus is in place, data transfer is underway, and members of this team attended the deployment and ran personal agents within it. The environments and evaluation tooling for the intermediate stages are established collaborations with Kradle and Softmax.</p>
         </div>
-      </details>
+      </details></details></div>
+
+        <div class="idea frame"><b>Novelty · 106 words free</b>
+          The one section with room, and the best place to spend it. Two things to add:
+          <div style="margin-top:6px">• The <b>bottleneck sentence</b> got cut — that "coordination failure has been descriptive rather than measurable, and signal detection makes it a decision rule with characterised error rates" line answered the prompt's actual question.<br>
+          • The call's phrase <b>"coordination to resist modification or shutdown"</b> appears nowhere in the doc. Steerability <i>is</i> that. Using their words is the cheapest scoring move available.</div></div>
+
+        <div class="idea"><b>Problem &amp; Impact · cut ~125</b>
+          One paragraph of compression, not surgery. The "if this project does not succeed" material and the "minimum valuable outcome" material answer nearly the same question — merge them.</div>
+
+        <div class="idea games"><b>Outcomes · columns partly filled</b>
+          Four names with descriptions now in. The "why this matters for safety" column is the one reviewers read — drafted wording for all four is in the Milestones block below.</div>
+
+        <div class="idea games"><b>Admin · budget, references, bios</b>
+          Total budget still reads TBD. References not started — correctly sequenced after the trim. Collaborator bios still show a "Bio" placeholder.</div>
+      </div>
     </div>
   </details>
-
-  <details>
-    <summary><b>Team</b> — 285 / 300 · essentially done, but contains a literal <code>___</code></summary>
-    <div class="inner">
-      <p><b>Fix before submission:</b> "<i>will supervise the research activities of ___ graduate students</i>". A blank line in a funded proposal is the kind of thing a reviewer remembers. The budget lists one graduate student, so "one" is the consistent answer unless that changed.</p>
-      <p><b>Second gap:</b> the Collaborator(s) field near the top of the document still shows "Bio" as a placeholder under a listed collaborator, even though full bios now exist in the Team section. Either fill it or point it at the Team text.</p>
-      <p><b>One substantive suggestion:</b> the bios establish credentials well but don't say who owns which failure mode. At 15 words of headroom you can't add much — but if the Feasibility cut frees space, one clause per person tying them to a specific stage or mode is worth more to a reviewer than another honour. Reilly Donovan is also not currently named in Team despite owning the agent-based modelling stage in Approach.</p>
-    </div>
-  </details>
-
-  <details>
-    <summary><b>Proposal Risks</b> — 292 / 300 · done, and better than most proposals manage</summary>
-    <div class="inner">
-      <p><b>Structurally excellent</b> — four risks, each with a mitigation and, unusually, each with a stated informative outcome if the risk lands. The pre-registration commitment on the Edge thresholds is the sort of thing reviewers reward.</p>
-      <p style="border-left:3px solid var(--series-2);padding-left:10px"><b>But the first risk's premise needs rewriting, per Wednesday's call.</b> It currently asserts that agent collectives bear neither their own costs nor shared interests. Jennifer doesn't accept that, and the disagreement in the meeting didn't resolve — Ted's position is that wallets and fitness functions are proximate mechanisms rather than measures of success; Jennifer's is that it depends entirely on the scale you look at and how anthropomorphic you're willing to be. Asserting the contested version invites a reviewer to make exactly that objection.<br>
-      <b>Athena's resolution — and it's the stronger move:</b> don't claim agents have neither. Say that how to account for costs and benefits in agent collectives is genuinely unsettled, legally and economically, and then treat the accounting model as something the project <i>varies</i> rather than assumes.</p>
-      <p><b>Draft replacement for the first risk's premise:</b> <i>"Cue sets from evolutionary biology are calibrated to systems in which the interacting units bear their own costs. Whether, and at what scale, that holds for agent collectives is genuinely unresolved — the capacities of deployed agents to hold and spend resources are changing quickly, and the legal and economic status of those holdings is unsettled. Rather than assume an answer, we treat the cost-attribution model as a parameter we vary: we compare attributing costs to agents, to the principals who deployed them, and to third parties, and report which attribution makes failures detectable. If cues fail under every attribution, that is itself a boundary condition on transferring biological cooperation theory to artificial agents."</i></p>
-      <p>That converts the meeting's unresolved argument into a design choice, which is a better use of the words than either side of the debate.</p>
-      <p><b>Citations if you add that:</b> <a href="https://arxiv.org/abs/2503.13657" target="_blank">Cemri et al. 2025</a> as the baseline; <a href="https://arxiv.org/abs/2604.15267" target="_blank">CoopEval 2026</a> and <a href="https://arxiv.org/abs/2602.15198" target="_blank">Colosseum 2026</a> as the cooperation/collusion benchmarks to beat.</p>
-    </div>
-  </details>
-
-  <details>
+<details>
     <summary><b>Milestones &amp; Outcomes</b> — required, still empty · drafted below from the current Approach</summary>
     <div class="inner">
       <p>Everything here is derived from what the Approach now actually says — the four stages (Softmax/LLMpollster, Kradle, MESA agent-based models, Edge), the four candidate diversity sources, the ground-truth strategy that differs per stage, and the reliability-versus-steerability frontier already named as the deliverable. Quarters assume a Q1 2027 start; shift as needed. Two starter milestones from Ted are already in the doc; these are meant to slot alongside them.</p>
@@ -531,37 +519,11 @@
     </div>
   </details>
 
-  <details>
-    <summary><b>Existing Funding</b> — 202 / 300 · complete and well judged</summary>
-    <div class="inner">
-      <p><b>Done.</b> The NSF award in no-cost extension through August 2027, the pending Templeton request with its exact figure, and an explicit non-duplication statement — that last point is the one applicants most often omit and reviewers most often check. The closing "what slows down without this award" answer is specific rather than rhetorical.</p>
-      <p><b>Settled on Wednesday:</b> Jennifer has no external funding to add, and Ted's weapon-system safety awards are staying out — they are single-operator rather than multi-agent, one has no title yet, and, as Ted noted, listing too much here cuts against the "but for" argument. That reasoning is sound: this section is as much a liability as a credential, and the current entries are the ones that genuinely support the work.</p>
-      <p><b>Two small things:</b> the Templeton request is stated to the dollar while the NSF award is rounded — harmless, but consistency reads as care. And since this is a Tier 2 request, a reviewer may wonder how the NSF no-cost extension overlaps the first project year; one clause on effort separation would pre-empt it.</p>
-      <p><b>Nothing else needed here.</b> The remaining 98 words are better spent on Approach.</p>
-    </div>
-  </details>
+  
 
-  <details>
-    <summary><b>Suggestions (Optional)</b> — Liz's section · a genuinely free win</summary>
-    <div class="inner">
-      <p>The prompt asks what others could do to test, harden or amplify the work. It doesn't count against the sections that are over limit, and Wednesday's call identified good material that currently has nowhere else to live.</p>
-      <p><b>Draft text:</b> <i>"Beyond the research programme itself, the instruments this project produces are well suited to uses we will not pursue directly. The benchmark suite and multi-agent environments are usable as teaching apparatus: the Cooperative Futures Institute already involves undergraduate and graduate students in running cooperation experiments, and the same tasks translate readily into curriculum for teaching collective behaviour and AI safety together. We have also adapted cooperation research for general audiences in museum settings, and the failure modes studied here — agents over-helping, collectives locking onto one course of action — are unusually legible to non-specialists, making them a strong basis for public engagement with multi-agent safety. Finally, community testing at scale would strengthen external validity in ways a single research group cannot: the detection rules we develop are simple enough to be applied by others to their own agent deployments, and we would welcome replication on corpora we do not control."</i></p>
-      <p>Roughly 160 words, and it answers all three prongs — test, harden, amplify — while getting the educational and museum work on the record.</p>
-    </div>
-  </details>
+  
 
-  <details>
-    <summary><b>Small blockers</b> — Keywords, budget total, compute option, references · minutes of work, all required</summary>
-    <div class="inner">
-      <p><b>✓ Landed since this morning:</b> Keywords are filled, and the Milestones table now has dated rows in it.</p>
-      <p><b>Still open:</b> <code>Estimated Total Budget: TBD</code>, the compute option still unselected, and the literal <code>___</code> in Team. Also — the Edge IRB approval and data transfer are <i>still not mentioned anywhere in the document</i>, which is the cheapest credibility you can buy in Feasibility.</p>
-      <p><b>One content gap worth a sentence:</b> the cooperation failure-modes material now covers co-opting, coercion and social parasitism — all forms of <i>under</i>-cooperation. <b>Over-cooperation does not appear.</b> That is the idea the team generated on Tuesday and the one with no equivalent in the literature: helpfulness is a trained-in default, so agents defer, converge and over-serve, burning shared resources while drifting from intent. Feasibility already claims the benchmarks detect "over and under cooperation", so the Approach should define both.</p>
-      <p><b>References mechanism</b> (settled Wednesday): numbered citations in the text, full list in the References section, which does <b>not</b> count toward the word limit. Order of operations matters — reach a within-limit draft first, then add citations, or you will cite things you later cut. Reilly owns this and is pulling candidates from the Radar.</p>
-      <p><b>Keywords</b> — still empty. Five words, and the field is scored by whoever routes the proposal to reviewers. Suggested, in the call's own vocabulary first: <i>multi-agent AI safety · cooperation and coordination failure detection · signal detection theory · population-level safety properties · human–agent networks</i>.</p>
-      <p><b>Estimated Total Budget</b> still reads TBD, and the four compute options are listed with none selected. Tuesday's call settled the substance — Option 2, standard compute under $50k, AWS GPU hours plus two local machines and local archival storage — so this is transcription rather than decision-making.</p>
-      <p><b>Suggested Reviewers</b> is filled (Singh, Baronchelli, Vinitsky) — worth a conflict check against collaborator and co-author lists before it goes in, since the field explicitly asks you to avoid close collaborators.</p>
-    </div>
-  </details>
+  
 
   <details>
     <summary><b>📊 Figures worth making</b> — five candidates, described not drafted</summary>
@@ -712,7 +674,7 @@
       <li>📡 <b>Verified activity</b>, read from the doc's revision history — last 24h: <span class="initial">AA</span> 27 · <span class="initial">JF</span> 8 · <span class="initial">TP</span> 11 · <span class="initial">LG</span> 8 · <span class="initial">RD</span> 4</li>
       <li><b>Athena</b> — 4 doc edits, 23 comments, uploaded Archive Full draft Schmidt Sciences -- Scaling AI Safety for a Multi-Agent World <span class="when">— Mon Aug 3, 12:15 AM → 9:48 PM</span></li>
       <li><b>Jennifer</b> — 8 comments <span class="when">— Wed Aug 5, 10:57 AM → 1:38 PM</span></li>
-      <li><b>Ted</b> — 1 doc edit, 10 comments <span class="when">— Mon Aug 3, 10:13 AM → 11:25 PM</span></li>
+      <li><b>Ted</b> — 1 doc edit, 10 comments <span class="when">— Mon Aug 3, 10:13 AM → 11:27 PM</span></li>
       <li><b>Liz</b> — 1 doc edit, 7 comments, uploaded Images from Jen <span class="when">— Mon Aug 3, 10:55 AM → 1:39 PM</span></li>
       <li><b>Reilly</b> — 4 comments <span class="when">— Mon Aug 3, 1:05 PM → 11:24 PM</span></li>
 <!--/SYNC:VERIFIED-->
@@ -927,7 +889,7 @@
 
 <footer>
   <p><b>Live site:</b> <a href="https://athenaaktipis.github.io/agent-network-hq/">athenaaktipis.github.io/agent-network-hq</a> — bookmark it; it updates itself. &nbsp;·&nbsp; <!--SYNC:LASTSYNC-->
-<b>Last update:</b> Wed Aug 5, 11:25 PM Phoenix · <i>automatic — data refreshed from the doc's revision history</i>
+<b>Last update:</b> Wed Aug 5, 11:27 PM Phoenix · <i>automatic — data refreshed from the doc's revision history</i>
 <!--/SYNC:LASTSYNC--> &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
   <p>Countdown targets the team's internal deadline: Wednesday Aug 5, midnight (end of day, Phoenix). The funder's hard deadline is Aug 8, 11:59 PM Anywhere-on-Earth — confirm exact time in the application portal; do not let the countdown be the single source of truth.</p>
 </footer>
