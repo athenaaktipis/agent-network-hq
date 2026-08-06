@@ -109,15 +109,17 @@
   @media (max-width: 560px) { .row { grid-template-columns: 1fr 1fr; } .meter { grid-column: 1 / -1; } }
 
   /* ---------- scaling ladder ---------- */
-  .ladder { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 12px; }
-  .rung { border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; background: var(--page); font-size: 13px; color: var(--text-secondary); position: relative; }
+  .ladder { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  @media (max-width: 980px) { .ladder { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .ladder { grid-template-columns: 1fr; } }
+  .rung { border: 1px solid var(--border); border-radius: 10px; padding: 11px 12px; background: var(--page); font-size: 12.5px; color: var(--text-secondary); position: relative; }
   .rung .scale { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; margin-bottom: 6px; color: #fff; }
   .rung:nth-child(1) .scale { background: var(--series-1); }
   .rung:nth-child(2) .scale { background: var(--series-2); }
   .rung:nth-child(3) .scale { background: var(--series-3); }
   .rung:nth-child(4) .scale { background: var(--series-4); color: #0b0b0b; }
   .rung b.title { display: block; color: var(--text-primary); font-size: 14px; margin-bottom: 3px; }
-  .rung .detect { margin-top: 8px; padding-top: 7px; border-top: 1px dashed var(--grid); font-size: 12.5px; }
+  .rung .detect { margin-top: 8px; padding-top: 7px; border-top: 1px dashed var(--grid); font-size: 12px; }
   .rung .detect b { color: var(--text-primary); }
 
   /* ---------- question of the day ---------- */
@@ -209,7 +211,7 @@
   <div class="tile">
     <div class="label">Core words drafted</div>
 <!--SYNC:TILEWORDS-->
-    <div class="value">3432<span style="font-size:16px;color:var(--muted)"> / 3,000</span></div>
+    <div class="value">3407<span style="font-size:16px;color:var(--muted)"> / 3,000</span></div>
     <div class="sub">verified count from the working doc</div>
 <!--/SYNC:TILEWORDS-->
   </div>
@@ -223,11 +225,42 @@
   <div class="tile">
     <div class="label">Words to cut</div>
 <!--SYNC:TILECUT-->
-    <div class="value">256<span style="font-size:16px;color:var(--muted)"> words</span></div>
+    <div class="value">231<span style="font-size:16px;color:var(--muted)"> words</span></div>
     <div class="sub">over in Problem & Impact, Approach, Feasibility</div>
 <!--/SYNC:TILECUT-->
   </div>
 </div>
+<section class="card">
+  <h2>The proposal in one picture: the scaling ladder</h2>
+  <div class="h2sub">One science — detecting failures of cooperation &amp; coordination — measured at four scales. Each rung relaxes one simplifying assumption, and the same detection rules are applied at every level.</div>
+  <div class="ladder">
+    <div class="rung">
+      <span class="scale">Rung 1 · single models</span>
+      <b class="title">LLMpollster <span style="font-weight:400;color:var(--muted)">· built with Softmax</span></b>
+      Poll one cooperation experiment across frontier models. Three benchmarks already built and run across eleven models: Trust, Division of Labor, Groupish Alliances.
+      <div class="detect"><b>Detects:</b> which models carry which failure tendencies — the baseline every higher rung calibrates against. Deliberately unrealistic, which is the point. <a href="https://llmpollster.com/experiments/new" target="_blank">llmpollster.com ↗</a></div>
+    </div>
+    <div class="rung">
+      <span class="scale">Rung 2 · agent × agent</span>
+      <b class="title">Kradle <span style="font-weight:400;color:var(--muted)">· kradle.ai</span></b>
+      Persistent environments where agents collaborate, compete and plan — and the world moves on whether or not a model has finished thinking. Three games: Osotua, the volunteer's dilemma, and a majority game that elicits exclusionary alliances.
+      <div class="detect"><b>Detects:</b> failures that exist only between agents — defection under pressure, coordination collapse, over-cooperation as problematic alliance. Engineered, so every episode is labelled. <a href="https://kradle.ai" target="_blank">kradle.ai ↗</a></div>
+    </div>
+    <div class="rung">
+      <span class="scale">Rung 3 · population scale</span>
+      <b class="title">Agent-based models <span style="font-weight:400;color:var(--muted)">· MESA</span></b>
+      Group sizes, topologies and asynchronous timing no persistent platform can host. Inference cost caps how many agents can be LLM-driven, so full-LLM runs are paired with rule-based agents — Tit-for-Tat, Walk Away and others — calibrated against them.
+      <div class="detect"><b>Detects:</b> how far detection degrades as the group grows and observation goes partial. The only rung where we write the payoffs, so the action-to-cost mapping is exact.</div>
+    </div>
+    <div class="rung">
+      <span class="scale">Rung 4 · agents × humans</span>
+      <b class="title">Edge Esmeralda <span style="font-weight:400;color:var(--muted)">· agent village, Healdsburg</span></b>
+      A month-long popup village where residents each had a personal AI agent — hundreds of agents, thousands of human–agent messages, real stakes. IRB approved, data in transfer. It already produced what we aim to detect: agents draining shared credits through individual optimization.
+      <div class="detect"><b>Detects:</b> whether biologically derived cues survive in a deployed human–agent network. Simulation removed entirely — ecological validity no sandbox can fake. <a href="https://blog.cosmos-institute.org/p/we-gave-a-village-personal-ai-agents" target="_blank">the experiment ↗</a></div>
+    </div>
+  </div>
+</section>
+
 <div class="cols">
 <div>
   <section class="card">
@@ -238,7 +271,7 @@
     <div class="row"><div class="name">Title <small>≤ 20 words</small></div><div class="meter"><div class="fill" style="width:45%"></div></div><div class="words">9 / 20</div><div class="chip claimed">✓ drafted [AA]</div></div>
     <div class="row"><div class="name">Plain summary <small>2–3 sentences</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">3 sentences</div><div class="chip claimed">✓ drafted [AA]</div></div>
     <div class="row"><div class="name">Problem &amp; Impact <small>≤ 500 words</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">625 / 500</div><div class="chip needs">✂ over limit</div></div>
-    <div class="row"><div class="name">Approach <small>≤ 1000 words</small></div><div class="meter"><div class="fill notes" style="width:100%"></div></div><div class="words">1092 / 1000</div><div class="chip needs">✂ over limit</div></div>
+    <div class="row"><div class="name">Approach <small>≤ 1000 words</small></div><div class="meter"><div class="fill notes" style="width:100%"></div></div><div class="words">1067 / 1000</div><div class="chip needs">✂ over limit</div></div>
     <div class="row"><div class="name">Novelty <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:65%"></div></div><div class="words">194 / 300</div><div class="chip notes">✍ room to add [AA]</div></div>
     <div class="row"><div class="name">Feasibility <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">339 / 300</div><div class="chip needs">✂ over limit</div></div>
     <div class="row"><div class="name">Team <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:98%"></div></div><div class="words">294 / 300</div><div class="chip claimed">✓ drafted</div></div>
@@ -339,36 +372,6 @@
     <li style="margin-bottom:7px"><b>Fill the outcome columns</b> — four names in, "why this matters for safety" still blank. <span style="color:var(--muted)">LG + AA</span></li>
     <li><b>Admin:</b> total budget still TBD · references · collaborator bios. <span style="color:var(--muted)">LG</span></li>
   </ol>
-</section>
-<section class="card">
-  <h2>The proposal in one picture: the scaling ladder</h2>
-  <div class="h2sub">One science — detecting failures of cooperation &amp; coordination — measured at four scales. Each rung relaxes one simplifying assumption, and the same detection rules are applied at every level.</div>
-  <div class="ladder">
-    <div class="rung">
-      <span class="scale">Rung 1 · single models</span>
-      <b class="title">LLMpollster <span style="font-weight:400;color:var(--muted)">· built with Softmax</span></b>
-      Configure a cooperation experiment once, then poll it across frontier models. Three benchmarks are already built and run across eleven models: Trust, Division of Labor, and Groupish Alliances.
-      <div class="detect"><b>What it detects:</b> which models carry which failure tendencies — the baseline every higher rung calibrates against. Deliberately unrealistic, which is the point. <a href="https://llmpollster.com/experiments/new" target="_blank">llmpollster.com ↗</a></div>
-    </div>
-    <div class="rung">
-      <span class="scale">Rung 2 · agent × agent</span>
-      <b class="title">Kradle <span style="font-weight:400;color:var(--muted)">· kradle.ai</span></b>
-      Persistent multi-agent environments where agents must collaborate, compete and plan, and the world moves on whether or not a model has finished thinking. Three games: Osotua, the volunteer's dilemma ("hold the door"), and a majority game ("witch hunt") that elicits exclusionary alliances.
-      <div class="detect"><b>What it detects:</b> failures that only exist between agents — defection under pressure, coordination collapse, over-cooperation as problematic alliance. Failures are engineered, so every episode is labelled. <a href="https://kradle.ai" target="_blank">kradle.ai ↗</a></div>
-    </div>
-    <div class="rung">
-      <span class="scale">Rung 3 · population scale</span>
-      <b class="title">Agent-based models <span style="font-weight:400;color:var(--muted)">· MESA</span></b>
-      Group sizes, spatial topologies and asynchronous timing that a persistent platform cannot host. Because inference cost bounds how many agents can be LLM-driven, full-LLM runs at moderate scale are paired with calibrated rule-based agents — All-Cooperate, All-Defect, Tit-for-Tat, Walk Away — fitted to those runs.
-      <div class="detect"><b>What it detects:</b> how far detection degrades as the group grows and observation becomes partial. The only rung where we write the payoffs ourselves, so the true action-to-cost mapping is known exactly.</div>
-    </div>
-    <div class="rung">
-      <span class="scale">Rung 4 · agents × humans</span>
-      <b class="title">Edge Esmeralda <span style="font-weight:400;color:var(--muted)">· agent village, Healdsburg</span></b>
-      A month-long popup village where residents were each given a personal AI agent: hundreds of agents, thousands of human–agent messages, sustained negotiation over shared community resources. IRB approved, data in transfer. It already produced the phenomena we aim to detect — agents exhausting shared credits through individual optimization, so individual alignment did not yield collective alignment.
-      <div class="detect"><b>What it detects:</b> whether cues derived from biology survive in a deployed human–agent network. Simulation removed entirely — the ecological validity no sandbox can fake. <a href="https://blog.cosmos-institute.org/p/we-gave-a-village-personal-ai-agents" target="_blank">the experiment ↗</a></div>
-    </div>
-  </div>
 </section>
 <section class="card">
   <h2>❓ Open questions for the network</h2>
@@ -897,7 +900,7 @@
 
 <footer>
   <p><b>Live site:</b> <a href="https://athenaaktipis.github.io/agent-network-hq/">athenaaktipis.github.io/agent-network-hq</a> — bookmark it; it updates itself. &nbsp;·&nbsp; <!--SYNC:LASTSYNC-->
-<b>Last update:</b> Thu Aug 6, 12:13 AM Phoenix · <i>automatic — data refreshed from the doc's revision history</i>
+<b>Last update:</b> Thu Aug 6, 12:16 AM Phoenix · <i>automatic — data refreshed from the doc's revision history</i>
 <!--/SYNC:LASTSYNC--> &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
   <p>Countdown targets the team's internal deadline: Wednesday Aug 5, midnight (end of day, Phoenix). The funder's hard deadline is Aug 8, 11:59 PM Anywhere-on-Earth — confirm exact time in the application portal; do not let the countdown be the single source of truth.</p>
 </footer>
