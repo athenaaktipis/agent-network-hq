@@ -9,8 +9,9 @@ page the whole team looks at. Your job in this repo is to keep that page's DATA 
 
 ## Deadlines (do not confuse these)
 
-- **Internal team deadline:** Wednesday **Aug 5, 2026, midnight end-of-day Phoenix**.
-  The page countdown targets `Date.UTC(2026, 7, 6, 7, 0, 0)` — never change this target.
+- **Working deadline:** Thursday **Aug 6, 2026, midnight end-of-day Phoenix** (moved from Aug 5,
+  which passed with the draft over word limits). The page countdown targets
+  `Date.UTC(2026, 7, 7, 7, 0, 0)`. Change this only when Athena moves the working deadline.
 - **Funder hard deadline:** **Aug 8, 2026, 11:59 PM Anywhere-on-Earth** (= Aug 9, 11:59 UTC).
 - If today is after Aug 9, 2026 (UTC), the sprint is over: don't sync, just say so.
 

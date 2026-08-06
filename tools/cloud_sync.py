@@ -276,6 +276,10 @@ def main():
         empty.append("Budget")
     empty.append("Milestones")
     started = sum(1 for w, _ in counts.values() if w > 0) + (1 if budget_started else 0)
+    # total words that must come out of over-limit sections
+    over_names = [l for _k, l, _n in SECTIONS if counts.get(l, (0, None))[1]
+                  and counts[l][0] > counts[l][1]]
+    over = sum(max(0, counts[l][0] - counts[l][1]) for l in over_names)
     total_sections = len(SECTIONS) + 2
 
     page = open(PAGE, encoding="utf-8").read()
@@ -297,6 +301,12 @@ def main():
         "EDGES": build_edges(people),
         "FIGCAP": f'    <div class="figcap">{build_figcap(people)}</div>',
         "VERIFIED": build_verified(data),
+        "TILECUT": (
+            f'    <div class="value">{over if over else 0}'
+            f'<span style="font-size:16px;color:var(--muted)"> words</span></div>\n'
+            f'    <div class="sub">'
+            f'{"over in " + ", ".join(over_names) if over_names else "every section inside its limit"}'
+            f'</div>'),
     }
 
     # Apply the substantive regions first. If none of them moved, the page is

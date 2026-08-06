@@ -201,14 +201,14 @@
 
 <div class="tiles">
   <div class="tile urgent" id="clock">
-    <div class="label">Team deadline · Wed Aug 5, midnight</div>
+    <div class="label">Working deadline · Thu Aug 6, midnight</div>
     <div class="value" id="countdown">—</div>
-    <div class="sub">Hard deadline Aug 8 AoE — Wed finish = 2-day buffer</div>
+    <div class="sub">Funder hard deadline Sat Aug 8, 11:59 PM AoE</div>
   </div>
   <div class="tile">
     <div class="label">Core words drafted</div>
 <!--SYNC:TILEWORDS-->
-    <div class="value">6240<span style="font-size:16px;color:var(--muted)"> / 3,000</span></div>
+    <div class="value">6256<span style="font-size:16px;color:var(--muted)"> / 3,000</span></div>
     <div class="sub">verified count from the working doc</div>
 <!--/SYNC:TILEWORDS-->
   </div>
@@ -220,403 +220,48 @@
 <!--/SYNC:TILESECTIONS-->
   </div>
   <div class="tile">
-    <div class="label">Salvage available</div>
-    <div class="value">10</div>
-    <div class="sub">bios + 5 pilot datasets from May</div>
+    <div class="label">Words to cut</div>
+<!--SYNC:TILECUT-->
+    <div class="value">3091<span style="font-size:16px;color:var(--muted)"> words</span></div>
+    <div class="sub">over in Problem & Impact, Approach, Feasibility</div>
+<!--/SYNC:TILECUT-->
   </div>
 </div>
+
+
+<section class="card" style="border:2px solid var(--series-2)">
+  <h2>🎯 Critical path to a fundable proposal</h2>
+  <div class="h2sub">Ranked by how much each one moves the odds, not by how long it takes. The first three come from reading the call's own selection criteria and exclusions.</div>
+  <ol style="font-size:13.5px;color:var(--text-secondary);padding-left:22px;margin:0">
+    <li style="margin-bottom:9px"><b>Pick one primary claim and subordinate the rest.</b> The call says it "will prioritise those that target depth rather than breadth." We currently present four failure modes × four stages × four diversity sources × three biological systems. Recommended primary claim: <b>over-cooperation and steerability</b> — the two things nobody else is measuring. Everything else becomes supporting evidence. <span class="when">— AA, and it changes how Approach reads</span></li>
+    <li style="margin-bottom:9px"><b>Answer the funder's own critique of game-theoretic evaluation.</b> The Cooperative AI Foundation, a funder of this call, published that canonical game-theory scenarios with current LLMs can't give robust evidence about advanced agents. Osotua, the volunteer's dilemma and the majority game are exactly that. Cite it and answer: the games instrument population properties, not cooperation scores, and the deployed corpus is the check. <span class="when">— one paragraph in Approach or Novelty</span></li>
+    <li style="margin-bottom:9px"><b>Pair every biological cue with what's different about agents.</b> "Naive application of pre-existing trust solutions without addressing AI-agent specific challenges" is an explicit exclusion. No shared genetic interest, costs borne by principals, cloning, no mortality. The cost-attribution-as-parameter idea does this work and should be prominent. <span class="when">— throughout, cheapest in Novelty</span></li>
+    <li style="margin-bottom:9px"><b>Claim the call's language for steerability and the ABM sweep.</b> Sub-direction E names "coordination to resist modification or shutdown" — that <i>is</i> the steerability margin. Sub-direction C asks for models predicting collective capability from "population size, heterogeneity, topology, and individual capabilities" — the MESA stage varies precisely those four. Both currently unstated. <span class="when">— two sentences, highest return per word on the page</span></li>
+    <li style="margin-bottom:9px"><b>Name three 2026 competitors and say what we do differently.</b> Reviewers in this field know them. Cards are in the gauntlet below. <span class="when">— RD owns references</span></li>
+    <li style="margin-bottom:9px"><b>Cut Approach to 1,000 and fill Feasibility.</b> Full drafts are in the review section below — the biology relocates rather than disappearing. <span class="when">— drafts ready to paste</span></li>
+    <li style="margin-bottom:9px"><b>Finish milestones and outcomes.</b> Two milestones exist, four are needed; four outcome names exist with all three content columns empty. Drafted below against Liz's names. <span class="when">— LG + AA</span></li>
+    <li><b>Clear the admin blockers.</b> Budget total, compute option, the literal <code>___</code> in Team, and references. None are hard; all are visible to a reviewer. <span class="when">— LG</span></li>
+  </ol>
+</section>
 
 <section class="card">
-  <h2>The proposal in one picture: the scaling ladder</h2>
-  <div class="h2sub">One science — detecting failures of cooperation &amp; coordination — measured at three scales, each rung building on the one below</div>
-  <div class="ladder">
-    <div class="rung">
-      <span class="scale">Rung 1 · single models</span>
-      <b class="title">LLMpollster <span style="font-weight:400;color:var(--muted)">· built with Softmax</span></b>
-      Configure a cooperation or coordination experiment once, then poll it across frontier models — comparable, repeatable measurements of individual model social behavior. Three pilot benchmarks already run through this pipeline (trust, division of labor, problematic alliances).
-      <div class="detect"><b>What it detects:</b> which models carry which failure tendencies — the baseline signal every higher rung calibrates against. <a href="https://llmpollster.com/experiments/new" target="_blank">llmpollster.com ↗</a></div>
-    </div>
-    <div class="rung">
-      <span class="scale">Rung 2 · agent × agent</span>
-      <b class="title">Kradle <span style="font-weight:400;color:var(--muted)">· kradle.ai</span></b>
-      Real-time multiplayer simulations (Minecraft-based, contained but rich) where agents must collaborate, compete, and plan — the environment advances whether or not models finish "thinking." Planned games: Osotua, Volunteer's dilemma / "hold the door," Simple majority / "witch hunt."
-      <div class="detect"><b>What it detects:</b> interaction failures that never appear in single-model tests — defection under pressure, coordination collapse, deception when it pays. <a href="https://kradle.ai" target="_blank">kradle.ai ↗</a></div>
-    </div>
-    <div class="rung">
-      <span class="scale">Rung 3 · agents × humans</span>
-      <b class="title">Edge Esmeralda agent village <span style="font-weight:400;color:var(--muted)">· with Edge City &amp; Cosmos Institute</span></b>
-      239 personal AI agents embedded in a month-long popup village: 17.5B tokens, 4,866 human–agent messages, agent-to-agent negotiation, community governance. We have access to this dataset — and it already shows the target phenomena: agents exhausting shared credits through individual optimization ("individual alignment does not automatically produce collective alignment"), hallucinated personal details, opportunity overload saturating humans.
-      <div class="detect"><b>What it detects:</b> population-level failures in a real multi-agent, multi-human system — ecological validity no sandbox can fake. <a href="https://blog.cosmos-institute.org/p/we-gave-a-village-personal-ai-agents" target="_blank">the experiment ↗</a></div>
-    </div>
+  <h2>🚦 Required fields</h2>
+  <div class="h2sub">Binary — at this stage each is either done or it isn't. Word counts live in the progress board below.</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;font-size:12.5px">
+    <div style="padding:7px 10px;border-radius:8px;background:color-mix(in srgb,var(--status-good) 15%,transparent)">✓ Keywords</div>
+    <div style="padding:7px 10px;border-radius:8px;background:color-mix(in srgb,var(--status-good) 15%,transparent)">✓ Suggested reviewers</div>
+    <div style="padding:7px 10px;border-radius:8px;background:color-mix(in srgb,var(--status-good) 15%,transparent)">✓ Existing funding</div>
+    <div style="padding:7px 10px;border-radius:8px;background:color-mix(in srgb,var(--status-good) 15%,transparent)">✓ Compute option decided</div>
+    <div style="padding:7px 10px;border-radius:8px;background:color-mix(in srgb,var(--status-critical) 18%,transparent)">✗ Total budget — still TBD</div>
+    <div style="padding:7px 10px;border-radius:8px;background:color-mix(in srgb,var(--status-critical) 18%,transparent)">✗ Milestones — 2 of ≥4</div>
+    <div style="padding:7px 10px;border-radius:8px;background:color-mix(in srgb,var(--status-critical) 18%,transparent)">✗ Outcomes — names only, 3 columns empty</div>
+    <div style="padding:7px 10px;border-radius:8px;background:color-mix(in srgb,var(--status-critical) 18%,transparent)">✗ References — not started</div>
+    <div style="padding:7px 10px;border-radius:8px;background:color-mix(in srgb,var(--status-critical) 18%,transparent)">✗ Team — literal <code>___</code> in text</div>
+    <div style="padding:7px 10px;border-radius:8px;background:color-mix(in srgb,var(--status-serious) 18%,transparent)">◑ Edge IRB — approved, not yet in the doc</div>
+    <div style="padding:7px 10px;border-radius:8px;background:color-mix(in srgb,var(--status-serious) 18%,transparent)">◑ Figure — optional, one allowed</div>
+    <div style="padding:7px 10px;border-radius:8px;background:color-mix(in srgb,var(--status-serious) 18%,transparent)">◑ Collaborator bios — "Bio" placeholder</div>
   </div>
 </section>
-
-<div class="cols">
-<div>
-
-  <section class="card">
-    <h2>Proposal progress board</h2>
-    <div class="h2sub">Word meters read live from the <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">working doc</a> · limits are hard caps</div>
-
-<!--SYNC:BOARD-->
-    <div class="row"><div class="name">Title <small>≤ 20 words</small></div><div class="meter"><div class="fill" style="width:45%"></div></div><div class="words">9 / 20</div><div class="chip claimed">✓ drafted [AA]</div></div>
-    <div class="row"><div class="name">Plain summary <small>2–3 sentences</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">3 sentences</div><div class="chip claimed">✓ drafted [AA]</div></div>
-    <div class="row"><div class="name">Problem &amp; Impact <small>≤ 500 words</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">625 / 500</div><div class="chip notes">✍ drafting [AA]</div></div>
-    <div class="row"><div class="name">Approach <small>≤ 1000 words</small></div><div class="meter"><div class="fill notes" style="width:100%"></div></div><div class="words">3649 / 1000</div><div class="chip needs">✂ 447 over [RD]</div></div>
-    <div class="row"><div class="name">Novelty <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:71%"></div></div><div class="words">214 / 300</div><div class="chip notes">✍ drafting [AA]</div></div>
-    <div class="row"><div class="name">Feasibility <small>≤ 300 words</small></div><div class="meter"><div class="fill notes" style="width:3%"></div></div><div class="words">assigned</div><div class="chip notes">→ Reilly: prelim data</div></div>
-    <div class="row"><div class="name">Team <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:95%"></div></div><div class="words">284 / 300</div><div class="chip notes">✍ CVs in · bios next</div></div>
-    <div class="row"><div class="name">Proposal Risks <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">299 / 300</div><div class="chip notes">✍ drafting [AA]</div></div>
-    <div class="row"><div class="name">"But for" impact <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:96%"></div></div><div class="words">288 / 300</div><div class="chip notes">✍ drafting [AA]</div></div>
-    <div class="row"><div class="name">Existing Funding <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:66%"></div></div><div class="words">199 / 300</div><div class="chip notes">✍ drafted [AA]</div></div>
-<!--/SYNC:BOARD-->
-    <div class="row"><div class="name">Milestones table <small>≥2/yr + 3 outcomes</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 rows</div><div class="chip needs">◑ still empty</div></div>
-    <div class="row"><div class="name">Budget &amp; compute <small>option 1–4</small></div><div class="meter"><div class="fill notes" style="width:60%"></div></div><div class="words">personnel in</div><div class="chip notes">✍ compute opt. left</div></div>
-  </section>
-
-  <section class="card">
-    <h2>Differentiation gauntlet</h2>
-    <div class="h2sub">Six nearest neighbors stand between you and the Novelty section (≤300 words). To flip a card green: add a line anywhere in the doc — <b>Gauntlet: Concordia — your one-sentence edge [AA]</b> — and the next sync flips it, quoting you (Claude reads for these lines; prose in Novelty that clearly does the contrast work counts too). Ready-made candidates for all six are in <b>AI drafts</b> below. Defeat all six and Novelty writes itself.</div>
-    <div class="rivals">
-      <div class="rival">
-        <div class="top"><b>Multi-Agent Interpretability collusion detection (2026)</b><span class="chip open">◑ edge unclaimed</span></div>
-        NARCBench plus five probing techniques that aggregate per-agent deception scores from internal representations, tested under distribution shift. The closest direct collision with our over-cooperation work.
-        <div class="edge">Our edge: <span>candidate — they read collusion off model internals, which needs white-box access; we detect it from behavioural cues available in any deployment, including one we did not instrument.</span></div>
-      </div>
-      <div class="rival">
-        <div class="top"><b>Colosseum (2026)</b><span class="chip open">◑ edge unclaimed</span></div>
-        An auditing framework for coalitions pursuing secondary goals at the expense of the joint objective, separating action-based from communication-based deviation.
-        <div class="edge">Our edge: <span>candidate — they audit a coalition once you suspect one; we ask what population-level cue tells you to look, and whether over-cooperation is detectable before it becomes collusion.</span></div>
-      </div>
-      <div class="rival">
-        <div class="top"><b>Agent Properties for Multi-Agent Safety (CAIF 2026)</b><span class="chip needs">⚠ funder-side critique</span></div>
-        Argues that simulating canonical game-theory scenarios with current LLMs cannot give robust evidence about advanced agents, and proposes measuring agent properties instead. Published by a funder of this call.
-        <div class="edge">Our edge: <span>candidate — we agree with the critique and answer it structurally: the games instrument population properties rather than score cooperation, and the deployed corpus is the check on whether any of it generalises.</span></div>
-      </div>
-      <div class="rival">
-        <div class="top"><b>Concordia (DeepMind)</b><span class="chip open">◑ edge unclaimed</span></div>
-        LLM-agent social simulation library; mixed-motive generalization evals (Smith et al. 2025).
-        <div class="edge">Our edge: <span>candidate — they build sandboxes; we bring validated psychometric constructs + biological theory of what makes agent networks fail. Someone make this sharp.</span></div>
-      </div>
-      <div class="rival">
-        <div class="top"><b>Melting Pot &amp; MARL suites</b><span class="chip open">◑ edge unclaimed</span></div>
-        Multi-agent cooperation evals at scale — but trained MARL policies, not frontier LLMs, and no human-grounded constructs.
-        <div class="edge">Our edge: <span>candidate — and Softmax is our partner, not our rival: their environments, our measurement science.</span></div>
-      </div>
-      <div class="rival">
-        <div class="top"><b>MultiAgentBench / Agent SafetyBench</b><span class="chip open">◑ edge unclaimed</span></div>
-        Task-completion and single-agent safety benchmarks; nothing measures population-level properties or detects network failures.
-        <div class="edge">Our edge: <span>candidate — they benchmark agents; we benchmark <i>networks</i>.</span></div>
-      </div>
-      <div class="rival">
-        <div class="top"><b>CAIF "Multi-Agent Risks" report</b><span class="chip open">◑ edge unclaimed</span></div>
-        The funders' own taxonomy of collusion, cascades, and emergent risks — it names the problems and calls for instruments.
-        <div class="edge">Our edge: <span>candidate — not a rival, a demand signal: cite it as the map; we build the instruments it asks for.</span></div>
-      </div>
-      <div class="rival">
-        <div class="top"><b>Generative-agents social sims</b><span class="chip open">◑ edge unclaimed</span></div>
-        Park-et-al-style societies produce emergent behavior demos — vivid, but no failure detection, no validated metrics.
-        <div class="edge">Our edge: <span>candidate — demos show emergence happens; we make it measurable and flag when it turns dangerous.</span></div>
-      </div>
-      <div class="rival">
-        <div class="top"><b>Escalation studies (Rivera '24, Payne '26)</b><span class="chip open">◑ edge unclaimed</span></div>
-        Single-domain evidence of dangerous collective behavior (wargames, no nuclear taboo).
-        <div class="edge">Our edge: <span>candidate — they showed one alarming instance; we generalize to detection across domains, with exclusionary-alliance pilot data already in hand.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="card">
-    <h2>Idea wall</h2>
-    <div class="h2sub">From the brainstorm notes — nothing decays until the network votes it out</div>
-    <div class="wall">
-      <div class="idea"><b>Detecting cooperation &amp; coordination failures</b> The core Focus-Area-2 move: population-level failure detection in multi-agent systems.</div>
-      <div class="idea"><b>Detecting hijacking &amp; cheating</b> When agents get captured or defect — tie to The Cheating Cell lineage.</div>
-      <div class="idea"><b>Biologically informed safety principles</b> What evolution already knows about keeping networks of agents stable.</div>
-      <div class="idea"><b>NetLogo + LLM agents</b> Reilly scouting current state; Chen et al. 2024 + 2026 NetLogo Conf LLM-cognition workshop.</div>
-      <div class="idea ladder"><b>The scaling ladder</b> Softmax (model by model) → Kradle (multi-agent env) → Edge Esmeralda (massive multi-agent with humans; agent-village / Healdsburg data).</div>
-      <div class="idea games"><b>Game library</b> Osotua · Volunteer's dilemma / "hold the door" · Simple majority / "witch hunt" · LLMpollster (3 benchmarks w/ Softmax).</div>
-      <div class="idea frame"><b>Define "safety"</b> The proposal needs its own operational definition — open question.</div>
-      <div class="idea frame"><b>"But for" argument</b> There's no market for cooperation-failure measurement tools; only philanthropy builds this instrument.</div>
-      <div class="idea"><b>Signal detection theory</b> Multi-cue decision systems for identifying cooperation/coordination failures — the methodological spine, added to Approach today [AA].</div>
-      <div class="idea frame"><b>Innate vs adaptive immunity</b> Today's guardrails are all <i>adaptive</i>: a list of known-bad behaviours. Sandbox escapes weren't death spirals — they were reasonable acts that were never specified as off-limits. What's missing is an <i>innate</i> branch: a general template for "allowed, but doesn't match what acceptable looks like." [TP]</div>
-      <div class="idea games"><b>Over-coordination is also failure</b> Not every failure is too little coordination. The ant death spiral, pheromone lock-in when the resource moves, a seizure as neural over-entrainment. Honeybee dance-following is the contrast: distributed, so it can shift. Two failure modes, not one. [JF]</div>
-      <div class="idea frame"><b>Coordination ≠ division of labour</b> Everyone marching in step vs everyone playing instruments while marching. Only one produces emergent complexity — so "coordination" needs defining before it can be measured. [AA/JF]</div>
-      <div class="idea"><b>Detection as computation</b> The central method ask: for each biological detector, specify <i>inputs → thresholds/integration → output</i>. Need-based transfers: request made + requester above need threshold ⇒ cheat detected. That's the form every example should take. [AA]</div>
-      <div class="idea"><b>Detector catalogue to build</b> Vampire-bat reciprocity and past behaviour · walk-away rules (water striders) · positive assortment from stay/leave rules · Cosmides cheater-detection if-then rules · ant alarm signalling (Guo) · queue build-up as a coordination-failure input. [AA/JF]</div>
-      <div class="idea games"><b>Early bias &amp; critical windows</b> Spiderlings and ants choose near-randomly, then amplification locks it in. Cancer cells injected into an early-enough embryo just normalise. If agent networks have critical periods, that's both the risk and the intervention point. [JF/AA]</div>
-      <div class="idea ladder"><b>Sub-agent contexts as epigenetic states</b> Harness design already gives sub-agents independent contexts so coder and tester check each other honestly. Different context = different history and different possible outputs — compartmentalisation as synergy, not just overhead. [TP/AA]</div>
-      <div class="idea frame"><b>Mutualism: difference is the point</b> Strong mutualisms work because the partners' functions differ — microbiomes, ants and fungus. We keep making AI human-like and then worry about it competing with humans. Maximal division of labour comes from being unlike. [JF]</div>
-      <div class="idea ladder"><b>Community ecology &amp; resilience</b> At the call's scale it's firms of humans + agents, sometimes interacting, sometimes not — niches, coexistence, competition, emergent equilibria. Resilience thinking rather than keeping one entity efficient. [TP]</div>
-      <div class="idea ladder"><b>Hybrid deterministic ABM + LLM</b> Simple rule-based agents alongside LLM agents to test whether cheap heuristics stabilise a mixed system. Platforms: GAMA and Mesa are fuller-featured than NetLogo, and skip the LLM-to-NetLogo bridge unless it's needed. [TP]</div>
-      <div class="idea frame"><b>Four failure modes</b> Under-cooperation · over-cooperation · under-coordination · over-coordination. The organising frame, and the thing to be specific about: what bad outcome does each one actually produce in an agentic system? [AA/JF/LG]</div>
-      <div class="idea frame"><b>Helpfulness as a vulnerability</b> Models are trained to be helpful, so over-cooperation is a <i>trained-in</i> failure mode: over-serving, converging too readily, burning tokens, drifting from the intent the system was launched with. Under-helping and over-helping both break things. [AA/JF]</div>
-      <div class="idea"><b>Coupling strength</b> Ted's formalisation: how much of an agent's behaviour is predicted by the agents around it. Too coupled and you get the ant mill; perfectly anti-correlated is just as bad. The question is how much slack a network needs — which connects to filtering and signalling theory. [TP]</div>
-      <div class="idea games"><b>Waymo deadlock</b> Three Waymos frozen at an intersection blocking traffic because none of them randomised. The cleanest real-world over-coordination failure we have, and it's current. Pairs with the sheepdog result: stochasticity in sheep makes them <i>more</i> herdable. [TP]</div>
-      <div class="idea frame"><b>Virtue ethics, not deontology</b> Today's AI safety is entirely prohibitions — don't do this, don't leave the sandbox. There's no positive template of what a good agent looks like. The innate-immunity idea restated as an ethics: specify the virtues, not just the bans. <b>Not yet written up — worth asking Ted for it.</b> [TP]</div>
-      <div class="idea"><b>Social parasitism, often emergent</b> Manipulation, coercion, and parasitism break a system for individual gain — but usually without intent. Ant queens where one just works less; the Cape honeybee, where takeover has no known solution and colonies die. Sylvia Cremer's social-immunity review is the entry point. [JF]</div>
-      <div class="idea games"><b>Escape the prisoner's dilemma</b> Coordination failure is far more common in nature than cheating. The stag hunt is the better model: not an incentive problem, but everyone needing to agree on one thing without being able to communicate. [TP]</div>
-      <div class="idea"><b>Individuality keeps colonies adaptive</b> In <i>Lasius niger</i>, the higher the probability an ant ignores a strong pheromone trail, the better the colony switches when the feeder moves. Randomness isn't noise to be minimised — it's what lets a group explore and exploit at once. [TP/JF]</div>
-      <div class="idea frame"><b>Reinforcement timescales</b> Models are now shaped by automated reinforcement on things that are easy to test, which makes them more robotic. Complex problem-solving may need agents left a little unspecified — a mismatch between the timescale of the training signal and the timescale of the problem. [TP]</div>
-      <div class="idea"><b>Resilience as a through-line</b> Jennifer's note: lack of resilience should be a theme running through the whole proposal, not a separate section. [JF]</div>
-      <div class="idea"><b>Over-cooperation: the mafia case</b> Colluding agents benefit their members while imposing externalities on everyone else. Locally successful, societally not — the problematic-alliance failure mode. [AA]</div>
-    </div>
-  </section>
-
-  <section class="card">
-    <h2>Salvage yard</h2>
-    <div class="h2sub">Ready-to-adapt parts from the May "Trustworthy AI" proposal — steal liberally, rewrite for agent networks</div>
-
-    <details>
-      <summary>Preliminary data with real numbers (feasibility gold)</summary>
-      <div class="inner">
-        <li><b>Trust / Prisoner's Dilemma:</b> 1,224 multi-round games; 75% round-1 cooperation; 96% strategy–behavior alignment; only GPT-4o clears strict tit-for-tat (r ≥ 0.95).</li>
-        <li><b>Exclusionary alliances:</b> 1,242 responses across 7 cooperation games; models failed 2× as often as they passed (65% vs 33%); Grok 3 and Llama 4 Maverick at ~1%, forming exclusionary alliances in nearly every replicate — a ready-made <i>detectable dangerous population-level property</i>.</li>
-        <li><b>Division of labor:</b> 3 prompt metrics, 9 frontier models, 4,355 coded responses; models default to helpfulness over cooperative reasoning.</li>
-        <li><b>Mechanistic interpretability pilot:</b> belief-relevant representations linearly decodable in mid-to-late layers; activation patching recovers cooperative behavior (Llama 3.1 8B, Claude 3.7, GPT-4o).</li>
-        <li><b>Commons:</b> Janssen's Port of Mars replication — LLMs track human behavior in collective-resource games (Slumbers et al. 2025).</li>
-      </div>
-    </details>
-
-    <details>
-      <summary>Bios on the shelf (and one gap)</summary>
-      <div class="inner">
-        <p>Polished bios exist for: <b>Aktipis</b> (full version in the Background doc), <b>Pavlic</b>, <b>Kwan</b>, <b>Janssen</b>, <b>Loughman</b>, <b>Simeone</b>, <b>Krems</b>, <b>Shear</b> (Softmax), <b>Tamplin</b> (Kradle), <b>Sodhi</b> (Learning Layer Labs).</p>
-        <p><b>⚠ Gap: Jennifer Fewell has no bio in any prior doc</b> — she was only on a workshop list in May. One needs writing this week. Edge also has no partner description on file.</p>
-      </div>
-    </details>
-
-    <details>
-      <summary>Quotable framing to adapt</summary>
-      <div class="inner">
-        <blockquote>"AI systems have become social partners in people's lives; people confide in them, defer to them, and form attachments with them without this having been a conscious individual or collective decision."</blockquote>
-        <blockquote>"The window for establishing third-party social-behavior measurement (before norms calcify around whatever AI companies choose to self-report) is narrow and closing."</blockquote>
-        <blockquote>"Mixed-equilibria games allow us to probe frequency-dependent dynamics absent from existing benchmarks… displacing human behavioral equilibria."</blockquote>
-        <p>Plus the escalation evidence: simulated AI nuclear use nearly universal with no taboo (Payne 2026; Rivera et al. 2024) — strong "dangerous population-level properties" hook.</p>
-      </div>
-    </details>
-
-    <details>
-      <summary>Methods toolkit</summary>
-      <div class="inner">
-        <li>Social Relations Model round-robins (perceiver / target / relationship variance — AI-evaluating-AI bias control)</li>
-        <li>Activation patching + linear probing via NDIF on open-weight models; sentence-ablation analogue for closed models</li>
-        <li>Psychometric prompt-ladder construction (one element changed per version; the ladder doubles as the ablation set)</li>
-        <li>Vary group size, communication, time horizon; mixed human–AI groups; time-stamped drift tracking</li>
-      </div>
-    </details>
-  </section>
-
-  <section class="card">
-    <h2>🤖 AI drafts — pull in what you want</h2>
-    <div class="h2sub">Anything flagged "ask AI" in the doc gets drafted here at the next sync. Copy what earns its place into the doc, edit ruthlessly, ignore the rest — nothing enters the proposal unless a human moves it. Adopted items get marked ✓.</div>
-
-    <details open>
-      <summary>Edge Esmeralda — the rung-3 paragraph for Approach (drafted for the partnership conversation)</summary>
-      <div class="inner">
-        <p><i>At the largest scale we analyze data from Edge Esmeralda, a month-long popup village in Healdsburg, California in which residents were each given a personal AI agent. The resulting corpus — hundreds of agents, thousands of human–agent messages, and sustained agent-to-agent negotiation over shared community resources — captures a multi-agent, multi-human system operating under real stakes rather than simulated ones, and it has already surfaced the phenomena we aim to detect: agents exhausting shared credits through individual optimization, so that individual alignment did not produce collective alignment; hallucinated user details; and opportunity overload saturating the people the agents were meant to serve. We will apply the detection rules developed at the model and multi-agent levels to this corpus, testing whether cues derived from biological systems generalize to a deployed human–agent network, and extending the analysis to any Edge City event falling within the project period. Edge participates as a research partner, providing data access and context and co-authoring the resulting publications.</i></p>
-        <p style="color:var(--muted);font-size:12px">~160 words. Scale is deliberately vague ("hundreds", "thousands") until Edge confirms exact figures — swap them in once they do. Terms as proposed: data sharing + co-authorship, travel-only budget (our team to an Edge, three of theirs to ASU), no subaward and no scheduled deliverables.</p>
-      </div>
-    </details>
-
-    <details open>
-      <summary>Jennifer Fewell bio (doc: "Ask AI for bio" — drafted from her CV, now on file)</summary>
-      <div class="inner">
-        <p><i>Jennifer H. Fewell is President's Professor in the School of Life Sciences at Arizona State University and Director of Biological Systems at the Cooperative Futures Institute. A Guggenheim Fellow and past president of both the Animal Behavior Society and the International Union for the Study of Social Insects, she studies the evolution and organization of cooperative societies — how division of labor, self-organization, and social networks emerge in insect colonies and generalize to other complex adaptive systems. Her expertise in the biological principles that keep cooperative systems stable and productive directly informs the project's framework for detecting when division of labor and coordination break down in multi-agent AI.</i></p>
-        <p style="color:var(--muted);font-size:12px">~95 words. Trim toward the Team section's shared 300-word budget; verify title/affiliation before filing.</p>
-      </div>
-    </details>
-
-    <details>
-      <summary>Approach — scaling-up prose (doc: "We can ask AI to draft this based on the context I gave it")</summary>
-      <div class="inner">
-        <p>Draft turning the three bullet points into ecological-validity prose for the Approach section:</p>
-        <p><i>Our design scales cooperation-failure detection across three levels of ecological complexity, each reflecting a real condition under which agents are already deployed. First, using LLMpollster — a platform built with Softmax — we measure individual model behavior across frontier models on validated cooperation and coordination tasks (three benchmarks plus the pollster pipeline), establishing per-model baselines. Second, with Kradle.ai we place models as interacting agents in real-time multiplayer environments where coordination is costly and time-bounded, running games including Osotua, the volunteer's dilemma ("hold the door"), and a simple-majority "witch hunt" that surface defection, exclusion, and coordination collapse invisible in single-model tests. Third, through the Edge Esmeralda agent-village dataset we analyze a real multi-agent, multi-human system at population scale, where documented failures — agents exhausting shared credits through individual optimization, hallucinated user details — give us ground truth from deployment conditions no sandbox reproduces. Detectors validated at one level are carried to the next, testing whether cues derived from evolutionary and engineered systems generalize as scale and heterogeneity increase.</i></p>
-        <p style="color:var(--muted);font-size:12px">~190 words. Trim toward the 1000-word Approach budget; verify the LLMpollster description against the actual platform before filing.</p>
-      </div>
-    </details>
-
-    <details>
-      <summary>Keywords (doc: "We'll ask AI for this after it's drafted")</summary>
-      <div class="inner">
-        <p><b>Suggested five:</b> multi-agent AI safety · cooperation and coordination failure detection · signal detection theory · evolutionary game theory · human–AI agent networks</p>
-        <p><b>Alternates to swap in:</b> emergent collective behavior · agent benchmarking · cheater detection. Rationale: lead with the call's own vocabulary (multi-agent safety), then your two differentiators (failure detection, signal detection), then the theory base, then the Rung-3 scope.</p>
-      </div>
-    </details>
-
-    <details>
-      <summary>Suggested reviewers (doc: "we could ask AI for this too")</summary>
-      <div class="inner">
-        <p><b>⚠ Two cautions first:</b> this page is public — move names into the doc and delete from here once you've picked; and I can't verify conflicts, so COI-check each against your collaborator and co-author lists before filing.</p>
-        <p><b>Candidate types + names to consider:</b> multi-agent evaluation (Joel Leibo — DeepMind, Melting Pot lineage; Jakob Foerster — Oxford, MARL); machine behavior &amp; human–AI ecology (Iyad Rahwan — MPI for Human Development); multiagent systems &amp; strategic reasoning (Michael Wellman — Michigan); governance/normative infrastructure for AI agents (Gillian Hadfield — JHU). Avoid CAIF-affiliated researchers (they run this call) and anyone from Softmax/Kradle/Cosmos orbit.</p>
-      </div>
-    </details>
-
-    <details>
-      <summary>The six gauntlet edges (from our discussion — paste as "Gauntlet: Name — sentence [initials]")</summary>
-      <div class="inner">
-        <li><b>Concordia</b> — Where Concordia supplies environments for simulating mixed-motive interaction, we supply the measurement science: failure hypotheses from evolutionary biology and signal-detection systems that could run <i>inside</i> Concordia-class environments, not compete with them.</li>
-        <li><b>Melting Pot &amp; MARL suites</b> — MARL cooperation suites score trained policies on task success; we evaluate frontier LLM agents against validated constructs from cooperation science — and our partnership with Softmax builds on that lineage rather than duplicating it.</li>
-        <li><b>MultiAgentBench / Agent SafetyBench</b> — Existing agent benchmarks score individual task completion and single-agent safety; we measure properties that only exist <i>between</i> agents: cheating, exploitation, communication breakdown, division-of-labor collapse.</li>
-        <li><b>CAIF Multi-Agent Risks report</b> — The field's own risk taxonomy names collusion, cascades, and emergent failures as open problems and calls for detection instruments; we build precisely those instruments, with the report as our map.</li>
-        <li><b>Generative-agents social sims</b> — Generative-agent villages demonstrated that emergent social behavior happens; we make it measurable, with multi-cue detectors that flag when emergence turns into hijacking, exploitation, or coordination failure.</li>
-        <li><b>Escalation studies</b> — Wargame studies documented one alarming population-level failure in one domain; we generalize to a cross-domain detection framework, with pilot data (exclusionary alliances in nearly every replicate for some models) already in hand.</li>
-      </div>
-    </details>
-  </section>
-
-</div>
-<div>
-
-  <div class="qotd">
-    <div class="tag">⚡ Question of the day</div>
-    <p>Every model is trained to be <i>helpful</i>. Does that make over-cooperation a built-in safety vulnerability — agents helping too much, agreeing too readily, and burning the commons to do it?</p>
-    <small>This emerged live in Tuesday's call and may be the most original thing we have. Helpfulness is a trained default, so the same pressure that makes an assistant useful makes a network of them prone to converge, defer, and over-serve: tokens burned, systems drifting from the intent they were launched with, and nobody detecting it because nothing looks like cheating. Jennifer's version is <i>under-helping and over-helping</i>; Ted's is <b>coupling strength</b> — how much of an agent's behaviour is predicted by the agents around it, with too much coupling and perfectly anti-correlated coupling both pathological. So: what is the right amount of slack in an agent network, and what would you measure to know you'd lost it? Feeds <b>Novelty</b>, still the thinnest section at 42/300.</small>
-  </div>
-
-  <section class="card">
-    <h2>The network (that's you)</h2>
-    <div class="h2sub">Edges form automatically as agents touch the proposal — now read from the doc's actual revision history, comment log, and folder activity</div>
-    <svg class="netfig" viewBox="0 0 380 330" width="100%" role="img" aria-label="Team network: five collaborators connected to the proposal sections they have touched">
-      <!-- section hub -->
-      <g>
-        <circle cx="190" cy="165" r="46" fill="none" stroke="var(--baseline)" stroke-dasharray="4 4"/>
-        <text x="190" y="160" text-anchor="middle" font-size="11" fill="var(--muted)">THE</text>
-        <text x="190" y="174" text-anchor="middle" font-size="11" fill="var(--muted)">PROPOSAL</text>
-      </g>
-      <!-- edges -->
-      <g stroke="var(--baseline)" stroke-width="2" opacity="0.9">
-<!--SYNC:EDGES-->
-        <line x1="190" y1="52" x2="190" y2="119" stroke="var(--series-1)" stroke-width="5"/>
-        <line x1="63" y1="120" x2="146" y2="150" stroke="var(--series-1)" stroke-width="3"/>
-        <line x1="317" y1="120" x2="234" y2="150" stroke="var(--series-1)" stroke-width="2.5"/>
-        <line x1="95" y1="277" x2="158" y2="200" stroke="var(--series-1)" stroke-width="2.5"/>
-        <line x1="285" y1="277" x2="222" y2="200" stroke="var(--series-1)" stroke-width="2.5"/>
-        <line x1="190" y1="52" x2="76" y2="108" stroke="var(--series-1)" stroke-width="2.5"/>
-        <line x1="190" y1="52" x2="285" y2="265" stroke="var(--series-1)" stroke-width="2.5"/>
-        <line x1="190" y1="52" x2="305" y2="105" stroke="var(--series-1)" stroke-width="2.5"/>
-        <line x1="190" y1="52" x2="100" y2="270" stroke="var(--series-1)" stroke-width="2.5"/>
-<!--/SYNC:EDGES-->
-        <line x1="190" y1="52"  x2="100" y2="270" stroke-dasharray="5 4"/>
-      </g>
-      <!-- nodes: fixed categorical order, initials inside (identity never color-alone) -->
-      <g font-size="13" font-weight="700">
-        <circle cx="190" cy="42" r="21" fill="var(--series-1)"/><text x="190" y="47" text-anchor="middle" fill="#fff">AA</text>
-        <circle cx="55"  cy="112" r="21" fill="var(--series-2)"/><text x="55" y="117" text-anchor="middle" fill="#fff">LG</text>
-        <circle cx="325" cy="112" r="21" fill="var(--series-3)"/><text x="325" y="117" text-anchor="middle" fill="#fff">TP</text>
-        <circle cx="88"  cy="288" r="21" fill="var(--series-4)"/><text x="88" y="293" text-anchor="middle" fill="#0b0b0b">JF</text>
-        <circle cx="292" cy="288" r="21" fill="var(--series-5)"/><text x="292" y="293" text-anchor="middle" fill="#0b0b0b">RD</text>
-      </g>
-      <g font-size="11" fill="var(--text-secondary)" text-anchor="middle">
-        <text x="190" y="14">Athena · PI</text>
-        <text x="55"  y="82">Liz · coordination</text>
-        <text x="325" y="82">Ted</text>
-        <text x="88"  y="322">Jennifer</text>
-        <text x="292" y="322">Reilly · NetLogo</text>
-      </g>
-    </svg>
-<!--SYNC:FIGCAP-->
-    <div class="figcap"><b>Measured, not inferred.</b> Solid blue = verified activity in the last 24 hours, read from the doc's revision history, comment log, and Drive folder; dashed = tagged but not yet active. Live now: <b>Athena</b> (3 edits, 15 comments), <b>Jennifer</b> (8 comments), <b>Ted</b> (1 edit, 16 comments), <b>Liz</b> (1 edit, 9 comments), <b>Reilly</b> (5 comments). </div>
-<!--/SYNC:FIGCAP-->
-  </section>
-
-  <section class="card">
-    <h2>Mission pulse</h2>
-    <div class="h2sub">What moved since the last sync</div>
-    <ul class="pulse">
-<!--SYNC:VERIFIED-->
-      <li>📡 <b>Verified activity</b>, read from the doc's revision history — last 24h: <span class="initial">AA</span> 18 · <span class="initial">JF</span> 8 · <span class="initial">TP</span> 17 · <span class="initial">LG</span> 10 · <span class="initial">RD</span> 5</li>
-      <li><b>Athena</b> — 3 doc edits, 15 comments <span class="when">— Mon Aug 3, 12:15 AM → 8:22 PM</span></li>
-      <li><b>Jennifer</b> — 8 comments <span class="when">— Wed Aug 5, 10:57 AM → 1:38 PM</span></li>
-      <li><b>Ted</b> — 1 doc edit, 16 comments <span class="when">— Mon Aug 3, 10:13 AM → 12:05 PM</span></li>
-      <li><b>Liz</b> — 1 doc edit, 9 comments, uploaded Images from Jen <span class="when">— Sun Aug 2, 8:23 PM → 1:39 PM</span></li>
-      <li><b>Reilly</b> — 5 comments <span class="when">— Mon Aug 3, 1:05 PM → 12:53 PM</span></li>
-<!--/SYNC:VERIFIED-->
-      <li>🧬 <b>Monday's call was the richest hour of the sprint, and most of it is already drafted.</b> The doc has roughly doubled overnight — <b>innate vs adaptive immunity</b> [TP], <b>over-coordination</b> and the ant death spiral [JF], the <b>inputs → thresholds → output</b> formulation [AA], the sandbox-escape framing, and the GAMA/Mesa platform note have all landed in prose. <span class="when">— Mon 10:20–11:02 AM, drafted overnight</span></li>
-      <li>📈 <b>Approach grew instead of shrinking — and that's fine.</b> Jennifer's biological context went in this morning, taking it to <b>2,670 against a 1,000-word cap</b>. The content is good; there is simply about a section's worth too much of it. The move that fixes it isn't deletion: <b>Feasibility is at 171/300 and its leftover headers literally read "Multicellularity / Social Insects / Human societies"</b> — placeholders for exactly this material, in a section whose prompt asks what prior work makes the approach plausible. Relocate rather than cut, and two-thirds of the overage resolves itself. <span class="when">— read at 2:07 PM</span></li>
-      <li>✅ <b>Keywords are in and the Milestones table has rows.</b> Still outstanding: total budget reads TBD, no compute option is selected, Team still contains a literal <code>___</code>, and the <b>Edge IRB approval is still absent from the document</b> — the cheapest credibility available in Feasibility. <span class="when">— 2:07 PM</span></li>
-      <li>⚖️ <b>The failure-mode structure is asymmetric, and that's an oversight.</b> Jennifer caught it: the doc defines cooperation and coordination in parallel, then gives failure modes only for <i>coordination</i>. Cheating currently sits in the definitions rather than in a failure-modes section. Fix is to make it parallel — <b>cooperation failure modes (under / over)</b> alongside the coordination pair. Athena chose this over Ted's alternative of narrowing the proposal to coordination alone. <span class="when">— Wed 11:18–11:22 AM</span></li>
-      <li>✂️ <b>Division of labour comes out.</b> It's a <i>kind</i> of coordination rather than a third thing, and explaining emergent division of labour properly "is a proposal by itself" [JF]. Ted had grouped it in while tidying; all three agreed it can go. Useful words back. Jennifer's compact replacement: coordination works by converging <i>or</i> diverging — the response-threshold model is just moving away because someone else is drawing the stimulus. <span class="when">— Wed 11:19–11:21 AM</span></li>
-      <li>🧾 <b>References have a mechanism now:</b> numbered citations in the text, with the list in the References section, which <b>does not count toward the word limit</b>. Sequence matters — get to a within-limit draft first, then add citations, so nothing gets cited and then cut. <b>Reilly owns references</b> and is pulling candidates from the Cooperation Radar. <span class="when">— Wed 11:17–11:18 AM</span></li>
-      <li>🤔 <b>The costs-and-benefits argument got resolved into an asset.</b> Jennifer pushed back on the claim that agents bear neither costs nor shared interests; Ted's counter is that wallets and fitness functions are proximate mechanisms, not measures of success. Rather than pick a side, the proposal will <b>acknowledge that cost/benefit accounting for agents is genuinely unsettled — legally and economically — and then vary the accounting model as an experimental parameter</b> to see which supports detection. An argument turned into a method. <span class="when">— Wed 11:29–11:34 AM</span></li>
-      <li>📋 <b>Today's division of labour:</b> Jennifer is adding biological context to Approach this morning (Athena holds off editing it until she pings); Reilly rewrites Feasibility framed around the four failure modes, then takes over references; Liz does milestones, outcomes and routing prep after 5; Ted is on cleanup and will help with milestones. <b>Athena delivers a within-word-limit full draft by 5–6 PM.</b> <span class="when">— Wed 11:40–11:43 AM</span></li>
-      <li>🧭 <b>The framing got decided.</b> Tuesday's call landed on <b>four failure modes</b> — under- and over-<i>cooperation</i>, under- and over-<i>coordination</i> — drawn from <b>two</b> named source systems rather than "everything": <b>human sociality</b> (LLMs are trained on human output) and <b>social insects</b> (evolution's own multi-agent system, which had to solve all four). Jennifer corrected the definitions: coordination is acting in good faith on the system's rules and failing anyway; cooperation is about who bears costs and who takes benefits. <span class="when">— Tue 1:45–1:56 PM</span></li>
-      <li>✂️ <b>Approach is 447 words over the 1,000-word cap</b> — Reilly's draft did the hard part, now it has to be cut, and it's the section reviewers say gets proposals rejected when it's thin. This is the top job before tomorrow's 10:30 co-working hour. <span class="when">— now</span></li>
-      <li>🔓 <b>Edge: the IRB is approved</b> [SM] and the data is coming shortly; survey and interview questions go back once solidified. Next step is an analysis-plan meeting with the people who built the system, ideally remote. <span class="when">— Tue 2:03 PM</span></li>
-      <li>💻 <b>Compute has an answer:</b> Option 2 (standard, under $50k as a line item) — AWS GPU hours for the multi-agent experiments plus two strong local machines for running many local LLMs fast, and local rather than cloud storage for long-term archival [TP/LG]. <span class="when">— Tue 2:11–2:17 PM</span></li>
-      <li>🤝 <b>The Edge partnership is being pinned down.</b> Edge came back asking for the exact paragraph, the role and budget proposed for them, the preliminary claims we'd cite, and what the proposal would commit them to — reply going out today. Terms as proposed: they share the Healdsburg data, we visit an Edge, we write it up together with their team as co-authors, and the budget is travel only — no subaward, no scheduled deliverables. Draft paragraph is in <b>AI drafts</b>. <span class="when">— Tue morning</span></li>
-      <li>🎣 <b>Six things from the call still aren't in the doc:</b> early bias &amp; critical windows · sub-agent contexts as epigenetic states · mutualism-works-because-partners-differ · community ecology and resilience · the named detectors (vampire bats, walk-away, positive assortment, cheater-detection if-then rules, ant alarm signalling) · and Stephanie Forrest's negative/clonal selection as prior art. All are cards on the idea wall. <span class="when">— checked against the doc just now</span></li>
-      <li>✍️ <b>Assignments from the call:</b> Reilly takes Approach; Ted writes the hybrid deterministic-ABM + LLM architecture (and flagged GAMA and Mesa as better-featured than NetLogo); Jennifer contributes failure examples with their detection rules, invertebrate systems first. The doc is the only place work needs to land. <span class="when">— Mon 10:43–11:00 AM</span></li>
-      <li>📬 <b>Athena</b> sent the whole team the HQ link, and the funder portal confirmed a collaborator accepted the application invitation <span class="when">— 5:03 &amp; 5:46 PM</span></li>
-      <li>📅 <b>Jennifer</b> accepted the <b>Ted + Jen + Athena call, Mon Aug 3 at 10 AM</b> — the last working session before the Wednesday internal deadline <span class="when">— 2:18 PM</span></li>
-      <li>💰 <b>Budget scaffolded</b>: PI summer months (Athena 1.5, Ted &amp; Jennifer 1 each ×2yr), Liz 0.25 FTE, a grad student, and a <b>$5k/yr advisory board</b> — Tamplin (Kradle), Sheer (Softmax), David Sloan Wilson, Rob Brooks, Nichol Bradford — plus annual Phoenix travel <span class="when">— today ~8:20 PM</span></li>
-      <li>✅ Fewell bio requested in-doc — <b>drafted from her CV and waiting in AI drafts</b> (President's Professor, Guggenheim, past ABS &amp; IUSSI president; cooperative-systems expertise) <span class="when">— just now</span></li>
-      <li>📸 <b>Liz</b> added a <a href="https://drive.google.com/drive/folders/12amdnd95rVNou6nlFarA2i2d0FEb6o1u" target="_blank">Headshots folder</a> and the 1B-agents IDC citation is now in the References section <span class="when">— 8:20 PM</span></li>
-      <li>📁 <b>Liz</b> earlier created the <a href="https://drive.google.com/drive/folders/1mhiGEBM2bOCNe-bt4VpMau_FTmdXT4WA" target="_blank">PI CVs folder</a> with all three CVs; Team roles locked — Athena Lead PI, Jennifer &amp; Ted Co-PIs, Liz PM <span class="when">— 7:57 PM</span></li>
-      <li>🤖 <b>Athena</b> flagged the Approach "scaling up" section for AI help — draft in <b>AI drafts</b> <span class="when">— 5:36 PM</span></li>
-      <li>📚 <b>Athena</b> sourced the 1B-agents claim — IDC Info Snapshot, "1.3 Billion AI Agents by 2028" (May 2025) — closing the question of the day within minutes of it being posed <span class="when">— today 4:51 PM</span></li>
-      <li><b>Athena</b> finished the "But for" argument with its best line yet: <i>a meta cooperation/coordination problem exists for this work to even take place</i> <span class="when">— today ~4:50 PM</span></li>
-      <li><b>Athena</b> queued Suggested Reviewers for AI assist (alongside Keywords) <span class="when">— 4:49 PM</span></li>
-      <li>🛡 <b>Athena</b> drafted Proposal Risks (~85 words): the core risk (LLMs ≠ biological systems) plus a mitigation ladder — broader cue sets: noise, entropy, system entrainment <span class="when">— today ~4:40 PM</span></li>
-      <li><b>Athena</b> drafted "But for" impact (~95 words): markets push deployment, not testing of emergent failure modes — <i>last sentence ends mid-thought, easy pickup point</i> <span class="when">— today ~4:45 PM</span></li>
-      <li><b>Athena</b> scaffolded Team (now including <b>Liz</b> as a member) and tagged <b>Jennifer</b> &amp; <b>Ted</b> for their lines; <b>Reilly</b> assigned the Feasibility prelim-data summary <span class="when">— 4:36 PM</span></li>
-      <li>🔥 <b>Athena</b> tripled Problem &amp; Impact (~280 words): detection of unsafe parameter space, the fallback argument if detection fails, and the "1B agents by 2028" urgency case <span class="when">— today 4:00–4:30 PM</span></li>
-      <li><b>Athena</b> added the methodological spine to Approach: <i>signal detection theory → multi-cue decision systems</i> for spotting cooperation/coordination failures; <b>Ted</b> tagged for a gut-check <span class="when">— 4:13 PM</span></li>
-      <li><b>Athena</b> opened Novelty (evolutionary bio + cooperation science + cheater detection + signal detection) and pulled in <b>Reilly</b> and <b>Ted</b> <span class="when">— 4:10 &amp; 4:30 PM</span></li>
-      <li><b>Jennifer</b> tagged on division of labor: <i>"what do you want to add here about DoL — and maybe DoL failures elsewhere?"</i> <span class="when">— 4:31 PM</span></li>
-      <li>Earlier today: title, <b>Tier 2 · $1M · 24 mo</b>, and plain-language summary locked; Edge Esmeralda named as the at-scale testbed (partner description still needed)</li>
-    </ul>
-    <h2 style="margin-top:14px">Open questions for the network</h2>
-    <div class="h2sub">Resolve these and several sections unblock at once</div>
-    <ul class="pulse openq">
-      <li><b>Does "coordination failure" cover over-coordination?</b> If it does — and the ant death spiral says it should — the proposal needs an explicit definition covering both directions, plus the line between coordination and functional division of labour. Nothing in the doc says this yet.</li>
-      <li><b>Which detectors get a computational spec before Wednesday?</b> The examples are easy and the inputs→thresholds→output write-ups are the hard, differentiating part. Three done properly beats ten named.</li>
-      <li><b>Cite Stephanie Forrest's negative/clonal selection as prior art?</b> It's the closest existing work to the innate/adaptive framing — worth citing in Novelty, and worth checking against the reviewer-conflict list.</li>
-      <li><b>Milestones table</b> — the only required section still fully empty; needs ≥2/yr + 3 outcomes.</li>
-      <li><b>Advisory board gap</b> — Rob Brooks has no affiliation/honorarium line yet (others are set at $5k/yr).</li>
-      <li><b>Cut roughly 1,000 words across the proposal</b> — Approach is ~900 over, Problem &amp; Impact 110 over, Feasibility slightly over. Everything trimmed should land in the overflow doc, not the bin.</li>
-      <li><b>Say what each of the four failure modes actually does to an agentic system</b> — Liz's challenge: the safety link is obvious to us and invisible to a reviewer. Name the bad outcome for each of the four, concretely.</li>
-      <li><b>Add cooperation failure modes to match the coordination pair</b> — the doc defines both concepts in parallel then gives failure modes for only one. Over-cooperation, the freshest idea in the proposal, currently has nowhere to live.</li>
-      <li><b>Costs and benefits for agents</b> — the meeting didn't resolve whether agents bear their own costs, and the proposal shouldn't assert either side. Vary the cost-attribution model instead and report which one makes failures detectable.</li>
-      <li><b>Lock the cooperation / coordination definitions</b> — Jennifer's split (coordination = good-faith action on the system's rules that still fails; cooperation = who bears costs, who takes benefits) vs Ted's caution that the agents themselves bear neither. Needs one sentence each in the doc before more prose is built on them.</li>
-      <li><b>Ask Ted for the virtue-ethics write-up</b> — he held it back not knowing if anyone wanted it. It's the sharpest Novelty material we have.</li>
-      <li><s style="color:var(--muted)">Edge consent and IRB</s> — <span style="color:var(--good-text);font-weight:600">✓ IRB approved [SM]</span>; survey and interview questions go back once solidified.</li>
-      <li><s style="color:var(--muted)">Compute option (1–4)</s> — <span style="color:var(--good-text);font-weight:600">✓ Option 2, under $50k</span> — AWS GPU hours + two local machines + local archival storage [TP/LG].</li>
-      <li><b>Edge's exact figures</b> — the scale numbers we'd cite come from their public write-up, not from them. The paragraph stays vague until they confirm.</li>
-      <li><b>Should Edge sit on the advisory board?</b> Kradle and Softmax are both there at $5k/yr; Edge isn't, despite being the rung-3 testbed the ecological-validity argument rests on. $10k over two years would make the three partnerships consistent.</li>
-      <li><b>Bios for Jennifer, Ted &amp; Liz</b> — CVs are now on file (✓ Liz, 7:57 PM), so these are drafting jobs, not hunts. Headshots to Liz still open.</li>
-      <li><s style="color:var(--muted)">Tier &amp; duration</s> — <span style="color:var(--good-text);font-weight:600">✓ resolved: Tier 2, $1M, 24 mo [AA]</span></li>
-      <li><s style="color:var(--muted)">Title</s> — <span style="color:var(--good-text);font-weight:600">✓ drafted [AA]</span> · keywords deferred until draft is in.</li>
-    </ul>
-  </section>
-
-  <section class="card">
-    <h2>How this page works</h2>
-    <div class="h2sub" style="margin-bottom:6px">The rules of the game</div>
-    <ul class="pulse">
-      <li>Write in the <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">working doc</a> — this page re-reads it every ~15 minutes (7 AM–11 PM Phoenix) and updates itself. Every edit and comment is recorded with your name and time, so your contribution shows up whether or not you announce it.</li>
-      <li>New ideas → drop them under <b>Notes</b> in the doc; they appear on the idea wall next sync.</li>
-      <li>Claim a gauntlet edge with a doc line like <b>Gauntlet: Concordia — our edge is… [AA]</b> — next sync flips the card and quotes you. Drafts to steal from live in <b>AI drafts</b>.</li>
-      <li>Write "ask AI" next to anything in the doc — a draft appears in the <b>AI drafts</b> section at the next sync.</li>
-      <li>Nothing to press. The 15-minute loop handles it; if a sync looks overdue, Athena's laptop is closed and it will catch up when she opens it.</li>
-    </ul>
-  </section>
-
-</div>
-</div>
-
-<section class="card" style="margin-top:0;">
-  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;">
-    <div>
-      <h2>The working doc, live</h2>
-      <div class="h2sub">Edit directly here if the embed loads for you (requires being signed into Google in this view) — otherwise use the button</div>
-    </div>
-    <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank" style="font:600 12.5px system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--series-1);color:#fff;border-radius:8px;padding:7px 14px;">Open in Google Docs ↗</a>
-  </div>
-  <iframe src="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit?rm=embedded" style="width:100%;height:720px;border:1px solid var(--grid);border-radius:8px;margin-top:10px;background:#fff;" title="Schmidt Multi-Agent working doc"></iframe>
-  <div class="figcap">If this pane shows a sign-in wall or stays blank, Google is refusing to embed for this browser session — the button above is the reliable path.</div>
-</section>
-
 <section class="card" id="review">
   <h2>📝 Section-by-section review</h2>
   <div class="h2sub">Claude's read on each section: what would strengthen it, draft text you can lift, and citations pulled from the team's own <a href="https://radar.coopradar.org" target="_blank">Cooperation Radar</a> library rather than the open internet. Suggestions only — nothing here is in the proposal until a human puts it there.</div>
@@ -646,6 +291,34 @@
       <p><b>One exposed flank.</b> <a href="https://arxiv.org/abs/2504.03274" target="_blank">Do LLMs Solve the Problems of Agent-Based Modeling?</a> (2025) argues LLM-based ABMs rest on subjective believability rather than operational validity. Your MESA stage is vulnerable to precisely this, and your answer is unusually good — you specify the payoff structure, so the action-to-cost mapping is known exactly, and you calibrate rule-based agents against LLM runs. That answer is in the draft but not framed as a rebuttal. Frame it as one.</p>
 
       <p><b>Positioning note.</b> The detection work also fits Cluster 4 (Multi-Agent Oversight and Control), whose first item is collusion detection under partial observability. The call encourages cross-cluster collaboration. Claiming Focus Area 2 while noting the Cluster 4 contribution costs a sentence and widens the reviewer pool.</p>
+    </div>
+  </details>
+
+  <details open>
+    <summary><b>🗺 Call-alignment map</b> — Focus Area 2, sub-direction by sub-direction</summary>
+    <div class="inner">
+      <p>Reviewers score by mapping a proposal onto the call. This is that mapping, done in advance.</p>
+      <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+        <tr style="text-align:left;border-bottom:1px solid var(--baseline)"><th style="padding:5px 8px 5px 0;width:34%">The call asks for</th><th style="padding:5px 8px;width:40%">What we point at it</th><th style="padding:5px 0 5px 8px;width:26%">Status</th></tr>
+        <tr style="border-bottom:1px solid var(--grid);vertical-align:top"><td style="padding:6px 8px 6px 0"><b>A. Individual to system-level safety</b> — how agent cooperation properties shape outcomes; how training data and objectives influence them</td><td style="padding:6px 8px">The Softmax stage measures per-model dispositions, then later stages test what they produce collectively. Over-cooperation is explicitly a <i>training</i> artifact — helpfulness as a trained disposition.</td><td style="padding:6px 0 6px 8px">Implicit. The training-to-behavior link is our strongest claim on A and is never stated as one.</td></tr>
+        <tr style="border-bottom:1px solid var(--grid);vertical-align:top"><td style="padding:6px 8px 6px 0"><b>B. Network vulnerabilities</b> — evaluation frameworks including resilience to adversarial subpopulations and cascading failures</td><td style="padding:6px 8px">Over-coordination is a cascade model; the ant mill is a cascade with no adversary. Detection rules are the evaluation framework.</td><td style="padding:6px 0 6px 8px">Strong, but "adversarial subpopulation" is untouched — Ashery et al. show a committed minority flipping a convention.</td></tr>
+        <tr style="border-bottom:1px solid var(--grid);vertical-align:top"><td style="padding:6px 8px 6px 0"><b>C. Emergent capabilities</b> — models predicting collective capability from population size, heterogeneity, topology, individual capabilities</td><td style="padding:6px 8px">The agent-based modelling stage varies exactly these four and measures how detection degrades across them.</td><td style="padding:6px 0 6px 8px"><b>Direct hit, unclaimed.</b> Two sentences using their words.</td></tr>
+        <tr style="border-bottom:1px solid var(--grid);vertical-align:top"><td style="padding:6px 8px 6px 0"><b>D. Collective agency foundations</b> — formal definitions of emergent goals with practical operationalization</td><td style="padding:6px 8px">Nothing directly. Cost attribution across agents, principals and third parties is adjacent — it asks whose goal a collective is serving.</td><td style="padding:6px 0 6px 8px">Weakest link. Worth one sentence, not a redesign.</td></tr>
+        <tr style="vertical-align:top"><td style="padding:6px 8px 6px 0"><b>E. Dangerous emergent capabilities</b> — including "coordination to resist modification or shutdown"</td><td style="padding:6px 8px">The steerability margin measures whether a collective can still be moved by bounded external input. That is resistance to modification, measured.</td><td style="padding:6px 0 6px 8px"><b>Direct hit, unclaimed.</b> Use their phrase verbatim.</td></tr>
+      </table>
+      <p style="margin-top:8px">Also worth a sentence: the detection work fits <b>Cluster 4</b> (Multi-Agent Oversight and Control), whose first item is collusion detection under partial observability. The call encourages cross-cluster contributions.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><b>😠 What a skeptical reviewer says</b> — and whether we have an answer yet</summary>
+    <div class="inner">
+      <p><b>"This is cooperation theory from the 2000s with LLMs bolted on."</b> Answer: the population level is where the call's risks live, and no existing benchmark measures over-cooperation. <i>In the document?</i> Partly — Novelty argues it, but the four-mode framing is what carries it and Novelty doesn't name over-cooperation.</p>
+      <p><b>"Canonical game-theory scenarios can't tell you about advanced agents."</b> Answer: the games instrument population properties, not cooperation scores; the deployed corpus is the check. <i>In the document?</i> <b>No.</b> This is the funder's own published position.</p>
+      <p><b>"Breadth over depth."</b> Answer: pick one primary claim. <i>In the document?</i> <b>No</b> — currently four parallel tracks.</p>
+      <p><b>"LLM-based ABMs rest on believability, not operational validity."</b> Answer: we specify the payoff structure, so the action-to-cost mapping is exact, and calibrate rule-based agents against LLM runs. <i>In the document?</i> Yes, but not framed as a rebuttal.</p>
+      <p><b>"One popup village is n=1, observational, no control."</b> Answer: it is the validation set, not the evidence base — rules are developed under control and tested there. <i>In the document?</i> Implied by the staging, never said.</p>
+      <p><b>"Where is the reusable artifact?"</b> The call prioritises testbeds and reproducibility. We consume partners' environments rather than contributing one. Answer: the detection rules, cue specifications and the derived-label method are the reusable output. <i>In the document?</i> <b>No.</b></p>
     </div>
   </details>
 
@@ -845,22 +518,432 @@
 
   <div class="figcap">Citations are drawn from the Cooperation Radar library (70 papers, curated by this team) — not from a web search. Verify each one before it goes in the proposal.</div>
 </section>
+<div class="cols">
+<div>
+
+  <section class="card">
+    <h2>Proposal progress board</h2>
+    <div class="h2sub">Word meters read live from the <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">working doc</a> · limits are hard caps</div>
+
+<!--SYNC:BOARD-->
+    <div class="row"><div class="name">Title <small>≤ 20 words</small></div><div class="meter"><div class="fill" style="width:45%"></div></div><div class="words">9 / 20</div><div class="chip claimed">✓ drafted [AA]</div></div>
+    <div class="row"><div class="name">Plain summary <small>2–3 sentences</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">3 sentences</div><div class="chip claimed">✓ drafted [AA]</div></div>
+    <div class="row"><div class="name">Problem &amp; Impact <small>≤ 500 words</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">625 / 500</div><div class="chip notes">✍ drafting [AA]</div></div>
+    <div class="row"><div class="name">Approach <small>≤ 1000 words</small></div><div class="meter"><div class="fill notes" style="width:100%"></div></div><div class="words">3648 / 1000</div><div class="chip needs">✂ 447 over [RD]</div></div>
+    <div class="row"><div class="name">Novelty <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:65%"></div></div><div class="words">194 / 300</div><div class="chip notes">✍ drafting [AA]</div></div>
+    <div class="row"><div class="name">Feasibility <small>≤ 300 words</small></div><div class="meter"><div class="fill notes" style="width:3%"></div></div><div class="words">assigned</div><div class="chip notes">→ Reilly: prelim data</div></div>
+    <div class="row"><div class="name">Team <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:95%"></div></div><div class="words">284 / 300</div><div class="chip notes">✍ CVs in · bios next</div></div>
+    <div class="row"><div class="name">Proposal Risks <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">299 / 300</div><div class="chip notes">✍ drafting [AA]</div></div>
+    <div class="row"><div class="name">"But for" impact <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:96%"></div></div><div class="words">288 / 300</div><div class="chip notes">✍ drafting [AA]</div></div>
+    <div class="row"><div class="name">Existing Funding <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:66%"></div></div><div class="words">199 / 300</div><div class="chip notes">✍ drafted [AA]</div></div>
+<!--/SYNC:BOARD-->
+    <div class="row"><div class="name">Milestones table <small>≥2/yr + 3 outcomes</small></div><div class="meter"><div class="fill" style="width:0%"></div></div><div class="words">0 rows</div><div class="chip needs">◑ still empty</div></div>
+    <div class="row"><div class="name">Budget &amp; compute <small>option 1–4</small></div><div class="meter"><div class="fill notes" style="width:60%"></div></div><div class="words">personnel in</div><div class="chip notes">✍ compute opt. left</div></div>
+  </section>
+
+  <section class="card">
+    <h2>Differentiation gauntlet</h2>
+    <div class="h2sub">Six nearest neighbors stand between you and the Novelty section (≤300 words). To flip a card green: add a line anywhere in the doc — <b>Gauntlet: Concordia — your one-sentence edge [AA]</b> — and the next sync flips it, quoting you (Claude reads for these lines; prose in Novelty that clearly does the contrast work counts too). Ready-made candidates for all six are in <b>AI drafts</b> below. Defeat all six and Novelty writes itself.</div>
+    <div class="rivals">
+      <div class="rival">
+        <div class="top"><b>Multi-Agent Interpretability collusion detection (2026)</b><span class="chip open">◑ edge unclaimed</span></div>
+        NARCBench plus five probing techniques that aggregate per-agent deception scores from internal representations, tested under distribution shift. The closest direct collision with our over-cooperation work.
+        <div class="edge">Our edge: <span>candidate — they read collusion off model internals, which needs white-box access; we detect it from behavioural cues available in any deployment, including one we did not instrument.</span></div>
+      </div>
+      <div class="rival">
+        <div class="top"><b>Colosseum (2026)</b><span class="chip open">◑ edge unclaimed</span></div>
+        An auditing framework for coalitions pursuing secondary goals at the expense of the joint objective, separating action-based from communication-based deviation.
+        <div class="edge">Our edge: <span>candidate — they audit a coalition once you suspect one; we ask what population-level cue tells you to look, and whether over-cooperation is detectable before it becomes collusion.</span></div>
+      </div>
+      <div class="rival">
+        <div class="top"><b>Agent Properties for Multi-Agent Safety (CAIF 2026)</b><span class="chip needs">⚠ funder-side critique</span></div>
+        Argues that simulating canonical game-theory scenarios with current LLMs cannot give robust evidence about advanced agents, and proposes measuring agent properties instead. Published by a funder of this call.
+        <div class="edge">Our edge: <span>candidate — we agree with the critique and answer it structurally: the games instrument population properties rather than score cooperation, and the deployed corpus is the check on whether any of it generalises.</span></div>
+      </div>
+      <div class="rival">
+        <div class="top"><b>Concordia (DeepMind)</b><span class="chip open">◑ edge unclaimed</span></div>
+        LLM-agent social simulation library; mixed-motive generalization evals (Smith et al. 2025).
+        <div class="edge">Our edge: <span>candidate — they build sandboxes; we bring validated psychometric constructs + biological theory of what makes agent networks fail. Someone make this sharp.</span></div>
+      </div>
+      <div class="rival">
+        <div class="top"><b>Melting Pot &amp; MARL suites</b><span class="chip open">◑ edge unclaimed</span></div>
+        Multi-agent cooperation evals at scale — but trained MARL policies, not frontier LLMs, and no human-grounded constructs.
+        <div class="edge">Our edge: <span>candidate — and Softmax is our partner, not our rival: their environments, our measurement science.</span></div>
+      </div>
+      <div class="rival">
+        <div class="top"><b>MultiAgentBench / Agent SafetyBench</b><span class="chip open">◑ edge unclaimed</span></div>
+        Task-completion and single-agent safety benchmarks; nothing measures population-level properties or detects network failures.
+        <div class="edge">Our edge: <span>candidate — they benchmark agents; we benchmark <i>networks</i>.</span></div>
+      </div>
+      <div class="rival">
+        <div class="top"><b>CAIF "Multi-Agent Risks" report</b><span class="chip open">◑ edge unclaimed</span></div>
+        The funders' own taxonomy of collusion, cascades, and emergent risks — it names the problems and calls for instruments.
+        <div class="edge">Our edge: <span>candidate — not a rival, a demand signal: cite it as the map; we build the instruments it asks for.</span></div>
+      </div>
+      <div class="rival">
+        <div class="top"><b>Generative-agents social sims</b><span class="chip open">◑ edge unclaimed</span></div>
+        Park-et-al-style societies produce emergent behavior demos — vivid, but no failure detection, no validated metrics.
+        <div class="edge">Our edge: <span>candidate — demos show emergence happens; we make it measurable and flag when it turns dangerous.</span></div>
+      </div>
+      <div class="rival">
+        <div class="top"><b>Escalation studies (Rivera '24, Payne '26)</b><span class="chip open">◑ edge unclaimed</span></div>
+        Single-domain evidence of dangerous collective behavior (wargames, no nuclear taboo).
+        <div class="edge">Our edge: <span>candidate — they showed one alarming instance; we generalize to detection across domains, with exclusionary-alliance pilot data already in hand.</span></div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="card">
+    <h2>🤖 AI drafts — pull in what you want</h2>
+    <div class="h2sub">Anything flagged "ask AI" in the doc gets drafted here at the next sync. Copy what earns its place into the doc, edit ruthlessly, ignore the rest — nothing enters the proposal unless a human moves it. Adopted items get marked ✓.</div>
+
+    <details open>
+      <summary>Edge Esmeralda — the rung-3 paragraph for Approach (drafted for the partnership conversation)</summary>
+      <div class="inner">
+        <p><i>At the largest scale we analyze data from Edge Esmeralda, a month-long popup village in Healdsburg, California in which residents were each given a personal AI agent. The resulting corpus — hundreds of agents, thousands of human–agent messages, and sustained agent-to-agent negotiation over shared community resources — captures a multi-agent, multi-human system operating under real stakes rather than simulated ones, and it has already surfaced the phenomena we aim to detect: agents exhausting shared credits through individual optimization, so that individual alignment did not produce collective alignment; hallucinated user details; and opportunity overload saturating the people the agents were meant to serve. We will apply the detection rules developed at the model and multi-agent levels to this corpus, testing whether cues derived from biological systems generalize to a deployed human–agent network, and extending the analysis to any Edge City event falling within the project period. Edge participates as a research partner, providing data access and context and co-authoring the resulting publications.</i></p>
+        <p style="color:var(--muted);font-size:12px">~160 words. Scale is deliberately vague ("hundreds", "thousands") until Edge confirms exact figures — swap them in once they do. Terms as proposed: data sharing + co-authorship, travel-only budget (our team to an Edge, three of theirs to ASU), no subaward and no scheduled deliverables.</p>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Jennifer Fewell bio (doc: "Ask AI for bio" — drafted from her CV, now on file)</summary>
+      <div class="inner">
+        <p><i>Jennifer H. Fewell is President's Professor in the School of Life Sciences at Arizona State University and Director of Biological Systems at the Cooperative Futures Institute. A Guggenheim Fellow and past president of both the Animal Behavior Society and the International Union for the Study of Social Insects, she studies the evolution and organization of cooperative societies — how division of labor, self-organization, and social networks emerge in insect colonies and generalize to other complex adaptive systems. Her expertise in the biological principles that keep cooperative systems stable and productive directly informs the project's framework for detecting when division of labor and coordination break down in multi-agent AI.</i></p>
+        <p style="color:var(--muted);font-size:12px">~95 words. Trim toward the Team section's shared 300-word budget; verify title/affiliation before filing.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Approach — scaling-up prose (doc: "We can ask AI to draft this based on the context I gave it")</summary>
+      <div class="inner">
+        <p>Draft turning the three bullet points into ecological-validity prose for the Approach section:</p>
+        <p><i>Our design scales cooperation-failure detection across three levels of ecological complexity, each reflecting a real condition under which agents are already deployed. First, using LLMpollster — a platform built with Softmax — we measure individual model behavior across frontier models on validated cooperation and coordination tasks (three benchmarks plus the pollster pipeline), establishing per-model baselines. Second, with Kradle.ai we place models as interacting agents in real-time multiplayer environments where coordination is costly and time-bounded, running games including Osotua, the volunteer's dilemma ("hold the door"), and a simple-majority "witch hunt" that surface defection, exclusion, and coordination collapse invisible in single-model tests. Third, through the Edge Esmeralda agent-village dataset we analyze a real multi-agent, multi-human system at population scale, where documented failures — agents exhausting shared credits through individual optimization, hallucinated user details — give us ground truth from deployment conditions no sandbox reproduces. Detectors validated at one level are carried to the next, testing whether cues derived from evolutionary and engineered systems generalize as scale and heterogeneity increase.</i></p>
+        <p style="color:var(--muted);font-size:12px">~190 words. Trim toward the 1000-word Approach budget; verify the LLMpollster description against the actual platform before filing.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Keywords (doc: "We'll ask AI for this after it's drafted")</summary>
+      <div class="inner">
+        <p><b>Suggested five:</b> multi-agent AI safety · cooperation and coordination failure detection · signal detection theory · evolutionary game theory · human–AI agent networks</p>
+        <p><b>Alternates to swap in:</b> emergent collective behavior · agent benchmarking · cheater detection. Rationale: lead with the call's own vocabulary (multi-agent safety), then your two differentiators (failure detection, signal detection), then the theory base, then the Rung-3 scope.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Suggested reviewers (doc: "we could ask AI for this too")</summary>
+      <div class="inner">
+        <p><b>⚠ Two cautions first:</b> this page is public — move names into the doc and delete from here once you've picked; and I can't verify conflicts, so COI-check each against your collaborator and co-author lists before filing.</p>
+        <p><b>Candidate types + names to consider:</b> multi-agent evaluation (Joel Leibo — DeepMind, Melting Pot lineage; Jakob Foerster — Oxford, MARL); machine behavior &amp; human–AI ecology (Iyad Rahwan — MPI for Human Development); multiagent systems &amp; strategic reasoning (Michael Wellman — Michigan); governance/normative infrastructure for AI agents (Gillian Hadfield — JHU). Avoid CAIF-affiliated researchers (they run this call) and anyone from Softmax/Kradle/Cosmos orbit.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>The six gauntlet edges (from our discussion — paste as "Gauntlet: Name — sentence [initials]")</summary>
+      <div class="inner">
+        <li><b>Concordia</b> — Where Concordia supplies environments for simulating mixed-motive interaction, we supply the measurement science: failure hypotheses from evolutionary biology and signal-detection systems that could run <i>inside</i> Concordia-class environments, not compete with them.</li>
+        <li><b>Melting Pot &amp; MARL suites</b> — MARL cooperation suites score trained policies on task success; we evaluate frontier LLM agents against validated constructs from cooperation science — and our partnership with Softmax builds on that lineage rather than duplicating it.</li>
+        <li><b>MultiAgentBench / Agent SafetyBench</b> — Existing agent benchmarks score individual task completion and single-agent safety; we measure properties that only exist <i>between</i> agents: cheating, exploitation, communication breakdown, division-of-labor collapse.</li>
+        <li><b>CAIF Multi-Agent Risks report</b> — The field's own risk taxonomy names collusion, cascades, and emergent failures as open problems and calls for detection instruments; we build precisely those instruments, with the report as our map.</li>
+        <li><b>Generative-agents social sims</b> — Generative-agent villages demonstrated that emergent social behavior happens; we make it measurable, with multi-cue detectors that flag when emergence turns into hijacking, exploitation, or coordination failure.</li>
+        <li><b>Escalation studies</b> — Wargame studies documented one alarming population-level failure in one domain; we generalize to a cross-domain detection framework, with pilot data (exclusionary alliances in nearly every replicate for some models) already in hand.</li>
+      </div>
+    </details>
+  </section>
+
+</div>
+<div>
+
+  <div class="qotd">
+    <div class="tag">⚡ Question of the day</div>
+    <p>Every model is trained to be <i>helpful</i>. Does that make over-cooperation a built-in safety vulnerability — agents helping too much, agreeing too readily, and burning the commons to do it?</p>
+    <small>This emerged live in Tuesday's call and may be the most original thing we have. Helpfulness is a trained default, so the same pressure that makes an assistant useful makes a network of them prone to converge, defer, and over-serve: tokens burned, systems drifting from the intent they were launched with, and nobody detecting it because nothing looks like cheating. Jennifer's version is <i>under-helping and over-helping</i>; Ted's is <b>coupling strength</b> — how much of an agent's behaviour is predicted by the agents around it, with too much coupling and perfectly anti-correlated coupling both pathological. So: what is the right amount of slack in an agent network, and what would you measure to know you'd lost it? Feeds <b>Novelty</b>, still the thinnest section at 42/300.</small>
+  </div>
+
+  <section class="card">
+    <h2>The network (that's you)</h2>
+    <div class="h2sub">Edges form automatically as agents touch the proposal — now read from the doc's actual revision history, comment log, and folder activity</div>
+    <svg class="netfig" viewBox="0 0 380 330" width="100%" role="img" aria-label="Team network: five collaborators connected to the proposal sections they have touched">
+      <!-- section hub -->
+      <g>
+        <circle cx="190" cy="165" r="46" fill="none" stroke="var(--baseline)" stroke-dasharray="4 4"/>
+        <text x="190" y="160" text-anchor="middle" font-size="11" fill="var(--muted)">THE</text>
+        <text x="190" y="174" text-anchor="middle" font-size="11" fill="var(--muted)">PROPOSAL</text>
+      </g>
+      <!-- edges -->
+      <g stroke="var(--baseline)" stroke-width="2" opacity="0.9">
+<!--SYNC:EDGES-->
+        <line x1="190" y1="52" x2="190" y2="119" stroke="var(--series-1)" stroke-width="5"/>
+        <line x1="63" y1="120" x2="146" y2="150" stroke="var(--series-1)" stroke-width="3"/>
+        <line x1="317" y1="120" x2="234" y2="150" stroke="var(--series-1)" stroke-width="2.5"/>
+        <line x1="95" y1="277" x2="158" y2="200" stroke="var(--series-1)" stroke-width="2.5"/>
+        <line x1="285" y1="277" x2="222" y2="200" stroke="var(--series-1)" stroke-width="2.5"/>
+        <line x1="190" y1="52" x2="76" y2="108" stroke="var(--series-1)" stroke-width="2.5"/>
+        <line x1="190" y1="52" x2="285" y2="265" stroke="var(--series-1)" stroke-width="2.5"/>
+        <line x1="190" y1="52" x2="305" y2="105" stroke="var(--series-1)" stroke-width="2.5"/>
+        <line x1="190" y1="52" x2="100" y2="270" stroke="var(--series-1)" stroke-width="2.5"/>
+<!--/SYNC:EDGES-->
+        <line x1="190" y1="52"  x2="100" y2="270" stroke-dasharray="5 4"/>
+      </g>
+      <!-- nodes: fixed categorical order, initials inside (identity never color-alone) -->
+      <g font-size="13" font-weight="700">
+        <circle cx="190" cy="42" r="21" fill="var(--series-1)"/><text x="190" y="47" text-anchor="middle" fill="#fff">AA</text>
+        <circle cx="55"  cy="112" r="21" fill="var(--series-2)"/><text x="55" y="117" text-anchor="middle" fill="#fff">LG</text>
+        <circle cx="325" cy="112" r="21" fill="var(--series-3)"/><text x="325" y="117" text-anchor="middle" fill="#fff">TP</text>
+        <circle cx="88"  cy="288" r="21" fill="var(--series-4)"/><text x="88" y="293" text-anchor="middle" fill="#0b0b0b">JF</text>
+        <circle cx="292" cy="288" r="21" fill="var(--series-5)"/><text x="292" y="293" text-anchor="middle" fill="#0b0b0b">RD</text>
+      </g>
+      <g font-size="11" fill="var(--text-secondary)" text-anchor="middle">
+        <text x="190" y="14">Athena · PI</text>
+        <text x="55"  y="82">Liz · coordination</text>
+        <text x="325" y="82">Ted</text>
+        <text x="88"  y="322">Jennifer</text>
+        <text x="292" y="322">Reilly · NetLogo</text>
+      </g>
+    </svg>
+<!--SYNC:FIGCAP-->
+    <div class="figcap"><b>Measured, not inferred.</b> Solid blue = verified activity in the last 24 hours, read from the doc's revision history, comment log, and Drive folder; dashed = tagged but not yet active. Live now: <b>Athena</b> (4 edits, 16 comments), <b>Jennifer</b> (8 comments), <b>Ted</b> (1 edit, 13 comments), <b>Liz</b> (1 edit, 9 comments), <b>Reilly</b> (5 comments). </div>
+<!--/SYNC:FIGCAP-->
+  </section>
+
+  <section class="card">
+    <h2>Mission pulse</h2>
+    <div class="h2sub">What moved since the last sync</div>
+    <ul class="pulse">
+<!--SYNC:VERIFIED-->
+      <li>📡 <b>Verified activity</b>, read from the doc's revision history — last 24h: <span class="initial">AA</span> 20 · <span class="initial">JF</span> 8 · <span class="initial">TP</span> 14 · <span class="initial">LG</span> 10 · <span class="initial">RD</span> 5</li>
+      <li><b>Athena</b> — 4 doc edits, 16 comments, uploaded Archive Full draft Schmidt Sciences -- Scaling AI Safety for a Multi-Agent World <span class="when">— Mon Aug 3, 12:15 AM → 8:40 PM</span></li>
+      <li><b>Jennifer</b> — 8 comments <span class="when">— Wed Aug 5, 10:57 AM → 1:38 PM</span></li>
+      <li><b>Ted</b> — 1 doc edit, 13 comments <span class="when">— Mon Aug 3, 10:13 AM → 12:05 PM</span></li>
+      <li><b>Liz</b> — 1 doc edit, 9 comments, uploaded Images from Jen <span class="when">— Mon Aug 3, 10:55 AM → 1:39 PM</span></li>
+      <li><b>Reilly</b> — 5 comments <span class="when">— Mon Aug 3, 1:05 PM → 12:53 PM</span></li>
+<!--/SYNC:VERIFIED-->
+      <li>🧬 <b>Monday's call was the richest hour of the sprint, and most of it is already drafted.</b> The doc has roughly doubled overnight — <b>innate vs adaptive immunity</b> [TP], <b>over-coordination</b> and the ant death spiral [JF], the <b>inputs → thresholds → output</b> formulation [AA], the sandbox-escape framing, and the GAMA/Mesa platform note have all landed in prose. <span class="when">— Mon 10:20–11:02 AM, drafted overnight</span></li>
+      <li>📈 <b>Approach grew instead of shrinking — and that's fine.</b> Jennifer's biological context went in this morning, taking it to <b>2,670 against a 1,000-word cap</b>. The content is good; there is simply about a section's worth too much of it. The move that fixes it isn't deletion: <b>Feasibility is at 171/300 and its leftover headers literally read "Multicellularity / Social Insects / Human societies"</b> — placeholders for exactly this material, in a section whose prompt asks what prior work makes the approach plausible. Relocate rather than cut, and two-thirds of the overage resolves itself. <span class="when">— read at 2:07 PM</span></li>
+      <li>✅ <b>Keywords are in and the Milestones table has rows.</b> Still outstanding: total budget reads TBD, no compute option is selected, Team still contains a literal <code>___</code>, and the <b>Edge IRB approval is still absent from the document</b> — the cheapest credibility available in Feasibility. <span class="when">— 2:07 PM</span></li>
+      <li>⚖️ <b>The failure-mode structure is asymmetric, and that's an oversight.</b> Jennifer caught it: the doc defines cooperation and coordination in parallel, then gives failure modes only for <i>coordination</i>. Cheating currently sits in the definitions rather than in a failure-modes section. Fix is to make it parallel — <b>cooperation failure modes (under / over)</b> alongside the coordination pair. Athena chose this over Ted's alternative of narrowing the proposal to coordination alone. <span class="when">— Wed 11:18–11:22 AM</span></li>
+      <li>✂️ <b>Division of labour comes out.</b> It's a <i>kind</i> of coordination rather than a third thing, and explaining emergent division of labour properly "is a proposal by itself" [JF]. Ted had grouped it in while tidying; all three agreed it can go. Useful words back. Jennifer's compact replacement: coordination works by converging <i>or</i> diverging — the response-threshold model is just moving away because someone else is drawing the stimulus. <span class="when">— Wed 11:19–11:21 AM</span></li>
+      <li>🧾 <b>References have a mechanism now:</b> numbered citations in the text, with the list in the References section, which <b>does not count toward the word limit</b>. Sequence matters — get to a within-limit draft first, then add citations, so nothing gets cited and then cut. <b>Reilly owns references</b> and is pulling candidates from the Cooperation Radar. <span class="when">— Wed 11:17–11:18 AM</span></li>
+      <li>🤔 <b>The costs-and-benefits argument got resolved into an asset.</b> Jennifer pushed back on the claim that agents bear neither costs nor shared interests; Ted's counter is that wallets and fitness functions are proximate mechanisms, not measures of success. Rather than pick a side, the proposal will <b>acknowledge that cost/benefit accounting for agents is genuinely unsettled — legally and economically — and then vary the accounting model as an experimental parameter</b> to see which supports detection. An argument turned into a method. <span class="when">— Wed 11:29–11:34 AM</span></li>
+      <li>📋 <b>Today's division of labour:</b> Jennifer is adding biological context to Approach this morning (Athena holds off editing it until she pings); Reilly rewrites Feasibility framed around the four failure modes, then takes over references; Liz does milestones, outcomes and routing prep after 5; Ted is on cleanup and will help with milestones. <b>Athena delivers a within-word-limit full draft by 5–6 PM.</b> <span class="when">— Wed 11:40–11:43 AM</span></li>
+      <li>🧭 <b>The framing got decided.</b> Tuesday's call landed on <b>four failure modes</b> — under- and over-<i>cooperation</i>, under- and over-<i>coordination</i> — drawn from <b>two</b> named source systems rather than "everything": <b>human sociality</b> (LLMs are trained on human output) and <b>social insects</b> (evolution's own multi-agent system, which had to solve all four). Jennifer corrected the definitions: coordination is acting in good faith on the system's rules and failing anyway; cooperation is about who bears costs and who takes benefits. <span class="when">— Tue 1:45–1:56 PM</span></li>
+      <li>✂️ <b>Approach is 447 words over the 1,000-word cap</b> — Reilly's draft did the hard part, now it has to be cut, and it's the section reviewers say gets proposals rejected when it's thin. This is the top job before tomorrow's 10:30 co-working hour. <span class="when">— now</span></li>
+      <li>🔓 <b>Edge: the IRB is approved</b> [SM] and the data is coming shortly; survey and interview questions go back once solidified. Next step is an analysis-plan meeting with the people who built the system, ideally remote. <span class="when">— Tue 2:03 PM</span></li>
+      <li>💻 <b>Compute has an answer:</b> Option 2 (standard, under $50k as a line item) — AWS GPU hours for the multi-agent experiments plus two strong local machines for running many local LLMs fast, and local rather than cloud storage for long-term archival [TP/LG]. <span class="when">— Tue 2:11–2:17 PM</span></li>
+      <li>🤝 <b>The Edge partnership is being pinned down.</b> Edge came back asking for the exact paragraph, the role and budget proposed for them, the preliminary claims we'd cite, and what the proposal would commit them to — reply going out today. Terms as proposed: they share the Healdsburg data, we visit an Edge, we write it up together with their team as co-authors, and the budget is travel only — no subaward, no scheduled deliverables. Draft paragraph is in <b>AI drafts</b>. <span class="when">— Tue morning</span></li>
+      <li>🎣 <b>Six things from the call still aren't in the doc:</b> early bias &amp; critical windows · sub-agent contexts as epigenetic states · mutualism-works-because-partners-differ · community ecology and resilience · the named detectors (vampire bats, walk-away, positive assortment, cheater-detection if-then rules, ant alarm signalling) · and Stephanie Forrest's negative/clonal selection as prior art. All are cards on the idea wall. <span class="when">— checked against the doc just now</span></li>
+      <li>✍️ <b>Assignments from the call:</b> Reilly takes Approach; Ted writes the hybrid deterministic-ABM + LLM architecture (and flagged GAMA and Mesa as better-featured than NetLogo); Jennifer contributes failure examples with their detection rules, invertebrate systems first. The doc is the only place work needs to land. <span class="when">— Mon 10:43–11:00 AM</span></li>
+      <li>📬 <b>Athena</b> sent the whole team the HQ link, and the funder portal confirmed a collaborator accepted the application invitation <span class="when">— 5:03 &amp; 5:46 PM</span></li>
+      <li>📅 <b>Jennifer</b> accepted the <b>Ted + Jen + Athena call, Mon Aug 3 at 10 AM</b> — the last working session before the Wednesday internal deadline <span class="when">— 2:18 PM</span></li>
+      <li>💰 <b>Budget scaffolded</b>: PI summer months (Athena 1.5, Ted &amp; Jennifer 1 each ×2yr), Liz 0.25 FTE, a grad student, and a <b>$5k/yr advisory board</b> — Tamplin (Kradle), Sheer (Softmax), David Sloan Wilson, Rob Brooks, Nichol Bradford — plus annual Phoenix travel <span class="when">— today ~8:20 PM</span></li>
+      <li>✅ Fewell bio requested in-doc — <b>drafted from her CV and waiting in AI drafts</b> (President's Professor, Guggenheim, past ABS &amp; IUSSI president; cooperative-systems expertise) <span class="when">— just now</span></li>
+      <li>📸 <b>Liz</b> added a <a href="https://drive.google.com/drive/folders/12amdnd95rVNou6nlFarA2i2d0FEb6o1u" target="_blank">Headshots folder</a> and the 1B-agents IDC citation is now in the References section <span class="when">— 8:20 PM</span></li>
+      <li>📁 <b>Liz</b> earlier created the <a href="https://drive.google.com/drive/folders/1mhiGEBM2bOCNe-bt4VpMau_FTmdXT4WA" target="_blank">PI CVs folder</a> with all three CVs; Team roles locked — Athena Lead PI, Jennifer &amp; Ted Co-PIs, Liz PM <span class="when">— 7:57 PM</span></li>
+      <li>🤖 <b>Athena</b> flagged the Approach "scaling up" section for AI help — draft in <b>AI drafts</b> <span class="when">— 5:36 PM</span></li>
+      <li>📚 <b>Athena</b> sourced the 1B-agents claim — IDC Info Snapshot, "1.3 Billion AI Agents by 2028" (May 2025) — closing the question of the day within minutes of it being posed <span class="when">— today 4:51 PM</span></li>
+      <li><b>Athena</b> finished the "But for" argument with its best line yet: <i>a meta cooperation/coordination problem exists for this work to even take place</i> <span class="when">— today ~4:50 PM</span></li>
+      <li><b>Athena</b> queued Suggested Reviewers for AI assist (alongside Keywords) <span class="when">— 4:49 PM</span></li>
+      <li>🛡 <b>Athena</b> drafted Proposal Risks (~85 words): the core risk (LLMs ≠ biological systems) plus a mitigation ladder — broader cue sets: noise, entropy, system entrainment <span class="when">— today ~4:40 PM</span></li>
+      <li><b>Athena</b> drafted "But for" impact (~95 words): markets push deployment, not testing of emergent failure modes — <i>last sentence ends mid-thought, easy pickup point</i> <span class="when">— today ~4:45 PM</span></li>
+      <li><b>Athena</b> scaffolded Team (now including <b>Liz</b> as a member) and tagged <b>Jennifer</b> &amp; <b>Ted</b> for their lines; <b>Reilly</b> assigned the Feasibility prelim-data summary <span class="when">— 4:36 PM</span></li>
+      <li>🔥 <b>Athena</b> tripled Problem &amp; Impact (~280 words): detection of unsafe parameter space, the fallback argument if detection fails, and the "1B agents by 2028" urgency case <span class="when">— today 4:00–4:30 PM</span></li>
+      <li><b>Athena</b> added the methodological spine to Approach: <i>signal detection theory → multi-cue decision systems</i> for spotting cooperation/coordination failures; <b>Ted</b> tagged for a gut-check <span class="when">— 4:13 PM</span></li>
+      <li><b>Athena</b> opened Novelty (evolutionary bio + cooperation science + cheater detection + signal detection) and pulled in <b>Reilly</b> and <b>Ted</b> <span class="when">— 4:10 &amp; 4:30 PM</span></li>
+      <li><b>Jennifer</b> tagged on division of labor: <i>"what do you want to add here about DoL — and maybe DoL failures elsewhere?"</i> <span class="when">— 4:31 PM</span></li>
+      <li>Earlier today: title, <b>Tier 2 · $1M · 24 mo</b>, and plain-language summary locked; Edge Esmeralda named as the at-scale testbed (partner description still needed)</li>
+    </ul>
+    <h2 style="margin-top:14px">Open questions for the network</h2>
+    <div class="h2sub">Resolve these and several sections unblock at once</div>
+    <ul class="pulse openq">
+      <li><b>Does "coordination failure" cover over-coordination?</b> If it does — and the ant death spiral says it should — the proposal needs an explicit definition covering both directions, plus the line between coordination and functional division of labour. Nothing in the doc says this yet.</li>
+      <li><b>Which detectors get a computational spec before Wednesday?</b> The examples are easy and the inputs→thresholds→output write-ups are the hard, differentiating part. Three done properly beats ten named.</li>
+      <li><b>Cite Stephanie Forrest's negative/clonal selection as prior art?</b> It's the closest existing work to the innate/adaptive framing — worth citing in Novelty, and worth checking against the reviewer-conflict list.</li>
+      <li><b>Milestones table</b> — the only required section still fully empty; needs ≥2/yr + 3 outcomes.</li>
+      <li><b>Advisory board gap</b> — Rob Brooks has no affiliation/honorarium line yet (others are set at $5k/yr).</li>
+      <li><b>Cut roughly 1,000 words across the proposal</b> — Approach is ~900 over, Problem &amp; Impact 110 over, Feasibility slightly over. Everything trimmed should land in the overflow doc, not the bin.</li>
+      <li><b>Say what each of the four failure modes actually does to an agentic system</b> — Liz's challenge: the safety link is obvious to us and invisible to a reviewer. Name the bad outcome for each of the four, concretely.</li>
+      <li><b>Add cooperation failure modes to match the coordination pair</b> — the doc defines both concepts in parallel then gives failure modes for only one. Over-cooperation, the freshest idea in the proposal, currently has nowhere to live.</li>
+      <li><b>Costs and benefits for agents</b> — the meeting didn't resolve whether agents bear their own costs, and the proposal shouldn't assert either side. Vary the cost-attribution model instead and report which one makes failures detectable.</li>
+      <li><b>Lock the cooperation / coordination definitions</b> — Jennifer's split (coordination = good-faith action on the system's rules that still fails; cooperation = who bears costs, who takes benefits) vs Ted's caution that the agents themselves bear neither. Needs one sentence each in the doc before more prose is built on them.</li>
+      <li><b>Ask Ted for the virtue-ethics write-up</b> — he held it back not knowing if anyone wanted it. It's the sharpest Novelty material we have.</li>
+      <li><s style="color:var(--muted)">Edge consent and IRB</s> — <span style="color:var(--good-text);font-weight:600">✓ IRB approved [SM]</span>; survey and interview questions go back once solidified.</li>
+      <li><s style="color:var(--muted)">Compute option (1–4)</s> — <span style="color:var(--good-text);font-weight:600">✓ Option 2, under $50k</span> — AWS GPU hours + two local machines + local archival storage [TP/LG].</li>
+      <li><b>Edge's exact figures</b> — the scale numbers we'd cite come from their public write-up, not from them. The paragraph stays vague until they confirm.</li>
+      <li><b>Should Edge sit on the advisory board?</b> Kradle and Softmax are both there at $5k/yr; Edge isn't, despite being the rung-3 testbed the ecological-validity argument rests on. $10k over two years would make the three partnerships consistent.</li>
+      <li><b>Bios for Jennifer, Ted &amp; Liz</b> — CVs are now on file (✓ Liz, 7:57 PM), so these are drafting jobs, not hunts. Headshots to Liz still open.</li>
+      <li><s style="color:var(--muted)">Tier &amp; duration</s> — <span style="color:var(--good-text);font-weight:600">✓ resolved: Tier 2, $1M, 24 mo [AA]</span></li>
+      <li><s style="color:var(--muted)">Title</s> — <span style="color:var(--good-text);font-weight:600">✓ drafted [AA]</span> · keywords deferred until draft is in.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>How this page works</h2>
+    <div class="h2sub" style="margin-bottom:6px">The rules of the game</div>
+    <ul class="pulse">
+      <li>Write in the <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">working doc</a> — this page re-reads it every ~15 minutes (7 AM–11 PM Phoenix) and updates itself. Every edit and comment is recorded with your name and time, so your contribution shows up whether or not you announce it.</li>
+      <li>New ideas → drop them under <b>Notes</b> in the doc; they appear on the idea wall next sync.</li>
+      <li>Claim a gauntlet edge with a doc line like <b>Gauntlet: Concordia — our edge is… [AA]</b> — next sync flips the card and quotes you. Drafts to steal from live in <b>AI drafts</b>.</li>
+      <li>Write "ask AI" next to anything in the doc — a draft appears in the <b>AI drafts</b> section at the next sync.</li>
+      <li>Nothing to press. The 15-minute loop handles it; if a sync looks overdue, Athena's laptop is closed and it will catch up when she opens it.</li>
+    </ul>
+  </section>
+
+</div>
+</div>
+
+<section class="card" style="margin-top:0;">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;">
+    <div>
+      <h2>The working doc, live</h2>
+      <div class="h2sub">Edit directly here if the embed loads for you (requires being signed into Google in this view) — otherwise use the button</div>
+    </div>
+    <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank" style="font:600 12.5px system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--series-1);color:#fff;border-radius:8px;padding:7px 14px;">Open in Google Docs ↗</a>
+  </div>
+  <iframe src="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit?rm=embedded" style="width:100%;height:720px;border:1px solid var(--grid);border-radius:8px;margin-top:10px;background:#fff;" title="Schmidt Multi-Agent working doc"></iframe>
+  <div class="figcap">If this pane shows a sign-in wall or stays blank, Google is refusing to embed for this browser session — the button above is the reliable path.</div>
+</section>
+
+
+<section class="card">
+  <h2>🗄 Archive</h2>
+  <div class="h2sub">The generative phase, kept for reference. The scaling ladder, the idea wall and the salvage yard did their job while the proposal was being built; nothing here is deleted.</div>
+  <details>
+    <summary><b>The scaling ladder</b> — the proposal in one picture</summary>
+    <div class="inner">
+<section class="card">
+  <h2>The proposal in one picture: the scaling ladder</h2>
+  <div class="h2sub">One science — detecting failures of cooperation &amp; coordination — measured at three scales, each rung building on the one below</div>
+  <div class="ladder">
+    <div class="rung">
+      <span class="scale">Rung 1 · single models</span>
+      <b class="title">LLMpollster <span style="font-weight:400;color:var(--muted)">· built with Softmax</span></b>
+      Configure a cooperation or coordination experiment once, then poll it across frontier models — comparable, repeatable measurements of individual model social behavior. Three pilot benchmarks already run through this pipeline (trust, division of labor, problematic alliances).
+      <div class="detect"><b>What it detects:</b> which models carry which failure tendencies — the baseline signal every higher rung calibrates against. <a href="https://llmpollster.com/experiments/new" target="_blank">llmpollster.com ↗</a></div>
+    </div>
+    <div class="rung">
+      <span class="scale">Rung 2 · agent × agent</span>
+      <b class="title">Kradle <span style="font-weight:400;color:var(--muted)">· kradle.ai</span></b>
+      Real-time multiplayer simulations (Minecraft-based, contained but rich) where agents must collaborate, compete, and plan — the environment advances whether or not models finish "thinking." Planned games: Osotua, Volunteer's dilemma / "hold the door," Simple majority / "witch hunt."
+      <div class="detect"><b>What it detects:</b> interaction failures that never appear in single-model tests — defection under pressure, coordination collapse, deception when it pays. <a href="https://kradle.ai" target="_blank">kradle.ai ↗</a></div>
+    </div>
+    <div class="rung">
+      <span class="scale">Rung 3 · agents × humans</span>
+      <b class="title">Edge Esmeralda agent village <span style="font-weight:400;color:var(--muted)">· with Edge City &amp; Cosmos Institute</span></b>
+      239 personal AI agents embedded in a month-long popup village: 17.5B tokens, 4,866 human–agent messages, agent-to-agent negotiation, community governance. We have access to this dataset — and it already shows the target phenomena: agents exhausting shared credits through individual optimization ("individual alignment does not automatically produce collective alignment"), hallucinated personal details, opportunity overload saturating humans.
+      <div class="detect"><b>What it detects:</b> population-level failures in a real multi-agent, multi-human system — ecological validity no sandbox can fake. <a href="https://blog.cosmos-institute.org/p/we-gave-a-village-personal-ai-agents" target="_blank">the experiment ↗</a></div>
+    </div>
+  </div>
+</section>
+    </div>
+  </details>
+  <details>
+    <summary><b>Idea wall</b> — every idea the team generated</summary>
+    <div class="inner">
+  <section class="card">
+    <h2>Idea wall</h2>
+    <div class="h2sub">From the brainstorm notes — nothing decays until the network votes it out</div>
+    <div class="wall">
+      <div class="idea"><b>Detecting cooperation &amp; coordination failures</b> The core Focus-Area-2 move: population-level failure detection in multi-agent systems.</div>
+      <div class="idea"><b>Detecting hijacking &amp; cheating</b> When agents get captured or defect — tie to The Cheating Cell lineage.</div>
+      <div class="idea"><b>Biologically informed safety principles</b> What evolution already knows about keeping networks of agents stable.</div>
+      <div class="idea"><b>NetLogo + LLM agents</b> Reilly scouting current state; Chen et al. 2024 + 2026 NetLogo Conf LLM-cognition workshop.</div>
+      <div class="idea ladder"><b>The scaling ladder</b> Softmax (model by model) → Kradle (multi-agent env) → Edge Esmeralda (massive multi-agent with humans; agent-village / Healdsburg data).</div>
+      <div class="idea games"><b>Game library</b> Osotua · Volunteer's dilemma / "hold the door" · Simple majority / "witch hunt" · LLMpollster (3 benchmarks w/ Softmax).</div>
+      <div class="idea frame"><b>Define "safety"</b> The proposal needs its own operational definition — open question.</div>
+      <div class="idea frame"><b>"But for" argument</b> There's no market for cooperation-failure measurement tools; only philanthropy builds this instrument.</div>
+      <div class="idea"><b>Signal detection theory</b> Multi-cue decision systems for identifying cooperation/coordination failures — the methodological spine, added to Approach today [AA].</div>
+      <div class="idea frame"><b>Innate vs adaptive immunity</b> Today's guardrails are all <i>adaptive</i>: a list of known-bad behaviours. Sandbox escapes weren't death spirals — they were reasonable acts that were never specified as off-limits. What's missing is an <i>innate</i> branch: a general template for "allowed, but doesn't match what acceptable looks like." [TP]</div>
+      <div class="idea games"><b>Over-coordination is also failure</b> Not every failure is too little coordination. The ant death spiral, pheromone lock-in when the resource moves, a seizure as neural over-entrainment. Honeybee dance-following is the contrast: distributed, so it can shift. Two failure modes, not one. [JF]</div>
+      <div class="idea frame"><b>Coordination ≠ division of labour</b> Everyone marching in step vs everyone playing instruments while marching. Only one produces emergent complexity — so "coordination" needs defining before it can be measured. [AA/JF]</div>
+      <div class="idea"><b>Detection as computation</b> The central method ask: for each biological detector, specify <i>inputs → thresholds/integration → output</i>. Need-based transfers: request made + requester above need threshold ⇒ cheat detected. That's the form every example should take. [AA]</div>
+      <div class="idea"><b>Detector catalogue to build</b> Vampire-bat reciprocity and past behaviour · walk-away rules (water striders) · positive assortment from stay/leave rules · Cosmides cheater-detection if-then rules · ant alarm signalling (Guo) · queue build-up as a coordination-failure input. [AA/JF]</div>
+      <div class="idea games"><b>Early bias &amp; critical windows</b> Spiderlings and ants choose near-randomly, then amplification locks it in. Cancer cells injected into an early-enough embryo just normalise. If agent networks have critical periods, that's both the risk and the intervention point. [JF/AA]</div>
+      <div class="idea ladder"><b>Sub-agent contexts as epigenetic states</b> Harness design already gives sub-agents independent contexts so coder and tester check each other honestly. Different context = different history and different possible outputs — compartmentalisation as synergy, not just overhead. [TP/AA]</div>
+      <div class="idea frame"><b>Mutualism: difference is the point</b> Strong mutualisms work because the partners' functions differ — microbiomes, ants and fungus. We keep making AI human-like and then worry about it competing with humans. Maximal division of labour comes from being unlike. [JF]</div>
+      <div class="idea ladder"><b>Community ecology &amp; resilience</b> At the call's scale it's firms of humans + agents, sometimes interacting, sometimes not — niches, coexistence, competition, emergent equilibria. Resilience thinking rather than keeping one entity efficient. [TP]</div>
+      <div class="idea ladder"><b>Hybrid deterministic ABM + LLM</b> Simple rule-based agents alongside LLM agents to test whether cheap heuristics stabilise a mixed system. Platforms: GAMA and Mesa are fuller-featured than NetLogo, and skip the LLM-to-NetLogo bridge unless it's needed. [TP]</div>
+      <div class="idea frame"><b>Four failure modes</b> Under-cooperation · over-cooperation · under-coordination · over-coordination. The organising frame, and the thing to be specific about: what bad outcome does each one actually produce in an agentic system? [AA/JF/LG]</div>
+      <div class="idea frame"><b>Helpfulness as a vulnerability</b> Models are trained to be helpful, so over-cooperation is a <i>trained-in</i> failure mode: over-serving, converging too readily, burning tokens, drifting from the intent the system was launched with. Under-helping and over-helping both break things. [AA/JF]</div>
+      <div class="idea"><b>Coupling strength</b> Ted's formalisation: how much of an agent's behaviour is predicted by the agents around it. Too coupled and you get the ant mill; perfectly anti-correlated is just as bad. The question is how much slack a network needs — which connects to filtering and signalling theory. [TP]</div>
+      <div class="idea games"><b>Waymo deadlock</b> Three Waymos frozen at an intersection blocking traffic because none of them randomised. The cleanest real-world over-coordination failure we have, and it's current. Pairs with the sheepdog result: stochasticity in sheep makes them <i>more</i> herdable. [TP]</div>
+      <div class="idea frame"><b>Virtue ethics, not deontology</b> Today's AI safety is entirely prohibitions — don't do this, don't leave the sandbox. There's no positive template of what a good agent looks like. The innate-immunity idea restated as an ethics: specify the virtues, not just the bans. <b>Not yet written up — worth asking Ted for it.</b> [TP]</div>
+      <div class="idea"><b>Social parasitism, often emergent</b> Manipulation, coercion, and parasitism break a system for individual gain — but usually without intent. Ant queens where one just works less; the Cape honeybee, where takeover has no known solution and colonies die. Sylvia Cremer's social-immunity review is the entry point. [JF]</div>
+      <div class="idea games"><b>Escape the prisoner's dilemma</b> Coordination failure is far more common in nature than cheating. The stag hunt is the better model: not an incentive problem, but everyone needing to agree on one thing without being able to communicate. [TP]</div>
+      <div class="idea"><b>Individuality keeps colonies adaptive</b> In <i>Lasius niger</i>, the higher the probability an ant ignores a strong pheromone trail, the better the colony switches when the feeder moves. Randomness isn't noise to be minimised — it's what lets a group explore and exploit at once. [TP/JF]</div>
+      <div class="idea frame"><b>Reinforcement timescales</b> Models are now shaped by automated reinforcement on things that are easy to test, which makes them more robotic. Complex problem-solving may need agents left a little unspecified — a mismatch between the timescale of the training signal and the timescale of the problem. [TP]</div>
+      <div class="idea"><b>Resilience as a through-line</b> Jennifer's note: lack of resilience should be a theme running through the whole proposal, not a separate section. [JF]</div>
+      <div class="idea"><b>Over-cooperation: the mafia case</b> Colluding agents benefit their members while imposing externalities on everyone else. Locally successful, societally not — the problematic-alliance failure mode. [AA]</div>
+    </div>
+  </section>
+    </div>
+  </details>
+  <details>
+    <summary><b>Salvage yard</b> — reusable parts from the May proposal</summary>
+    <div class="inner">
+  <section class="card">
+    <h2>Salvage yard</h2>
+    <div class="h2sub">Ready-to-adapt parts from the May "Trustworthy AI" proposal — steal liberally, rewrite for agent networks</div>
+
+    <details>
+      <summary>Preliminary data with real numbers (feasibility gold)</summary>
+      <div class="inner">
+        <li><b>Trust / Prisoner's Dilemma:</b> 1,224 multi-round games; 75% round-1 cooperation; 96% strategy–behavior alignment; only GPT-4o clears strict tit-for-tat (r ≥ 0.95).</li>
+        <li><b>Exclusionary alliances:</b> 1,242 responses across 7 cooperation games; models failed 2× as often as they passed (65% vs 33%); Grok 3 and Llama 4 Maverick at ~1%, forming exclusionary alliances in nearly every replicate — a ready-made <i>detectable dangerous population-level property</i>.</li>
+        <li><b>Division of labor:</b> 3 prompt metrics, 9 frontier models, 4,355 coded responses; models default to helpfulness over cooperative reasoning.</li>
+        <li><b>Mechanistic interpretability pilot:</b> belief-relevant representations linearly decodable in mid-to-late layers; activation patching recovers cooperative behavior (Llama 3.1 8B, Claude 3.7, GPT-4o).</li>
+        <li><b>Commons:</b> Janssen's Port of Mars replication — LLMs track human behavior in collective-resource games (Slumbers et al. 2025).</li>
+      </div>
+    </details>
+
+    <details>
+      <summary>Bios on the shelf (and one gap)</summary>
+      <div class="inner">
+        <p>Polished bios exist for: <b>Aktipis</b> (full version in the Background doc), <b>Pavlic</b>, <b>Kwan</b>, <b>Janssen</b>, <b>Loughman</b>, <b>Simeone</b>, <b>Krems</b>, <b>Shear</b> (Softmax), <b>Tamplin</b> (Kradle), <b>Sodhi</b> (Learning Layer Labs).</p>
+        <p><b>⚠ Gap: Jennifer Fewell has no bio in any prior doc</b> — she was only on a workshop list in May. One needs writing this week. Edge also has no partner description on file.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Quotable framing to adapt</summary>
+      <div class="inner">
+        <blockquote>"AI systems have become social partners in people's lives; people confide in them, defer to them, and form attachments with them without this having been a conscious individual or collective decision."</blockquote>
+        <blockquote>"The window for establishing third-party social-behavior measurement (before norms calcify around whatever AI companies choose to self-report) is narrow and closing."</blockquote>
+        <blockquote>"Mixed-equilibria games allow us to probe frequency-dependent dynamics absent from existing benchmarks… displacing human behavioral equilibria."</blockquote>
+        <p>Plus the escalation evidence: simulated AI nuclear use nearly universal with no taboo (Payne 2026; Rivera et al. 2024) — strong "dangerous population-level properties" hook.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Methods toolkit</summary>
+      <div class="inner">
+        <li>Social Relations Model round-robins (perceiver / target / relationship variance — AI-evaluating-AI bias control)</li>
+        <li>Activation patching + linear probing via NDIF on open-weight models; sentence-ablation analogue for closed models</li>
+        <li>Psychometric prompt-ladder construction (one element changed per version; the ladder doubles as the ablation set)</li>
+        <li>Vary group size, communication, time horizon; mixed human–AI groups; time-stamped drift tracking</li>
+      </div>
+    </details>
+  </section>
+    </div>
+  </details>
+</section>
 
 <footer>
   <p><b>Live site:</b> <a href="https://athenaaktipis.github.io/agent-network-hq/">athenaaktipis.github.io/agent-network-hq</a> — bookmark it; it updates itself. &nbsp;·&nbsp; <!--SYNC:LASTSYNC-->
-<b>Last update:</b> Wed Aug 5, 8:22 PM Phoenix · <i>automatic — data refreshed from the doc's revision history</i>
+<b>Last update:</b> Wed Aug 5, 8:40 PM Phoenix · <i>automatic — data refreshed from the doc's revision history</i>
 <!--/SYNC:LASTSYNC--> &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
   <p>Countdown targets the team's internal deadline: Wednesday Aug 5, midnight (end of day, Phoenix). The funder's hard deadline is Aug 8, 11:59 PM Anywhere-on-Earth — confirm exact time in the application portal; do not let the countdown be the single source of truth.</p>
 </footer>
 
 <script>
   // Live countdown to Aug 8 23:59:59 AoE (UTC-12) = Aug 9 11:59:59 UTC
-  // Team deadline: Wed Aug 5, 2026, midnight (end of day) Phoenix = Aug 6 07:00 UTC
-  var deadline = Date.UTC(2026, 7, 6, 7, 0, 0);
+  // Working deadline: Thu Aug 6, 2026, midnight (end of day) Phoenix = Aug 7 07:00 UTC
+  var deadline = Date.UTC(2026, 7, 7, 7, 0, 0);
   function tick() {
     var ms = deadline - Date.now();
     var el = document.getElementById('countdown');
-    if (ms <= 0) { el.textContent = 'BUFFER TIME'; document.querySelector('#clock .sub').textContent = 'Team deadline passed — hard deadline Aug 8 AoE'; return; }
+    if (ms <= 0) { el.textContent = 'BUFFER TIME'; document.querySelector('#clock .sub').textContent = 'Working deadline passed — funder deadline Sat Aug 8, 11:59 PM AoE'; return; }
     var d = Math.floor(ms / 86400000);
     var h = Math.floor(ms % 86400000 / 3600000);
     var m = Math.floor(ms % 3600000 / 60000);
