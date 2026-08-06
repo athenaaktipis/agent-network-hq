@@ -174,6 +174,12 @@
   .idea.ladder { border-left-color: var(--series-2); }
   .idea.frame { border-left-color: var(--series-1); }
 
+  /* ---------- open questions: masonry so cards don't stretch ---------- */
+  .qwall { column-count: 3; column-gap: 10px; }
+  .qwall .idea { break-inside: avoid; -webkit-column-break-inside: avoid; display: inline-block; width: 100%; margin-bottom: 10px; }
+  @media (max-width: 900px) { .qwall { column-count: 2; } }
+  @media (max-width: 560px) { .qwall { column-count: 1; } }
+
   /* ---------- salvage yard ---------- */
   details { border: 1px solid var(--border); border-radius: 10px; background: var(--page); margin-bottom: 8px; }
   summary { cursor: pointer; padding: 10px 14px; font-weight: 650; font-size: 13.5px; }
@@ -211,7 +217,7 @@
   <div class="tile">
     <div class="label">Core words drafted</div>
 <!--SYNC:TILEWORDS-->
-    <div class="value">3369<span style="font-size:16px;color:var(--muted)"> / 3,000</span></div>
+    <div class="value">3353<span style="font-size:16px;color:var(--muted)"> / 3,000</span></div>
     <div class="sub">verified count from the working doc</div>
 <!--/SYNC:TILEWORDS-->
   </div>
@@ -225,7 +231,7 @@
   <div class="tile">
     <div class="label">Words to cut</div>
 <!--SYNC:TILECUT-->
-    <div class="value">193<span style="font-size:16px;color:var(--muted)"> words</span></div>
+    <div class="value">177<span style="font-size:16px;color:var(--muted)"> words</span></div>
     <div class="sub">over in Problem & Impact, Approach, Feasibility</div>
 <!--/SYNC:TILECUT-->
   </div>
@@ -271,7 +277,7 @@
     <div class="row"><div class="name">Title <small>≤ 20 words</small></div><div class="meter"><div class="fill" style="width:45%"></div></div><div class="words">9 / 20</div><div class="chip claimed">✓ drafted [AA]</div></div>
     <div class="row"><div class="name">Plain summary <small>2–3 sentences</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">3 sentences</div><div class="chip claimed">✓ drafted [AA]</div></div>
     <div class="row"><div class="name">Problem &amp; Impact <small>≤ 500 words</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">625 / 500</div><div class="chip needs">✂ over limit</div></div>
-    <div class="row"><div class="name">Approach <small>≤ 1000 words</small></div><div class="meter"><div class="fill notes" style="width:100%"></div></div><div class="words">1029 / 1000</div><div class="chip needs">✂ over limit</div></div>
+    <div class="row"><div class="name">Approach <small>≤ 1000 words</small></div><div class="meter"><div class="fill notes" style="width:100%"></div></div><div class="words">1013 / 1000</div><div class="chip needs">✂ over limit</div></div>
     <div class="row"><div class="name">Novelty <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:65%"></div></div><div class="words">194 / 300</div><div class="chip notes">✍ room to add [AA]</div></div>
     <div class="row"><div class="name">Feasibility <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:100%"></div></div><div class="words">339 / 300</div><div class="chip needs">✂ over limit</div></div>
     <div class="row"><div class="name">Team <small>≤ 300 words</small></div><div class="meter"><div class="fill" style="width:98%"></div></div><div class="words">294 / 300</div><div class="chip claimed">✓ drafted</div></div>
@@ -378,7 +384,7 @@
   <section class="card">
   <h2>❓ Open questions for the network</h2>
   <div class="h2sub">Genuinely unresolved — resolved ones have been retired. Answer any of these in the doc or the group chat.</div>
-  <div class="wall">
+  <div class="qwall">
     <div class="idea frame"><b>Which detectors get a full spec?</b> Examples are easy; the inputs → threshold → output write-ups are the hard, differentiating part. Three done properly beats ten named.</div>
     <div class="idea frame"><b>Does the doc say what each failure mode <i>does</i>?</b> Liz's challenge: the link from the four modes to actual harm is obvious to us and invisible to a reviewer.</div>
     <div class="idea"><b>Cite Stephanie Forrest?</b> Negative selection and clonal selection are the closest prior art to the innate/adaptive framing. Not in the doc, and worth a conflict check.</div>
@@ -903,7 +909,7 @@
 
 <footer>
   <p><b>Live site:</b> <a href="https://athenaaktipis.github.io/agent-network-hq/">athenaaktipis.github.io/agent-network-hq</a> — bookmark it; it updates itself. &nbsp;·&nbsp; <!--SYNC:LASTSYNC-->
-<b>Last update:</b> Thu Aug 6, 12:18 AM Phoenix · <i>automatic — data refreshed from the doc's revision history</i>
+<b>Last update:</b> Thu Aug 6, 12:23 AM Phoenix · <i>automatic — data refreshed from the doc's revision history</i>
 <!--/SYNC:LASTSYNC--> &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
   <p>Countdown targets the team's internal deadline: Wednesday Aug 5, midnight (end of day, Phoenix). The funder's hard deadline is Aug 8, 11:59 PM Anywhere-on-Earth — confirm exact time in the application portal; do not let the countdown be the single source of truth.</p>
 </footer>
