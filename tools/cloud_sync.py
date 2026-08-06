@@ -271,11 +271,18 @@ def main():
     # Milestones + Budget sit on the board but aren't word-counted; Budget counts
     # as started once personnel lines exist, Milestones once the table has rows.
     budget_started = "SUM month" in doc_text
+    # count filled milestone rows (dated entries between the two table headers)
+    ms = 0
+    if "Intermediate Milestones" in doc_text and "End-of-Project Outcomes" in doc_text:
+        seg = doc_text[doc_text.index("Intermediate Milestones"):doc_text.index("End-of-Project Outcomes")]
+        ms = len(re.findall(r"^\s*Q[1-4]\s+20\d\d", seg, re.M))
     empty = [l for _k, l, _n in SECTIONS if counts.get(l, (0,))[0] == 0]
     if not budget_started:
         empty.append("Budget")
-    empty.append("Milestones")
-    started = sum(1 for w, _ in counts.values() if w > 0) + (1 if budget_started else 0)
+    if ms < 4:
+        empty.append("Milestones")
+    started = (sum(1 for w, _ in counts.values() if w > 0)
+               + (1 if budget_started else 0) + (1 if ms else 0))
     # total words that must come out of over-limit sections
     over_names = [l for _k, l, _n in SECTIONS if counts.get(l, (0, None))[1]
                   and counts[l][0] > counts[l][1]]
@@ -297,7 +304,7 @@ def main():
         "TILESECTIONS": (
             f'    <div class="value">{started}<span style="font-size:16px;color:var(--muted)"> / '
             f'{total_sections}</span></div>\n    <div class="sub">'
-            f'{" &amp; ".join(empty) if empty else "every section open"} still empty</div>'),
+            f'{(" &amp; ".join(empty) + " still empty") if empty else "every section has content"}</div>'),
         "EDGES": build_edges(people),
         "FIGCAP": f'    <div class="figcap">{build_figcap(people)}</div>',
         "VERIFIED": build_verified(data),
