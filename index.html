@@ -200,7 +200,7 @@
   <h1>Agent Network HQ</h1>
   <div class="statusline" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
 <!--SYNC:STATUSLINE-->
-    <span><span class="dot">●</span> 3 of 5 agents active in the last 24h (verified) · network status: <b>accelerating</b> — 11 of 12 sections in motion</span>
+    <span><span class="dot">●</span> 0 of 5 agents active in the last 24h (verified) · network status: <b>quiet</b> — 11 of 12 sections in motion</span>
 <!--/SYNC:STATUSLINE-->    <button id="syncbtn" onclick="requestSync()" style="cursor:pointer;font:600 12.5px system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--surface-1);border:1px solid var(--border);border-radius:8px;padding:6px 12px;white-space:nowrap;">⟳ Auto-syncing every 15 min</button>
   </div>
   <div id="syncnote" style="display:none;margin-top:8px;font-size:12.5px;color:var(--text-secondary);border:1px solid var(--border);border-left:3px solid var(--series-2);border-radius:8px;padding:8px 12px;background:var(--surface-1);">
@@ -318,14 +318,14 @@
       <!-- edges -->
       <g stroke="var(--baseline)" stroke-width="2" opacity="0.9">
 <!--SYNC:EDGES-->
-        <line x1="190" y1="52" x2="190" y2="119" stroke="var(--series-1)" stroke-width="5"/>
-        <line x1="63" y1="120" x2="146" y2="150" stroke="var(--series-1)" stroke-width="3"/>
-        <line x1="317" y1="120" x2="234" y2="150" stroke="var(--series-1)" stroke-width="2.5"/>
+        <line x1="190" y1="52" x2="190" y2="119"/>
+        <line x1="63" y1="120" x2="146" y2="150"/>
+        <line x1="317" y1="120" x2="234" y2="150"/>
         <line x1="95" y1="277" x2="158" y2="200"/>
         <line x1="285" y1="277" x2="222" y2="200"/>
-        <line x1="190" y1="52" x2="76" y2="108" stroke="var(--series-1)" stroke-width="2.5"/>
+        <line x1="190" y1="52" x2="76" y2="108" stroke-dasharray="5 4"/>
         <line x1="190" y1="52" x2="285" y2="265" stroke-dasharray="5 4"/>
-        <line x1="190" y1="52" x2="305" y2="105" stroke="var(--series-1)" stroke-width="2.5"/>
+        <line x1="190" y1="52" x2="305" y2="105" stroke-dasharray="5 4"/>
         <line x1="190" y1="52" x2="100" y2="270" stroke-dasharray="5 4"/>
 <!--/SYNC:EDGES-->
       </g>
@@ -346,7 +346,7 @@
       </g>
     </svg>
 <!--SYNC:FIGCAP-->
-    <div class="figcap"><b>Measured, not inferred.</b> Solid blue = verified activity in the last 24 hours, read from the doc's revision history, comment log, and Drive folder; dashed = tagged but not yet active. Live now: <b>Athena</b> (1 edit), <b>Ted</b> (3 comments), <b>Liz</b> (1 edit, 1 comment). Quiet: <b>Jennifer</b>, <b>Reilly</b>.</div>
+    <div class="figcap"><b>Measured, not inferred.</b> Solid blue = verified activity in the last 24 hours, read from the doc's revision history, comment log, and Drive folder; dashed = tagged but not yet active. No verified activity in the last 24 hours. Quiet: <b>Athena</b>, <b>Jennifer</b>, <b>Ted</b>, <b>Liz</b>, <b>Reilly</b>.</div>
 <!--/SYNC:FIGCAP-->
   </section>
   <section class="card">
@@ -354,7 +354,7 @@
     <div class="h2sub">Ten most recent developments</div>
     <ul class="pulse">
 <!--SYNC:VERIFIED-->
-      <li>📡 <b>Verified activity</b>, read from the doc's revision history — last 24h: <span class="initial">AA</span> 1 · <span class="initial">TP</span> 3 · <span class="initial">LG</span> 2. Who did what is in the graph caption above.</li>
+      <li>📡 <b>Verified activity</b>, read from the doc's revision history — last 24h: none yet. Who did what is in the graph caption above.</li>
 <!--/SYNC:VERIFIED-->
       <li><b>Approach</b> grew, not shrank — Jennifer's biology went in <span class="when">— Wed</span></li>
       <li><b>Cooperation failure modes missing</b> — coordination has them, cooperation doesn't [JF] <span class="when">— Wed</span></li>
@@ -911,7 +911,7 @@
 
 <footer>
   <p><b>Live site:</b> <a href="https://athenaaktipis.github.io/agent-network-hq/">athenaaktipis.github.io/agent-network-hq</a> — bookmark it; it updates itself. &nbsp;·&nbsp; <!--SYNC:LASTSYNC-->
-<b>Last update:</b> Sun Aug 9, 2:15 PM Phoenix · <i>automatic — data refreshed from the doc's revision history</i>
+<b>Last update:</b> Sun Aug 9, 3:00 PM Phoenix · <i>automatic — data refreshed from the doc's revision history</i>
 <!--/SYNC:LASTSYNC--> &nbsp;·&nbsp; Sources: <a href="https://docs.google.com/document/d/1r6I20zgDDmYqaPdJbyD0-Lce_bgKA9Lp5O0-znEh248/edit" target="_blank">Working doc</a> · <a href="https://docs.google.com/document/d/1U7kPpb5YLQg1Jf41GptiJS_PoUkL26XcmVkgrtnblyM/edit" target="_blank">May master doc</a> · <a href="https://www.schmidtsciences.org/multi-agent-ai/" target="_blank">The call</a></p>
   <p>Countdown targets the team's internal deadline: Wednesday Aug 5, midnight (end of day, Phoenix). The funder's hard deadline is Aug 8, 11:59 PM Anywhere-on-Earth — confirm exact time in the application portal; do not let the countdown be the single source of truth.</p>
 </footer>
