@@ -29,10 +29,11 @@ repo-root CLAUDE.md's rules about `index.html` and `/sync` do not govern this di
 
 - **Founding roster:** in formation. Live status is in the founders doc/spreadsheet —
   always read those rather than trusting any snapshot here.
-- **Inaugural conference — May 2027, Crete:** venue discussion underway with Metaxa
-  Hospitality (the group that hosted the May 2026 ISEEC meeting). Their proposal is in
-  hand (Jul 25); logistics details still being negotiated over email (Aug 10) — see the
-  Gmail thread for current state.
+- **Inaugural conference — May 20–23, 2027 (Thu–Sun), Creta Maris, Crete:** dates set
+  with the hotel and announced at haicos.org/events#inaugural-meeting. Venue is Metaxa
+  Hospitality (hosted the May 2026 ISEEC meeting); remaining logistics (AV/tech
+  staffing) being finalized over email — see the Gmail thread for current state.
+- **Partners:** Prosocial World approved for listing on the website (Aug 2026).
 - **Related event (not HAICoS-run):** "Evolving AI" gathering at Harvard, Oct 8–10, 2026
   (prosocial.world/evolving-ai, with David Sloan Wilson and Alex Pentland). Fellowship
   applications opened Aug 10, 2026. Overlapping people and themes; a natural recruiting
